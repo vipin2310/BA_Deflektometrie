@@ -13,3 +13,19 @@
     \label{sec:verfahren}
     \input{03_sichtpruefungDurchLichtreflexionen/verfahren/verfahren}
 }
+
+%Einsatz von mehreren Streifenmustern
+{
+	\FloatBarrier
+    \section{Einsatz von mehreren Streifenmustern}
+    \label{sec:einsatzVonMehrerenStreifenmustern}
+    \input{03_sichtpruefungDurchLichtreflexionen/einsatzVonMehrerenStreifenmustern/einsatzVonMehrerenStreifenmustern}
+}
+
+%Optimierungen
+{
+	\FloatBarrier
+    \section{Optimierungen}
+    \label{sec:optimierungen}
+    \input{03_sichtpruefungDurchLichtreflexionen/optimierungen/optimierungen}
+}
