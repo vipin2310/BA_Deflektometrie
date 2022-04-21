@@ -1,15 +1,17 @@
 \begin{Definition}{Deflektometrische Registrierung}{def:deflektometrischeRegistrierung}
-	Die \textit{deflektometrische Registrierung} $ l_{r} $ beschreibt die Abbildung von Bildpunkten zu Schirmpunkten. \cite{kit_sbw}
+	Die \textit{deflektometrische Registrierung} \acrshort{lr} beschreibt die Abbildung von Bildpunkten zu Schirmpunkten. \cite{kit_sbw}
 	\begin{equation}
-		l_{r} : A_{Cam} \rightarrow L \cup \varnothing ,~ P_{B} \rightarrow P_{L}
+		\text{\acrshort{lr}} : A_{Cam} \rightarrow L \cup \varnothing ,~ P_{B} \rightarrow P_{L}
 	\end{equation}
 	$ A_{Cam} \subset \mathbb{R}^{2} $ bezeichnet die Menge der Bildpunkte bzw. der Kamerapixel.
 	$ L \subset \mathbb{R}^{2} $ bezeichnet die Menge der Schirmpunkte bzw. der Monitorpixel.
 	In Koordinatenschreibweise lässt sich die Abbildung somit darstellen als:
 	\begin{equation} \label{eq:deflektometrischeRegistrierung}
-		l_{r} : \mathbb{R}^{2} \supset A_{Cam} \rightarrow \mathbb{R}^2 ,~ (x_{B}, y_{B}) \mapsto  (x_{L}, y_{L})
+		\text{\acrshort{lr}} : \mathbb{R}^{2} \supset A_{Cam} \rightarrow \mathbb{R}^2 ,~ (x_{B}, y_{B}) \mapsto  (x_{L}, y_{L})
 	\end{equation}
 \end{Definition}
 
 \noindent
-Durch diese Abbildung...
+Die deflektometrische Registrierung kann aus der Beobachtung des Monitors mithilfe der Kamera aufgestellt werden.
+Wird der Monitor indirekt über eine spiegelnde Oberfläche beobachtet, können aus der deflektometrischen Registrierung Krümmungsmerkmale über die spiegelnde Oberfläche bestimmt werden.
+Durch die Berücksichtigung der Positionen der Systemkomponenten können, wie im Abschnitt \ref{sub:rekonstruktion} bereits beschrieben, Höheninformationen über die Oberfläche gewonnen werden.
