@@ -1,0 +1,15 @@
+\begin{Definition}{Deflektometrische Registrierung}{def:deflektometrischeRegistrierung}
+	Die \textit{deflektometrische Registrierung} $ l_{r} $ beschreibt die Abbildung von Bildpunkten zu Schirmpunkten. \cite{kit_sbw}
+	\begin{equation}
+		l_{r} : A_{Cam} \rightarrow L \cup \varnothing ,~ P_{B} \rightarrow P_{L}
+	\end{equation}
+	$ A_{Cam} \subset \mathbb{R}^{2} $ bezeichnet die Menge der Bildpunkte bzw. der Kamerapixel.
+	$ L \subset \mathbb{R}^{2} $ bezeichnet die Menge der Schirmpunkte bzw. der Monitorpixel.
+	In Koordinatenschreibweise lässt sich die Abbildung somit darstellen als:
+	\begin{equation} \label{eq:deflektometrischeRegistrierung}
+		l_{r} : \mathbb{R}^{2} \supset A_{Cam} \rightarrow \mathbb{R}^2 ,~ (x_{B}, y_{B}) \mapsto  (x_{L}, y_{L})
+	\end{equation}
+\end{Definition}
+
+\noindent
+Durch diese Abbildung...

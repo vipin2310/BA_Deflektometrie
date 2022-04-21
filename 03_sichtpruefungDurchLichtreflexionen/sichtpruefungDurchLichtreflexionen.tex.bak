@@ -1,0 +1,15 @@
+%Prüfaufbau
+{
+	\FloatBarrier
+    \section{Prüfaufbau}
+    \label{sec:pruefaufbau}
+    \input{03_sichtpruefungDurchLichtreflexionen/pruefaufbau/pruefaufbau}
+}
+
+%Verfahren
+{
+	\FloatBarrier
+    \section{Verfahren}
+    \label{sec:verfahren}
+    \input{03_sichtpruefungDurchLichtreflexionen/verfahren/verfahren}
+}
