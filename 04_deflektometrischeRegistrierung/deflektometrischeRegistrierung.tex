@@ -6,12 +6,20 @@
 	$ A_{Cam} \subset \mathbb{R}^{2} $ bezeichnet die Menge der Bildpunkte bzw. der Kamerapixel.
 	$ L \subset \mathbb{R}^{2} $ bezeichnet die Menge der Schirmpunkte bzw. der Monitorpixel.
 	In Koordinatenschreibweise lässt sich die Abbildung somit darstellen als:
-	\begin{equation} \label{eq:deflektometrischeRegistrierung}
+	\begin{equation}
 		\text{\acrshort{lr}} : \mathbb{R}^{2} \supset A_{Cam} \rightarrow \mathbb{R}^2 ,~ (x_{B}, y_{B}) \mapsto (x_{L}, y_{L})
+	\end{equation}
+	Ferner kann die \textit{deflektometrische Registrierung} \acrshort{lr} in zwei Abbildungen von Bildpunkten zu den Spalten- und Zeilenpositionen der Schirmpunkte separiert werden:
+	\begin{equation}
+		l_{r,rows} : \mathbb{R}^{2} \supset A_{Cam} \rightarrow \mathbb{R} ,~ (x_{B}, y_{B}) \mapsto x_{L}
+	\end{equation}
+	\begin{equation}
+		l_{r,cols} : \mathbb{R}^{2} \supset A_{Cam} \rightarrow \mathbb{R} ,~ (x_{B}, y_{B}) \mapsto y_{L}
 	\end{equation}
 \end{Definition}
 
 \noindent
 Die deflektometrische Registrierung kann aus der Beobachtung des Monitors mithilfe der Kamera aufgestellt werden.
 Wird der Monitor indirekt über eine spiegelnde Oberfläche beobachtet, können aus der deflektometrischen Registrierung Krümmungsmerkmale über die spiegelnde Oberfläche bestimmt werden.
-Durch die Berücksichtigung der Positionen der Systemkomponenten können, wie im Abschnitt \ref{sub:rekonstruktion} bereits beschrieben, Höheninformationen über die Oberfläche gewonnen werden.
+Durch die Berücksichtigung der Positionen der Systemkomponenten können mittels der deflektometrischen Registrierung Höheninformationen über die Oberfläche gewonnen werden.
+Dieses Verfahren wurde im Abschnitt \ref{sub:rekonstruktion} bereits beschrieben.

@@ -68,6 +68,13 @@
     	\input{04_deflektometrischeRegistrierung/deflektometrischeRegistrierung}
     }
     
+    %Fourier-Streifen-Analyse
+    {
+    	\FloatBarrier %Verhindert Fehlpositionierung von Abbildungen aus vorherigen Abschnitten
+    	\chapter{Fourier-Streifen-Analyse}
+    	\input{05_fourierStreifenAnalyse/fourierStreifenAnalyse}
+    }
+    
     %Quellenverzeichnis
     {
     	\FloatBarrier %Verhindert Fehlpositionierung von Abbildungen aus vorherigen Abschnitten
