@@ -1,0 +1,27 @@
+Ohne eine Phasenentfaltung bekommt man eventuell eine mehrdeutige Zuordnung aufgrund der Periodizität der Kosinusfunktion.
+Soll eine eindeutige Zuordnung über das Phasenschiebeverfahren ohne Phasenentfaltung erfolgen, darf es also nur eine einzige Musterperiode auf der Monitorbreite bzw. Monitorhöhe geben.
+Damit lässt sich die Kodierung der Monitorkoordinaten $(x_{L}, y_{L})$ durch die Phasen $(\phi_{x}, \phi_{y})$ folgendermaßen aufstellen:
+%
+\begin{equation}
+	x_{L} = \dfrac{\text{\acrshort{lwidth}}}{2\pi}\phi_{x},
+	\qquad
+	y_{L} = \dfrac{\text{\acrshort{lheight}}}{2\pi}\phi_{y}
+\end{equation}
+%
+\noindent
+Die Monitorbreite wird dabei mit \acrshort{lwidth} und die Monitorhöhe mit \acrshort{lheight} angegeben.
+
+\p
+O.B.d.A. wird nachfolgend nur die deflektometrische Registrierung der Spaltenpositionen \acrshort{lrx} ($x$-Richtung) betrachtet.
+Die deflektometrische Registrierung der Zeilenpositionen \acrshort{lry} ($y$-Richtung) kann analog bestimmt werden.
+Das $k$-te Muster $m_k$ zur Kodierung der Monitorpunkte wird durch eine Kosinusfunktion aufgebaut und hat die Form:
+%
+\begin{equation}
+		m_k(x_L,y_L) = A_m \left(1 + C_m \cos \left(\dfrac{2\pi}{\text{\acrshort{lwidth}}} x_L + \psi_k\right)\right),
+		\quad
+		k \in \lbrace 1,\ldots,N_{shift}\rbrace,
+		\psi_k = (k - 1)\left(\dfrac{2\pi}{N_{shift}}\right)
+	\end{align}
+\end{equation}
+%
+$A_m$ bezeichnet die Amplitude, $C_m$ den Kontrast und 
