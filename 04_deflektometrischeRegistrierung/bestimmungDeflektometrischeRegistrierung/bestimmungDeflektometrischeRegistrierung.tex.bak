@@ -26,3 +26,11 @@ Hierzu stellt Werling in seiner Arbeit \cite{kit_sbw} ein mehrstufiges Phasensch
     \label{sub:registrierungOhnePhasenentfaltung}
     \input{04_deflektometrischeRegistrierung/bestimmungDeflektometrischeRegistrierung/registrierungOhnePhasenentfaltung/registrierungOhnePhasenentfaltung}
 }
+
+%Deflektometrische Registrierung mit Phasenentfaltung
+{
+	\FloatBarrier
+    \subsection{Deflektometrische Registrierung mit Phasenentfaltung}
+    \label{sub:registrierungMitPhasenentfaltung}
+    \input{04_deflektometrischeRegistrierung/bestimmungDeflektometrischeRegistrierung/registrierungMitPhasenentfaltung/registrierungMitPhasenentfaltung}
+}

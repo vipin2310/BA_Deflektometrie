@@ -9,7 +9,7 @@
 	$ L \subset \mathbb{R}^{2} $ bezeichnet die Menge der Schirmpunkte bzw. der Monitorpixel.
 	In Koordinatenschreibweise lässt sich die Abbildung somit darstellen als:
 	%
-	\begin{equation}
+	\begin{equation}\label{eq:deflektometrischeRegistrierungAbbildung}
 		\text{\acrshort{lr}} : \mathbb{R}^{2} \supset A_{Cam} \rightarrow \mathbb{R}^2 ,~ (x_{B}, y_{B}) \mapsto (x_{L}, y_{L})
 	\end{equation}
 	%
