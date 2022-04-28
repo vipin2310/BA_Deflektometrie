@@ -1,7 +1,7 @@
 Ohne eine Phasenentfaltung bekommt man eventuell eine mehrdeutige Zuordnung aufgrund der Periodizität der Kosinusfunktion.
 Soll eine eindeutige Zuordnung über das Phasenschiebeverfahren ohne Phasenentfaltung erfolgen, darf es also nur eine einzige Musterperiode auf der Monitorbreite bzw. Monitorhöhe geben.
 Damit lässt sich die Kodierung der Monitorkoordinaten $(x_{L}, y_{L})$ durch die Phasen $(\phi_{x}, \phi_{y})$ folgendermaßen aufstellen:
-%
+%TODO Quelle Werling angeben?
 \begin{equation}\label{eq:phasenkodierung}
 	x_{L} = \dfrac{\text{\acrshort{lwidth}}}{2\pi}\phi_{x},
 	\qquad
@@ -17,12 +17,12 @@ Die deflektometrische Registrierung der Zeilenpositionen \acrshort{lry} ($y$-Ric
 Das $k$-te Muster $m_k$ zur Kodierung der Monitorpunkte wird durch eine Kosinusfunktion aufgebaut und hat die Form:
 %
 \begin{equation}\label{eq:monitormuster}
-	\begin{split}	
-		m_k(x_L,y_L) = A_m \left(1 + C_m \cos \left(\dfrac{2\pi}{\text{\acrshort{lwidth}}} x_L + \psi_k\right)\right),
-		\qquad
-		k \in \lbrace 1,\ldots,N_{shift}\rbrace, \\
+	\begin{gathered}	
+		m_k(x_L,y_L) = A_m \left(1 + C_m \cos \left(\dfrac{2\pi}{\text{\acrshort{lwidth}}} x_L + \psi_k\right)\right),\\
+		k \in \lbrace 1,\ldots,N_{shift}\rbrace,
+		\quad
 		\psi_k = (k - 1)\dfrac{2\pi}{N_{shift}}
-	\end{split}
+	\end{gathered}
 \end{equation}
 %
 $A_m$ bezeichnet die Amplitude, $C_m$ den Kontrast, $\psi_k$ die Phasenverschiebung des $k$-ten Musters und $N_{shift}$ die Anzahl an Mustern für das Phasenschiebeverfahren.

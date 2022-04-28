@@ -1,0 +1,42 @@
+Die hier beschriebene Methodik zur Bestimmung der deflektometrischen Registrierung ist ein mehrstufiges Phasenschiebeverfahren.
+Ein solches Verfahren wird von Kammel in seiner Dissertation \cite{kit_kammel} vorgestellt.
+Das Verfahren von Kammel zeigt jedoch in der Praxis Kodierungsartefakte bzw. Phasensprünge insbesondere an den Periodengrenzen.
+Aus dem Grund stellt Werling darauf aufbauend in seiner Dissertation \cite{kit_werling} einen anderen Ansatz eines mehrstufigen Phasenschiebeverfahrens vor, der das Problem mit den Phasensprünge minimiert.
+Die Idee hinter dem Ansatz ist dabei, dass man sich zunächst, analog zum Verfahren aus Kapitel \ref{sub:registrierungOhnePhasenentfaltung}, die $x$- bzw. $y$-Koordinaten in Relation zu den Perioden der Muster bestimmt.
+Durch mehrere Muster mit unterschiedlichen Perioden erhält man schließlich mehrere relative unterschiedliche $x$- bzw. $y$-Koordinaten.
+Diese müssen im finalen Ergebnis der richtigen Periode zugeordnet werden, indem der Abstand der Koordinaten minimiert wird.
+
+\p
+Analog zum Verfahren aus Kapitel \ref{sub:registrierungOhnePhasenentfaltung} benötigt man $N_{shift}$-viele Muster um die Phase eines Bildpunkts $(x_B, y_B)^\top$ zu bestimmen.
+Zusätzlich betrachtet man mehrere Stufen des Verfahrens.
+Das Musters auf der Stufe $i$ hat $N_\lambda^i$-viele Perioden über die Monitorbreite \acrshort{lwidth} bzw. -höhe \acrshort{lheight}.
+Dabei sollen sich für unterschiedliche Stufen auch die Perioden der verwendeten Muster unterscheiden.
+Die Phasen $\phi_x^i$ und $\phi_y^i$ der kodierten Monitorpunkte $(x_L, y_L)^\top$ auf der $i$-ten Stufe sehen dann folgendermaßen aus:
+%
+\begin{equation}
+	\phi_x^i = \dfrac{2\pi N_\lambda^i}{\text{\acrshort{lwidth}}} x_L
+	\qquad
+	\phi_y^i = \dfrac{2\pi N_\lambda^i}{\text{\acrshort{lheight}}} y_L
+\end{equation}
+
+\p
+O.B.d.A. wird nachfolgend nur die deflektometrische Registrierung der Spaltenpositionen \acrshort{lrx} ($x$-Richtung) betrachtet.
+Die deflektometrische Registrierung der Zeilenpositionen \acrshort{lry} ($y$-Richtung) kann analog bestimmt werden.
+Auf der Stufe $i$ hat das $k$-te Muster $m_k^i$ zur Kodierung der Monitorpunkte $(x_L, y_L)^\top$ somit die Form:
+%
+\begin{equation}\label{eq:monitormuster_mehrstufig}
+	\begin{gathered}	
+		m_k^i(x_L,y_L) = A_m^i \left(1 + C_m^i \cos \left(\phi_x^i + \psi_k\right)\right),\\
+		k \in \lbrace 1,\ldots,N_{shift}\rbrace,
+		\quad
+		\psi_k = (k - 1)\dfrac{2\pi}{N_{shift}}
+	\end{gathered}
+\end{equation}
+%
+Es bezeichnet $A_m^i$ die Amplitude und $C_m^i$ den Kontrast des Musters der $i$-ten Stufe.
+Wie auch in Kapitel \ref{sub:registrierungOhnePhasenentfaltung} entspricht $\psi_k$ der Phasenverschiebung des $k$-ten Musters der Stufen.
+Analog zu Kapitel \ref{sub:registrierungOhnePhasenentfaltung} nimmt die Kamera das Signal $g_k^i$ auf:
+%
+\begin{equation}\label{eq:kamerabild}
+	g_k^i(x_B, y_B) = A_g^i(x_B, y_B) \left(1 + C_g^i(x_B, y_B) \cos \left(\dfrac{2\pi N_\lambda^i}{\text{\acrshort{lwidth}}}\text{\acrshort{lrx}}(x_B, y_B) + \psi_k\right)\right)
+\end{equation}
