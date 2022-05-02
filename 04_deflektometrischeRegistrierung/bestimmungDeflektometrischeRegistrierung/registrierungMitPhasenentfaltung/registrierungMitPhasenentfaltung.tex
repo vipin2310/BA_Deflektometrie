@@ -37,6 +37,96 @@ Es bezeichnet $A_m^i$ die Amplitude und $C_m^i$ den Kontrast des Musters der $i$
 Wie auch in Kapitel \ref{sub:registrierungOhnePhasenentfaltung} entspricht $\psi_k$ der Phasenverschiebung des $k$-ten Musters der Stufen.
 Analog zu Kapitel \ref{sub:registrierungOhnePhasenentfaltung} nimmt die Kamera das Signal $g_k^i$ auf:
 %
-\begin{equation}\label{eq:kamerabild}
+\begin{equation}\label{eq:kamerabild_mehrstufig}
 	g_k^i(x_B, y_B) = A_g^i(x_B, y_B) \left(1 + C_g^i(x_B, y_B) \cos \left(\dfrac{2\pi N_\lambda^i}{\text{\acrshort{lwidth}}}\text{\acrshort{lrx}}(x_B, y_B) + \psi_k\right)\right)
 \end{equation}
+%
+Analog zu Kapitel \ref{sub:registrierungOhnePhasenentfaltung} lässt sich aus den Bildern $g_k^i$ die Phase der $i$-ten Stufe $\phi_x^i$ berechnen.
+Vergleichbar zu Gleichung \ref{eq:registrierungX}, kann man in diesem Verfahren aus der Phase die Monitorkoordinaten relativ zum Intervall $[0,\text{\acrshort{lwidth}}/N_\lambda^i)$ bestimmen:
+%
+\begin{equation}\label{eq:registrierungX_relativ}
+	x_{L,relativ}^i =
+	\dfrac{\text{\acrshort{lwidth}}}{2\pi N_\lambda^i}
+	\arctan 
+	\left( 
+		-\dfrac
+		{\sum\limits_{k=1}^{N_{shift}} g_k^i(x_B, y_B) sin\left((k - 1)\dfrac{2\pi}{N_{shift}}\right)}
+		{\sum\limits_{k=1}^{N_{shift}} g_k^i(x_B, y_B) cos\left((k - 1)\dfrac{2\pi}{N_{shift}}\right)}
+	\right)
+\end{equation}
+%
+Die absolute Monitorkoordinate $x_L^i$ der $i$-ten Stufe lässt sich bestimmen indem man zur Phase $\phi_x$ ein unbekanntes ganzzahliges Vielfaches von $2\pi$ addiert.
+In Abhängigkeit von $x_{L,relativ}^i$ bedeutet das für $x_L^i$:
+%
+\begin{equation}\label{registrierungX_absolut}
+	x_L^i = x_{L,relativ}^i + n^i \dfrac{\text{\acrshort{lwidth}}}{N_\lambda^i},
+	\qquad
+	(n^i \in \mathbb{N}_0)
+\end{equation}
+%
+Dabei ist $n^i$ ein unbekannter ganzzahliger Faktor, der die absolute Auswertung bestimmt.
+Zur Bestimmung des Faktors $n_i$ sollen zwei verschiedene Stufen des Verfahrens $i$,$j$ mit $i \neq j$ betrachtet werden.
+Zur eindeutigen Lösbarkeit des nachfolgenden Gleichungssystems müssen $N_\lambda^i$ und $N_\lambda^j$ teilerfremd sein.
+Das heißt es gilt:
+%
+\begin{equation*}
+	ggT(N_\lambda^i, N_\lambda^j) = 1
+	\quad
+	\forall i \neq j
+\end{equation*}
+%
+Dadurch erhält man zwei unterschiedliche Muster $m_k^i$ und $m_k^j$ und das eindeutig lösbare Gleichungssystem:
+%
+\begin{equation}\label{eq:gleichungssystemRegistrierung}
+	\begin{split}
+		x_L & = x_{L,relativ}^i + n^i \dfrac{\text{\acrshort{lwidth}}}{N_\lambda^i},\\
+		x_L & = x_{L,relativ}^j + n^j \dfrac{\text{\acrshort{lwidth}}}{N_\lambda^j},
+		\quad i \neq j,
+		\quad n^i, n^j \in \mathbb{N}_0
+	\end{split}
+\end{equation}
+%
+In diesem Zusammenhang muss für die Monitorkoordinate $x_L = x_L^i = x_L^j$ gelten.
+Die Gleichheit ist aufgrund von Ungenauigkeiten in der Kameraaufnahme nur schwierig zu erreichen, weshalb man aus dem Gleichungssystem ein Optimierungsproblem bildet.
+Das heißt, gesucht ist folgende Näherungslösung $(n^i, n^j)$:
+%
+\begin{equation}\label{eq:optimierungsProblem_zweiStufen}
+	\begin{gathered}	
+		(n^i, n^j) = \argmin_{\alpha, \beta \in \mathbb{N}_0}
+		\left\lvert
+			\Bigg(
+				x_{L,relativ}^i + \alpha \dfrac{\text{\acrshort{lwidth}}}{N_\lambda^i}
+			\Bigg)
+			-
+			\Bigg(		
+				x_{L,relativ}^j + \beta \dfrac{\text{\acrshort{lwidth}}}{N_\lambda^j}
+			\Bigg)
+		\right\rvert,\\
+		\alpha \in \lbrace 0,\ldots, N_\lambda^i - 1\rbrace,
+		\qquad
+		\beta \in \lbrace 0,\ldots, N_\lambda^j - 1\rbrace
+	\end{gathered}
+\end{equation}
+%
+Durch weitere Stufen dieses Verfahrens erhöht sich zunehmend die Genauigkeit der Phasenentfaltung.
+Das zu betrachtende Optimierungsproblem ergibt schließlich den Vektor $(n^1,\ldots, n^{N_{step}})$ zur Bestimmung der deflektometrischen Registrierung in $x$-Richtung:
+%
+\begin{equation}\label{eq:optimierungsProblem_mehrstufig}
+	\begin{gathered}	
+		(n^1,\ldots, n^{N_{step}}) = \argmin_{\mathrm{\textit{A}}}
+		\sum\limits_{i = 1}^{N_{step}}
+		\sum\limits_{j = i + 1}^{N_{step}}
+		\left\lvert
+			\Bigg(
+				x_{L,relativ}^i + \alpha^i \dfrac{\text{\acrshort{lwidth}}}{N_\lambda^i}
+			\Bigg)
+			-
+			\Bigg(		
+				x_{L,relativ}^j + \alpha^j \dfrac{\text{\acrshort{lwidth}}}{N_\lambda^j}
+			\Bigg)
+		\right\rvert,\\
+		\text{mit} ~\mathrm{\textit{A}} = (\alpha^1,\ldots,\alpha^{N{step}}) ~\text{und} ~\alpha^i = \lbrace 0,\ldots, N_\lambda^i - 1 \rbrace \subset \mathbb{N}_0
+	\end{gathered}
+\end{equation}
+%TODO
+Mit dem Vektor aus Gleichung \ref{eq:optimierungsProblem_mehrstufig}....
