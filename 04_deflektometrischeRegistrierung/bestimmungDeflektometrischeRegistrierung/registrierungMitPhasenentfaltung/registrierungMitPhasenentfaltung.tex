@@ -1,10 +1,10 @@
 Die hier beschriebene Methodik zur Bestimmung der deflektometrischen Registrierung ist ein mehrstufiges Phasenschiebeverfahren.
 Ein solches Verfahren wird von Kammel in seiner Dissertation \cite{kit_kammel} vorgestellt.
 Das Verfahren von Kammel zeigt jedoch in der Praxis Kodierungsartefakte bzw. Phasensprünge insbesondere an den Periodengrenzen.
-Aus dem Grund stellt Werling darauf aufbauend in seiner Dissertation \cite{kit_werling} einen anderen Ansatz eines mehrstufigen Phasenschiebeverfahrens vor, der das Problem mit den Phasensprünge minimiert.
+Aus dem Grund stellt Werling darauf aufbauend in seiner Dissertation \cite{kit_werling} einen neuen Ansatz eines mehrstufigen Phasenschiebeverfahrens vor, der das Problem mit den Phasensprüngen minimiert.
 Die Idee hinter dem Ansatz ist dabei, dass man sich zunächst, analog zum Verfahren aus Kapitel \ref{sub:registrierungOhnePhasenentfaltung}, die $x$- bzw. $y$-Koordinaten in Relation zu den Perioden der Muster bestimmt.
 Durch mehrere Muster mit unterschiedlichen Perioden erhält man schließlich mehrere relative unterschiedliche $x$- bzw. $y$-Koordinaten.
-Diese müssen im finalen Ergebnis der richtigen Periode zugeordnet werden, indem der Abstand der Koordinaten minimiert wird.
+Diese müssen im finalen Ergebnis der richtigen Periode zugeordnet werden, indem ein Optimierungsproblem gelöst wird.
 
 \p
 Analog zum Verfahren aus Kapitel \ref{sub:registrierungOhnePhasenentfaltung} benötigt man $N_{shift}$-viele Muster um die Phase eines Bildpunkts $(x_B, y_B)^\top$ zu bestimmen.
@@ -133,11 +133,30 @@ Mit dem Ergebnis aus Gleichung \ref{eq:optimierungsProblem_mehrstufig} lässt si
 Durch die Berechnung eines Mittelwerts der $x_L^i$ erhält man die beste Annäherung an den tatsächlichen Wert.
 %
 \begin{equation}\label{registrierungX_mehrstufig}
-	x_L = \dfrac{1}{N_{step}} \sum\limits_{i = 1}^{N_{step}} x_{L,relativ}^i + n^i \dfrac{\text{\acrshort{lwidth}}}{N_\lambda^i} 
+	\begin{split}
+		x_L
+		& =
+			\text{\acrshort{lrx}}(x_B, y_B)\\
+		& =
+			\dfrac{1}{N_{step}}
+			\sum\limits_{i = 1}^{N_{step}}
+			x_{L,relativ}^i + n^i \dfrac{\text{\acrshort{lwidth}}}{N_\lambda^i}\\
+		& =
+			\dfrac{1}{N_{step}}
+			\sum\limits_{i = 1}^{N_{step}}
+			\dfrac{\text{\acrshort{lwidth}}}{2\pi N_\lambda^i}
+			\arctan
+			\left(
+				-\dfrac
+				{\sum\limits_{k=1}^{N_{shift}} g_k^i(x_B, y_B) sin\left((k - 1)\dfrac{2\pi}{N_{shift}}\right)}
+				{\sum\limits_{k=1}^{N_{shift}} g_k^i(x_B, y_B) cos\left((k - 1)\dfrac{2\pi}{N_{shift}}\right)}
+			\right)
+			+ n^i \dfrac{\text{\acrshort{lwidth}}}{N_\lambda^i}
+	\end{split}
 \end{equation}
 %
-Durch Gleichung \ref{registrierungX_mehrstufig} ist somit die deflektometrische Registrierung der Spalten in x-Richtung nach der Phasenentfaltung angegeben.
-Analog lässt sich dieses Verfahren auch für die deflektometrische Registrierung der Zeilenpositionen anwenden.
+Durch Gleichung \ref{registrierungX_mehrstufig} ist somit die deflektometrische Registrierung der Spaltenpositionen \acrshort{lrx} nach der Phasenentfaltung angegeben.
+Analog lässt sich dieses Verfahren auch für die deflektometrische Registrierung der Zeilenpositionen \acrshort{lry} anwenden.
 
 \p
 Für die eindeutige Lösbarkeit des Gleichungssystems aus \ref{eq:gleichungssystemRegistrierung} ist die Wahl der Anzahl an Perioden im Muster $N_\lambda^i$ entscheidend.
