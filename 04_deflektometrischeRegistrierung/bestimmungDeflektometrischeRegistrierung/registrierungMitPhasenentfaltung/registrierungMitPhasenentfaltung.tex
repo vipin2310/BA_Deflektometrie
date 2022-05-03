@@ -109,7 +109,7 @@ Das heißt, gesucht ist folgende Näherungslösung $(n^i, n^j)$:
 \end{equation}
 %
 Durch weitere Stufen dieses Verfahrens erhöht sich zunehmend die Genauigkeit der Phasenentfaltung.
-Das zu betrachtende Optimierungsproblem ergibt schließlich den Vektor $(n^1,\ldots, n^{N_{step}})$ zur Bestimmung der deflektometrischen Registrierung in $x$-Richtung:
+Das zu betrachtende Optimierungsproblem ergibt schließlich das Tupel $(n^1,\ldots, n^{N_{step}})$ zur Bestimmung der deflektometrischen Registrierung in $x$-Richtung:
 %
 \begin{equation}\label{eq:optimierungsProblem_mehrstufig}
 	\begin{gathered}	
@@ -128,5 +128,26 @@ Das zu betrachtende Optimierungsproblem ergibt schließlich den Vektor $(n^1,\ld
 		\text{mit} ~\mathrm{\textit{A}} = (\alpha^1,\ldots,\alpha^{N{step}}) ~\text{und} ~\alpha^i = \lbrace 0,\ldots, N_\lambda^i - 1 \rbrace \subset \mathbb{N}_0
 	\end{gathered}
 \end{equation}
-%TODO
-Mit dem Vektor aus Gleichung \ref{eq:optimierungsProblem_mehrstufig}....
+%
+Mit dem Ergebnis aus Gleichung \ref{eq:optimierungsProblem_mehrstufig} lässt sich die absolute Monitorkoordinate in der Spalten $x_L^i$ berechnen.
+Durch die Berechnung eines Mittelwerts der $x_L^i$ erhält man die beste Annäherung an den tatsächlichen Wert.
+%
+\begin{equation}\label{registrierungX_mehrstufig}
+	x_L = \dfrac{1}{N_{step}} \sum\limits_{i = 1}^{N_{step}} x_{L,relativ}^i + n^i \dfrac{\text{\acrshort{lwidth}}}{N_\lambda^i} 
+\end{equation}
+%
+Durch Gleichung \ref{registrierungX_mehrstufig} ist somit die deflektometrische Registrierung der Spalten in x-Richtung nach der Phasenentfaltung angegeben.
+Analog lässt sich dieses Verfahren auch für die deflektometrische Registrierung der Zeilenpositionen anwenden.
+
+\p
+Für die eindeutige Lösbarkeit des Gleichungssystems aus \ref{eq:gleichungssystemRegistrierung} ist die Wahl der Anzahl an Perioden im Muster $N_\lambda^i$ entscheidend.
+Da der Zusammenhang
+%
+\begin{equation*}
+	ggT(N_\lambda^i, N_\lambda^j) = 1
+	\quad
+	\forall i \neq j
+\end{equation*}
+%
+gelten soll, sind geeignete Wahlen für die $N_\lambda^i$ die Elemente aus der Menge der Primzahlen $\mathbb{P} = \lbrace 2, 3, 5, 7, 11,\ldots\rbrace$.
+Die festzulegenden Parameter $N_{shift}$ und $N_{step}$ haben zunächst keine großen Auswirkungen auf die Lösbarkeit des Verfahrens, dennoch empfiehlt sich eine genügend hohe Anzahl an Phasenverschiebungen und Mustern mit unterschiedlichen Perioden zu wählen um die Genauigkeit des Verfahrens anzuheben.
