@@ -129,10 +129,10 @@ Das zu betrachtende Optimierungsproblem ergibt schließlich das Tupel $(n^1,\ldo
 	\end{gathered}
 \end{equation}
 %
-Mit dem Ergebnis aus Gleichung \ref{eq:optimierungsProblem_mehrstufig} lässt sich die absolute Monitorkoordinate in der Spalten $x_L^i$ berechnen.
+Mit dem Ergebnis aus Gleichung \ref{eq:optimierungsProblem_mehrstufig} lässt sich die absolute Monitorkoordinate in den Spalten $x_L^i$ berechnen.
 Durch die Berechnung eines Mittelwerts der $x_L^i$ erhält man die beste Annäherung an den tatsächlichen Wert.
 %
-\begin{equation}\label{registrierungX_mehrstufig}
+\begin{equation}\label{eq:registrierungX_mehrstufig}
 	\begin{split}
 		x_L
 		& =
@@ -155,7 +155,7 @@ Durch die Berechnung eines Mittelwerts der $x_L^i$ erhält man die beste Annähe
 	\end{split}
 \end{equation}
 %
-Durch Gleichung \ref{registrierungX_mehrstufig} ist somit die deflektometrische Registrierung der Spaltenpositionen \acrshort{lrx} nach der Phasenentfaltung angegeben.
+Durch Gleichung \ref{eq:registrierungX_mehrstufig} ist somit die deflektometrische Registrierung der Spaltenpositionen \acrshort{lrx} nach der Phasenentfaltung angegeben.
 Analog lässt sich dieses Verfahren auch für die deflektometrische Registrierung der Zeilenpositionen \acrshort{lry} anwenden.
 
 \p
@@ -163,10 +163,21 @@ Für die eindeutige Lösbarkeit des Gleichungssystems aus \ref{eq:gleichungssyst
 Da der Zusammenhang
 %
 \begin{equation*}
-	ggT(N_\lambda^i, N_\lambda^j) = 1
-	\quad
-	\forall i \neq j
+	ggT(N_\lambda^1, \ldots, N_\lambda^{N_{step}}) = 1
 \end{equation*}
 %
-gelten soll, sind geeignete Wahlen für die $N_\lambda^i$ die Elemente aus der Menge der Primzahlen $\mathbb{P} = \lbrace 2, 3, 5, 7, 11,\ldots\rbrace$.
+gelten soll, sind geeignete Wahlen für die Anzahl an Perioden $N_\lambda^i$ die Elemente aus der Menge der Primzahlen $\mathbb{P} = \lbrace 2, 3, 5, 7, 11,\ldots\rbrace$.
 Die festzulegenden Parameter $N_{shift}$ und $N_{step}$ haben zunächst keine großen Auswirkungen auf die Lösbarkeit des Verfahrens, dennoch empfiehlt sich eine genügend hohe Anzahl an Phasenverschiebungen und Mustern mit unterschiedlichen Perioden zu wählen um die Genauigkeit des Verfahrens anzuheben.
+
+\p
+Das beschriebene Verfahren zur Bestimmung der deflektometrischen Registrierung \acrshort{lr} wird nachfolgend im Algorithmus \ref{alg:bestimmungDeflektometrischeRegistrierung} zusammengefasst.
+%
+%Algorithmus zur Bestimmung der deflektometrischen Registrierung mit Phasenentfaltung
+{
+	\FloatBarrier
+	\input{04_deflektometrischeRegistrierung/bestimmungDeflektometrischeRegistrierung/registrierungMitPhasenentfaltung/algorithmusDeflektometrischeRegistrierung}
+}
+
+\noindent
+Der Algorithmus beschreibt die deflektometrische Registrierung der Spaltenpositionen \acrshort{lrx}.
+Analog lässt sich auch die deflektometrische Registrierung der Zeilenpositionen \acrshort{lry} bestimmen.

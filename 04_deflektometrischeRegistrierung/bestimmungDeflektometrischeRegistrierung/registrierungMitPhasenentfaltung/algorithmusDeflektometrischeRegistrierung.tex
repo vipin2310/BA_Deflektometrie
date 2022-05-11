@@ -1,0 +1,43 @@
+\begin{algorithm}[H]
+\caption{Bestimmung der deflektometrischen Registrierung mit Phasenentfaltung}
+	\label{alg:bestimmungDeflektometrischeRegistrierung}
+	\begin{algorithmic}[1]
+		%Input
+		\Require $N_{shift} \geq 3, ~N_{step} \geq 1, ~N_\lambda^i \geq 1 ~\forall ~i \in \lbrace 1,\ldots,N_{step} \rbrace$
+		%Output
+		\Ensure Deflektometrische Registrierung der Spalten \acrshort{lrx}
+		
+		\Statex		
+		
+		\Procedure {Bildaufnahme}{$N_{step}$, $N_{shift}$, $N_\lambda^i$, \acrshort{lwidth}}
+			\For {Alle Stufen $i \gets 1$ \textbf{to} $N_{step}$}
+				\For {Alle Phasenverschiebungen $k \gets 1$ \textbf{to} $N_{shift}$}
+					\State Erzeugung des Musters $m_k^i$ nach Gleichung \ref{eq:monitormuster_mehrstufig}
+					\State Anzeige des Musters $m_k^i$ auf geeignetem Bildschirm
+					\State Aufnahme des Bildes mit Kamera $\rightarrow g_k^i$ nach Gleichung \ref{eq:kamerabild_mehrstufig}
+				\EndFor
+			\EndFor
+			\State \Return Musterbilder $g_k^i$
+		\EndProcedure
+		
+		\Statex
+		
+		\Procedure {DeflektometrischeRegistrierung}{$N_{step}$, $N_{shift}$, $N_\lambda^i$, \acrshort{lwidth}, $g_k^i$}
+			\State // Überprüfung ob eindeutige Berechnung möglich ist:
+			\If {$ggT(N_\lambda^1, \ldots, N_\lambda^{N_{step}}) = 1$}
+				\State // Deflektometrische Registrierung ist eindeutig zu berechnen
+				\For {Alle Kamerapixel $(x_B, y_B) \in \text{\acrshort{d}}(g_k^i$)}
+					\For {Alle Stufen $i \gets 1$ \textbf{to} $N_{step}$}
+						\State Berechnung von $x_{L,relativ}^i$ nach Gleichung \ref{eq:registrierungX_relativ}
+					\EndFor
+					\State Lösung des Optimierungsproblems aus Gleichung \ref{eq:optimierungsProblem_mehrstufig} $\rightarrow (n^1,\ldots, n^{N_{step}})$
+					\State Berechnung von $x_L$ nach Gleichung \ref{eq:registrierungX_mehrstufig} $\rightarrow \text{\acrshort{lrx}}(x_B, y_B)$
+				\EndFor
+				\State \Return Deflektometrische Registrierung der Spalten \acrshort{lrx}
+			\Else
+				\State // Deflektometrische Registrierung ist nicht eindeutig zu berechnen
+				\State \Return
+			\EndIf
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
