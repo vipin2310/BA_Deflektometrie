@@ -3,9 +3,9 @@ Soll eine eindeutige Zuordnung über das Phasenschiebeverfahren ohne Phasenentfa
 Damit lässt sich die Kodierung der Monitorkoordinaten $(x_{L}, y_{L})$ durch die Phasen $(\phi_{x}, \phi_{y})$ folgendermaßen aufstellen:
 %TODO Quelle Werling angeben?
 \begin{equation}\label{eq:phasenkodierung}
-	x_{L} = \dfrac{\text{\acrshort{lwidth}}}{2\pi}\phi_{x},
+	x_{L} = \dfrac{\acrshortmath{lwidth}}{2\pi}\phi_{x},
 	\qquad
-	y_{L} = \dfrac{\text{\acrshort{lheight}}}{2\pi}\phi_{y}
+	y_{L} = \dfrac{\acrshortmath{lheight}}{2\pi}\phi_{y}
 \end{equation}
 %
 \noindent
@@ -18,7 +18,7 @@ Das $k$-te Muster $m_k$ zur Kodierung der Monitorpunkte wird durch eine Kosinusf
 %
 \begin{equation}\label{eq:monitormuster}
 	\begin{gathered}	
-		m_k(x_L,y_L) = A_m \left(1 + C_m \cos \left(\dfrac{2\pi}{\text{\acrshort{lwidth}}} x_L + \psi_k\right)\right),\\
+		m_k(x_L,y_L) = A_m \left(1 + C_m \cos \left(\dfrac{2\pi}{\acrshortmath{lwidth}} x_L + \psi_k\right)\right),\\
 		k \in \lbrace 1,\ldots,N_{shift}\rbrace,
 		\quad
 		\psi_k = (k - 1)\dfrac{2\pi}{N_{shift}}
@@ -34,23 +34,23 @@ Das Muster wird auf dem Monitor angezeigt und über eine spiegelnde Oberfläche 
 		x_L \\ 
 		y_L
 	\end{pmatrix}
-	= \text{\acrshort{lr}}(x_B, y_B) = 
+	= \acrshortmath{lr}(x_B, y_B) = 
 	\begin{pmatrix}
-		\text{\acrshort{lrx}}(x_B, y_B) \\ 
-		\text{\acrshort{lry}}(x_B, y_B)
+		\acrshortmath{lrx}(x_B, y_B) \\ 
+		\acrshortmath{lry}(x_B, y_B)
 	\end{pmatrix} 
 \end{equation}
 %
-Dementsprechend lässt sich das $k$-te Kamerabild $g$ am Bildpunkt $(x_B, y_B)^\top$ beschreiben durch das $k$-te Muster am Punkt $\text{\acrshort{lrx}}(x_B, y_B), \text{\acrshort{lry}}(x_B, y_B))^\top$:
+Dementsprechend lässt sich das $k$-te Kamerabild $g$ am Bildpunkt $(x_B, y_B)^\top$ beschreiben durch das $k$-te Muster am Punkt $\acrshortmath{lrx}(x_B, y_B), \acrshortmath{lry}(x_B, y_B))^\top$:
 %
 \begin{equation}
-	g_k(x_B, y_B) = m_k(\text{\acrshort{lrx}}(x_B, y_B), \text{\acrshort{lry}}(x_B, y_B))
+	g_k(x_B, y_B) = m_k(\acrshortmath{lrx}(x_B, y_B), \acrshortmath{lry}(x_B, y_B))
 \end{equation}
 %
 Setzt man für $m_k$ die Gleichung \ref{eq:monitormuster} unter Berücksichtigung der Veränderung durch die Oberfläche erhält man:
 %
 \begin{equation}\label{eq:kamerabild}
-	g_k(x_B, y_B) = A_g(x_B, y_B) \left(1 + C_g(x_B, y_B) \cos \left(\dfrac{2\pi}{\text{\acrshort{lwidth}}}\text{\acrshort{lrx}}(x_B, y_B) + \psi_k\right)\right)
+	g_k(x_B, y_B) = A_g(x_B, y_B) \left(1 + C_g(x_B, y_B) \cos \left(\dfrac{2\pi}{\acrshortmath{lwidth}}\acrshortmath{lrx}(x_B, y_B) + \psi_k\right)\right)
 \end{equation}
 %
 Dabei sind die Amplitude $A_g$ und der Kontrast $C_g$ des Musters im Kamerabild unter Umständen unterschiedlich zu dem angezeigten Muster im Monitorbild.
@@ -61,7 +61,7 @@ Aus dem Grund werden $A_g$ und $C_g$ in Abhängigkeit vom Kamerabildpunkt $(x_B,
 Durch Umstellung der Gleichung \ref{eq:phasenkodierung} nach der Phase und Einsetzen der deflektometrischen Registrierung \acrshort{lr}, erhält man die Phase $\phi_x$ des $k$-ten Musters in Abhängigkeit von den Kamerabildpunkten:
 %
 \begin{equation}\label{eq:phaseBildkoordinaten}
-	\phi_x = \dfrac{2\pi}{\text{\acrshort{lwidth}}}\text{\acrshort{lrx}}(x_B, y_B)
+	\phi_x = \dfrac{2\pi}{\acrshortmath{lwidth}}\acrshortmath{lrx}(x_B, y_B)
 \end{equation}
 %
 Durch Einsetzen der Phase aus Gleichung \ref{eq:phaseBildkoordinaten} in die Gleichung \ref{eq:kamerabild} des Kamerabilds erhält man den Zusammenhang zwischen der Phase $\phi_x$ des $k$-ten Musters und dem Kamerabild   $g_k$:
@@ -79,8 +79,8 @@ Unter Einbeziehung der $N_{shift}$-vielen phasenverschobenen Streifenmuster kann
 Aus den Gleichungen \ref{eq:phasenkodierung} und \ref{eq:tanPhase} folgt schließlich:
 %
 \begin{equation}\label{eq:registrierungX}
-	x_L = \text{\acrshort{lrx}}(x_B, y_B) = 
-	\dfrac{\text{\acrshort{lwidth}}}{2\pi}
+	x_L = \acrshortmath{lrx}(x_B, y_B) = 
+	\dfrac{\acrshortmath{lwidth}}{2\pi}
 	\arctan 
 	\left( 
 		-\dfrac

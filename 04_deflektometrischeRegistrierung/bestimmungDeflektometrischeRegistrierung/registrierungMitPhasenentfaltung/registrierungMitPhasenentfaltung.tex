@@ -14,9 +14,9 @@ Dabei sollen sich für unterschiedliche Stufen auch die Perioden der verwendeten
 Die Phasen $\phi_x^i$ und $\phi_y^i$ der kodierten Monitorpunkte $(x_L, y_L)^\top$ auf der $i$-ten Stufe sehen dann folgendermaßen aus:
 %
 \begin{equation}
-	\phi_x^i = \dfrac{2\pi N_\lambda^i}{\text{\acrshort{lwidth}}} x_L
+	\phi_x^i = \dfrac{2\pi N_\lambda^i}{\acrshortmath{lwidth}} x_L
 	\qquad
-	\phi_y^i = \dfrac{2\pi N_\lambda^i}{\text{\acrshort{lheight}}} y_L
+	\phi_y^i = \dfrac{2\pi N_\lambda^i}{\acrshortmath{lheight}} y_L
 \end{equation}
 
 \p
@@ -38,15 +38,15 @@ Wie auch in Kapitel \ref{sub:registrierungOhnePhasenentfaltung} entspricht $\psi
 Analog zu Kapitel \ref{sub:registrierungOhnePhasenentfaltung} nimmt die Kamera das Signal $g_k^i$ auf:
 %
 \begin{equation}\label{eq:kamerabild_mehrstufig}
-	g_k^i(x_B, y_B) = A_g^i(x_B, y_B) \left(1 + C_g^i(x_B, y_B) \cos \left(\dfrac{2\pi N_\lambda^i}{\text{\acrshort{lwidth}}}\text{\acrshort{lrx}}(x_B, y_B) + \psi_k\right)\right)
+	g_k^i(x_B, y_B) = A_g^i(x_B, y_B) \left(1 + C_g^i(x_B, y_B) \cos \left(\dfrac{2\pi N_\lambda^i}{\acrshortmath{lwidth}}\acrshortmath{lrx}(x_B, y_B) + \psi_k\right)\right)
 \end{equation}
 %
 Analog zu Kapitel \ref{sub:registrierungOhnePhasenentfaltung} lässt sich aus den Bildern $g_k^i$ die Phase der $i$-ten Stufe $\phi_x^i$ berechnen.
-Vergleichbar zu Gleichung \ref{eq:registrierungX}, kann man in diesem Verfahren aus der Phase die Monitorkoordinaten relativ zum Intervall $[0,\text{\acrshort{lwidth}}/N_\lambda^i)$ bestimmen:
+Vergleichbar zu Gleichung \ref{eq:registrierungX}, kann man in diesem Verfahren aus der Phase die Monitorkoordinaten relativ zum Intervall $[0,\acrshortmath{lwidth}/N_\lambda^i)$ bestimmen:
 %
 \begin{equation}\label{eq:registrierungX_relativ}
 	x_{L,relativ}^i =
-	\dfrac{\text{\acrshort{lwidth}}}{2\pi N_\lambda^i}
+	\dfrac{\acrshortmath{lwidth}}{2\pi N_\lambda^i}
 	\arctan 
 	\left( 
 		-\dfrac
@@ -58,8 +58,8 @@ Vergleichbar zu Gleichung \ref{eq:registrierungX}, kann man in diesem Verfahren 
 Die absolute Monitorkoordinate $x_L^i$ der $i$-ten Stufe lässt sich bestimmen indem man zur Phase $\phi_x$ ein unbekanntes ganzzahliges Vielfaches von $2\pi$ addiert.
 In Abhängigkeit von $x_{L,relativ}^i$ bedeutet das für $x_L^i$:
 %
-\begin{equation}\label{registrierungX_absolut}
-	x_L^i = x_{L,relativ}^i + n^i \dfrac{\text{\acrshort{lwidth}}}{N_\lambda^i},
+\begin{equation}\label{eq:registrierungX_absolut}
+	x_L^i = x_{L,relativ}^i + n^i \dfrac{\acrshortmath{lwidth}}{N_\lambda^i},
 	\qquad
 	(n^i \in \mathbb{N}_0)
 \end{equation}
@@ -79,8 +79,8 @@ Dadurch erhält man zwei unterschiedliche Muster $m_k^i$ und $m_k^j$ und das ein
 %
 \begin{equation}\label{eq:gleichungssystemRegistrierung}
 	\begin{split}
-		x_L & = x_{L,relativ}^i + n^i \dfrac{\text{\acrshort{lwidth}}}{N_\lambda^i},\\
-		x_L & = x_{L,relativ}^j + n^j \dfrac{\text{\acrshort{lwidth}}}{N_\lambda^j},
+		x_L & = x_{L,relativ}^i + n^i \dfrac{\acrshortmath{lwidth}}{N_\lambda^i},\\
+		x_L & = x_{L,relativ}^j + n^j \dfrac{\acrshortmath{lwidth}}{N_\lambda^j},
 		\quad i \neq j,
 		\quad n^i, n^j \in \mathbb{N}_0
 	\end{split}
@@ -95,11 +95,11 @@ Das heißt, gesucht ist folgende Näherungslösung $(n^i, n^j)$:
 		(n^i, n^j) = \argmin_{\alpha, \beta \in \mathbb{N}_0}
 		\left\lvert
 			\Bigg(
-				x_{L,relativ}^i + \alpha \dfrac{\text{\acrshort{lwidth}}}{N_\lambda^i}
+				x_{L,relativ}^i + \alpha \dfrac{\acrshortmath{lwidth}}{N_\lambda^i}
 			\Bigg)
 			-
 			\Bigg(		
-				x_{L,relativ}^j + \beta \dfrac{\text{\acrshort{lwidth}}}{N_\lambda^j}
+				x_{L,relativ}^j + \beta \dfrac{\acrshortmath{lwidth}}{N_\lambda^j}
 			\Bigg)
 		\right\rvert,\\
 		\alpha \in \lbrace 0,\ldots, N_\lambda^i - 1\rbrace,
@@ -118,11 +118,11 @@ Das zu betrachtende Optimierungsproblem ergibt schließlich das Tupel $(n^1,\ldo
 		\sum\limits_{j = i + 1}^{N_{step}}
 		\left\lvert
 			\Bigg(
-				x_{L,relativ}^i + \alpha^i \dfrac{\text{\acrshort{lwidth}}}{N_\lambda^i}
+				x_{L,relativ}^i + \alpha^i \dfrac{\acrshortmath{lwidth}}{N_\lambda^i}
 			\Bigg)
 			-
 			\Bigg(		
-				x_{L,relativ}^j + \alpha^j \dfrac{\text{\acrshort{lwidth}}}{N_\lambda^j}
+				x_{L,relativ}^j + \alpha^j \dfrac{\acrshortmath{lwidth}}{N_\lambda^j}
 			\Bigg)
 		\right\rvert,\\
 		\text{mit} ~\mathrm{\textit{A}} = (\alpha^1,\ldots,\alpha^{N{step}}) ~\text{und} ~\alpha^i = \lbrace 0,\ldots, N_\lambda^i - 1 \rbrace \subset \mathbb{N}_0
@@ -136,22 +136,22 @@ Durch die Berechnung eines Mittelwerts der $x_L^i$ erhält man die beste Annähe
 	\begin{split}
 		x_L
 		& =
-			\text{\acrshort{lrx}}(x_B, y_B)\\
+			\acrshortmath{lrx}(x_B, y_B)\\
 		& =
 			\dfrac{1}{N_{step}}
 			\sum\limits_{i = 1}^{N_{step}}
-			x_{L,relativ}^i + n^i \dfrac{\text{\acrshort{lwidth}}}{N_\lambda^i}\\
+			x_{L,relativ}^i + n^i \dfrac{\acrshortmath{lwidth}}{N_\lambda^i}\\
 		& =
 			\dfrac{1}{N_{step}}
 			\sum\limits_{i = 1}^{N_{step}}
-			\dfrac{\text{\acrshort{lwidth}}}{2\pi N_\lambda^i}
+			\dfrac{\acrshortmath{lwidth}}{2\pi N_\lambda^i}
 			\arctan
 			\left(
 				-\dfrac
 				{\sum\limits_{k=1}^{N_{shift}} g_k^i(x_B, y_B) sin\left((k - 1)\dfrac{2\pi}{N_{shift}}\right)}
 				{\sum\limits_{k=1}^{N_{shift}} g_k^i(x_B, y_B) cos\left((k - 1)\dfrac{2\pi}{N_{shift}}\right)}
 			\right)
-			+ n^i \dfrac{\text{\acrshort{lwidth}}}{N_\lambda^i}
+			+ n^i \dfrac{\acrshortmath{lwidth}}{N_\lambda^i}
 	\end{split}
 \end{equation}
 %
@@ -171,7 +171,7 @@ Die festzulegenden Parameter $N_{shift}$ und $N_{step}$ haben zunächst keine gr
 
 \p
 Das beschriebene Verfahren zur Bestimmung der deflektometrischen Registrierung \acrshort{lr} wird nachfolgend im Algorithmus \ref{alg:bestimmungDeflektometrischeRegistrierung} zusammengefasst.
-%
+
 %Algorithmus zur Bestimmung der deflektometrischen Registrierung mit Phasenentfaltung
 {
 	\FloatBarrier
@@ -179,5 +179,6 @@ Das beschriebene Verfahren zur Bestimmung der deflektometrischen Registrierung \
 }
 
 \noindent
-Der Algorithmus beschreibt die deflektometrische Registrierung der Spaltenpositionen \acrshort{lrx}.
+Der Algorithmus beschreibt die Berechnung der deflektometrischen Registrierung der Spaltenpositionen \acrshort{lrx}.
 Analog lässt sich auch die deflektometrische Registrierung der Zeilenpositionen \acrshort{lry} bestimmen.
+Nach Satz \ref{theo:separierbarkeitDeflektometrischeRegistrierung} kann schließlich aus den separierten deflektometrischen Registrierungen der Spalten- und Zeilenpositionen \acrshort{lrx} und \acrshort{lry} die deflektometrische Registrierung \acrshort{lr} des Prüfsystems gebildet werden.

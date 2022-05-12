@@ -1,0 +1,60 @@
+Die deflektometrische Registrierung \acrshort{lr} kann ohne Weiteres nicht direkt ausgewertet werden.
+Deshalb wird im Folgenden die Weiterverarbeitung der deflektometrischen Registrierung beschrieben, sodass bekannte Algorithmen aus dem Gebiet der Bildverarbeitung angewendet werden können.
+
+\p
+Die graphische Darstellung der deflektometrischen Registrierung \acrshort{lr} stellt sich zunächst als schwierig heraus, da man mit einer Abbildung der Form $\mathbb{R}^2 \rightarrow \mathbb{R}^2$ arbeitet.
+Aus dem Grund wird die Separierbarkeit der deflektometrischen Registrierung aus Satz \ref{theo:separierbarkeitDeflektometrischeRegistrierung} angewendet.
+Daraus erhält man die beiden Abbildungen der Form $\mathbb{R}^2 \rightarrow \mathbb{R}$:
+%
+\begin{equation*}
+	\acrshortmath{lrx} : \mathbb{R}^{2} \supset A_{Cam} \rightarrow \mathbb{R} ,\quad (x_{B}, y_{B}) \mapsto x_{L}
+\end{equation*}
+%
+\begin{equation*}
+	\acrshortmath{lry} : \mathbb{R}^{2} \supset A_{Cam} \rightarrow \mathbb{R} ,\quad (x_{B}, y_{B}) \mapsto y_{L}
+\end{equation*}
+%
+In der Form lässt sich die Analogie zu der mathematischen Beschreibung eines Graubildes $f$ erkennen:
+%
+\begin{equation*}
+	f : \mathbb{R}^{2} \supseteq [x_{min},x_{max}] \times [y_{min},y_{max}] \rightarrow [I_{min},I_{max}] \subseteq \mathbb{R} ,\quad (x,y) \mapsto f(x,y)
+\end{equation*}
+%
+Für die Darstellung als Bilder sind somit lediglich geeignete Transformationen der Wertemengen der deflektometrischen Registrierungen \acrshort{lrx} und \acrshort{lry} nötig.
+%
+\begin{Definition}{Darstellung der Deflektometrischen Registrierung}{def:graphDeflektometrischeRegistrierung}
+	Die deflektometrischen Registrierung \acrshort{lr} kann als zwei einzelne Bilder \acrshort{frx} und \acrshort{fry} dargestellt werden.
+	%	
+	\begin{equation*}
+		\acrshortmath{frx} : \mathbb{R}^2 \supset \acrshortmath{d}(\acrshortmath{lrx}) \rightarrow [I_{min},I_{max}] \subseteq \mathbb{R}
+	\end{equation*}
+	%
+	\begin{equation*}
+		\acrshortmath{fry} : \mathbb{R}^2 \supset \acrshortmath{d}(\acrshortmath{lry}) \rightarrow [I_{min},I_{max}] \subseteq \mathbb{R}
+	\end{equation*}
+	%
+	Dabei hat lassen sich die Bilder \acrshort{frx} und \acrshort{fry} schreiben als:
+	%	
+	\begin{equation*}
+		\acrshortmath{frx}(x,y) = t_x(\acrshortmath{lrx}(x,y))
+		\qquad
+	\end{equation*}
+	%	
+	\begin{equation*}
+		\acrshortmath{fry}(x,y) = t_y(\acrshortmath{lry}(x,y))
+	\end{equation*}
+	%
+	Es gilt $\acrshortmath{d}(\acrshortmath{frx}) = \acrshortmath{d}(\acrshortmath{lrx})$ und $\acrshortmath{d}(\acrshortmath{fry}) = \acrshortmath{d}(\acrshortmath{lry})$.
+	Die Abbildungen $t_x$ und $t_y$ sind dabei lineare Transformationen der Wertemengen der deflektometrischen Abbildungen in Spalten und Zeilen zu den zulässigen Intensitäten für die Bilder \acrshort{frx} und \acrshort{fry}, angegeben durch das Intervall $[I_{min},I{max}]$.
+	%
+	\begin{equation*}
+		t_x : \mathbb{R} \supset \acrshortmath{w}(\acrshortmath{lry}) \rightarrow [I_{min},I_{max}] \subseteq \mathbb{R}
+	\end{equation*}
+	%
+	\begin{equation*}
+		t_y : \mathbb{R} \supset \acrshortmath{w}(\acrshortmath{lry}) \rightarrow [I_{min},I_{max}] \subseteq \mathbb{R}
+	\end{equation*}
+	%
+	Die Transformationen $t_x$ und $t_y$ lassen sich schreiben als:
+	
+\end{Definition}

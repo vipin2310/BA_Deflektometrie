@@ -26,12 +26,12 @@
 			\State // Überprüfung ob eindeutige Berechnung möglich ist:
 			\If {$ggT(N_\lambda^1, \ldots, N_\lambda^{N_{step}}) = 1$}
 				\State // Deflektometrische Registrierung ist eindeutig zu berechnen
-				\For {Alle Kamerapixel $(x_B, y_B) \in \text{\acrshort{d}}(g_k^i$)}
+				\For {Alle Kamerapixel $(x_B, y_B) \in \acrshortmath{d}(g_k^i$)}
 					\For {Alle Stufen $i \gets 1$ \textbf{to} $N_{step}$}
 						\State Berechnung von $x_{L,relativ}^i$ nach Gleichung \ref{eq:registrierungX_relativ}
 					\EndFor
 					\State Lösung des Optimierungsproblems aus Gleichung \ref{eq:optimierungsProblem_mehrstufig} $\rightarrow (n^1,\ldots, n^{N_{step}})$
-					\State Berechnung von $x_L$ nach Gleichung \ref{eq:registrierungX_mehrstufig} $\rightarrow \text{\acrshort{lrx}}(x_B, y_B)$
+					\State Berechnung von $x_L$ nach Gleichung \ref{eq:registrierungX_mehrstufig} $\rightarrow \acrshortmath{lrx}(x_B, y_B)$
 				\EndFor
 				\State \Return Deflektometrische Registrierung der Spalten \acrshort{lrx}
 			\Else
