@@ -45,7 +45,7 @@ Für die Darstellung als Bilder sind somit lediglich geeignete Transformationen 
 	\end{equation*}
 	%
 	Es gilt $\acrshortmath{d}(\acrshortmath{frx}) = \acrshortmath{d}(\acrshortmath{lrx})$ und $\acrshortmath{d}(\acrshortmath{fry}) = \acrshortmath{d}(\acrshortmath{lry})$.
-	Die Abbildungen $t_x$ und $t_y$ sind dabei lineare Transformationen der Wertemengen der deflektometrischen Abbildungen in Spalten und Zeilen zu den zulässigen Intensitäten für die Bilder \acrshort{frx} und \acrshort{fry}, angegeben durch das Intervall $[I_{min},I{max}]$.
+	Die Abbildungen $t_x$ und $t_y$ sind dabei lineare Transformationen der Wertemengen der deflektometrischen Abbildungen in Spalten und Zeilen zu den zulässigen Intensitäten für die Bilder \acrshort{frx} und \acrshort{fry}, angegeben durch das Intervall $[I_{min},I_{max}]$.
 	%
 	\begin{equation*}
 		t_x : \mathbb{R} \supset \acrshortmath{w}(\acrshortmath{lry}) \rightarrow [I_{min},I_{max}] \subseteq \mathbb{R}
@@ -56,5 +56,13 @@ Für die Darstellung als Bilder sind somit lediglich geeignete Transformationen 
 	\end{equation*}
 	%
 	Die Transformationen $t_x$ und $t_y$ lassen sich schreiben als:
-	
+	%	
+	\begin{equation*}
+		t_x(l) = \left(\dfrac{l}{\acrshortmath{lwidth}}(I_{max} - I_{min})\right) + I_{min}
+	\end{equation*}
+	%	
+	\begin{equation*}
+		t_y(l) = \left(\dfrac{l}{\acrshortmath{lheight}}(I_{max} - I_{min})\right) + I_{min}
+	\end{equation*}
+	%
 \end{Definition}
