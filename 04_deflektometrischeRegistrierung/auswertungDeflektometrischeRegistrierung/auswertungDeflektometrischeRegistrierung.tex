@@ -33,11 +33,10 @@ Für die Darstellung als Bilder sind somit lediglich geeignete Transformationen 
 		\acrshortmath{fry} : \mathbb{R}^2 \supset \acrshortmath{d}(\acrshortmath{lry}) \rightarrow [I_{min},I_{max}] \subseteq \mathbb{R}
 	\end{equation*}
 	%
-	Dabei hat lassen sich die Bilder \acrshort{frx} und \acrshort{fry} schreiben als:
+	Dabei lassen sich die Bilder \acrshort{frx} und \acrshort{fry} schreiben als:
 	%	
 	\begin{equation*}
 		\acrshortmath{frx}(x,y) = t_x(\acrshortmath{lrx}(x,y))
-		\qquad
 	\end{equation*}
 	%	
 	\begin{equation*}
@@ -58,11 +57,42 @@ Für die Darstellung als Bilder sind somit lediglich geeignete Transformationen 
 	Die Transformationen $t_x$ und $t_y$ lassen sich schreiben als:
 	%	
 	\begin{equation*}
-		t_x(l) = \left(\dfrac{l}{\acrshortmath{lwidth}}(I_{max} - I_{min})\right) + I_{min}
+		t_x(x) = \left(\dfrac{x}{\acrshortmath{lwidth}}(I_{max} - I_{min})\right) + I_{min}
 	\end{equation*}
 	%	
 	\begin{equation*}
-		t_y(l) = \left(\dfrac{l}{\acrshortmath{lheight}}(I_{max} - I_{min})\right) + I_{min}
+		t_y(y) = \left(\dfrac{y}{\acrshortmath{lheight}}(I_{max} - I_{min})\right) + I_{min}
 	\end{equation*}
 	%
 \end{Definition}
+%
+Erstellt man aus der berechneten deflektometrischen Registrierung \acrshort{lr} einer ungekrümmten Fläche die zugehörigen Bilder \acrshort{frx} und \acrshort{fry} nach Definition \ref{def:graphDeflektometrischeRegistrierung}, erhält man Darstellungen wie in Abbildung \ref{tikz:abbOptimaleSpaltenZeilenReg}:
+
+% Abbildung: Optimale Spalten- und Zeilenregistrierung
+{
+	\begin{figure}[H]
+		\centering
+		\input{04_deflektometrischeRegistrierung/auswertungDeflektometrischeRegistrierung/figures/abbOptimaleSpaltenZeilenReg}
+		\label{tikz:abbOptimaleSpaltenZeilenReg}
+	\end{figure}
+}
+
+\noindent
+In Abbildung \ref{tikz:abbOptimaleSpaltenZeilenReg} wird direkt das Muster auf dem Monitor betrachtet.
+Aus dem Grund lässt sich erkennen, dass die Zuordnung von Monitor- und Kamerapixeln in den Spalten und Zeilen linear verläuft.
+Werden nun die Streifen durch besondere Oberflächeneigenschaften gekrümmt oder verzerrt, dann werden an diesen Stellen in den Bildern der deflektometrischen Registrierung Abweichungen vom linearen Grauwerteverlauf sichtbar.
+
+% Abbildung: Verzerrung der Spalten- und Zeilenregistrierung durch Einkerbungen
+{
+	\begin{figure}[H]
+		\centering
+		\input{04_deflektometrischeRegistrierung/auswertungDeflektometrischeRegistrierung/figures/abbVerzerrungRegistrierung}
+		\label{tikz:abbVerzerrungRegistrierung}
+	\end{figure}
+}
+
+\noindent
+%TODO Über die Porzellanobjekte schreiben.
+%
+Diese resultierenden Bilder können durch herkömmliche Verfahren aus der Bildverarbeitung weiterverarbeitet und analysiert werden.
+Als hilfreich erweist sich dabei die Analyse von Gradientenbildern oder einer Hochpassfilterung zur Hervorhebung von lokalen Defekten\cite{kit_werling}.

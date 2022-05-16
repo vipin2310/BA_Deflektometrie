@@ -125,17 +125,26 @@ Das zu betrachtende Optimierungsproblem ergibt schließlich das Tupel $(n^1,\ldo
 				x_{L,relativ}^j + \alpha^j \dfrac{\acrshortmath{lwidth}}{N_\lambda^j}
 			\Bigg)
 		\right\rvert,\\
-		\text{mit} ~\mathrm{\textit{A}} = (\alpha^1,\ldots,\alpha^{N{step}}) ~\text{und} ~\alpha^i = \lbrace 0,\ldots, N_\lambda^i - 1 \rbrace \subset \mathbb{N}_0
+		\text{mit} ~\mathrm{\textit{A}} = (\alpha^1,\ldots,\alpha^{N{step}}) ~\text{und} ~\alpha^i \in \lbrace 0,\ldots, N_\lambda^i - 1 \rbrace \subset \mathbb{N}_0
 	\end{gathered}
 \end{equation}
-%
-% Tikz-Picture: Bestimmung eindeutiger Position
+
+% Abbildung: Bestimmung eindeutiger Position
 {
-	\FloatBarrier
-	\input{04_deflektometrischeRegistrierung/bestimmungDeflektometrischeRegistrierung/registrierungMitPhasenentfaltung/figures/bestimmungEindeutigerPosition}
+	\begin{figure}[H]
+		\centering
+		\input{04_deflektometrischeRegistrierung/bestimmungDeflektometrischeRegistrierung/registrierungMitPhasenentfaltung/figures/abbBestimmungEindeutigerPosition}
+		\label{tikz:abbBestimmungEindeutigerPosition}
+	\end{figure}
 }
-%
-Mit dem Ergebnis aus Gleichung \ref{eq:optimierungsProblem_mehrstufig} lässt sich die absolute Monitorkoordinate in den Spalten $x_L^i$ berechnen.
+
+\noindent
+Die Abbildung \ref{tikz:abbBestimmungEindeutigerPosition} stellt die Lösung des Optimierungsproblems aus Gleichung \ref{eq:optimierungsProblem_mehrstufig} graphisch an einem Beispiel dar.
+Durch die zuvor erwähnten Schritte des Verfahrens erhält man für ein Kamerapixel die relative Spaltenposition $x_{L,relativ}^i$ zu den Perioden des $i$-ten Musters (siehe violette Punkte in Abb. \ref{tikz:abbBestimmungEindeutigerPosition}).
+Unter Berücksichtigung der Teilerfremdheit erhält man durch die Bestimmung des minimalen Abstands die eindeutige Zuordnung $\mathrm{\textit{A}} = (\alpha^1,\ldots,\alpha^{N{step}})$ der relativen Spaltenpositionen zur richtigen Periode (siehe rote Punkte in Abb. \ref{tikz:abbBestimmungEindeutigerPosition}).
+
+\p
+Mit dieser Zuordnung aus Gleichung \ref{eq:optimierungsProblem_mehrstufig} lässt sich die absolute Monitorkoordinate in den Spalten $x_L^i$ berechnen.
 Durch die Berechnung eines Mittelwerts der $x_L^i$ erhält man die beste Annäherung an den tatsächlichen Wert.
 %
 \begin{equation}\label{eq:registrierungX_mehrstufig}
@@ -161,7 +170,7 @@ Durch die Berechnung eines Mittelwerts der $x_L^i$ erhält man die beste Annähe
 	\end{split}
 \end{equation}
 %
-Durch Gleichung \ref{eq:registrierungX_mehrstufig} ist somit die deflektometrische Registrierung der Spaltenpositionen \acrshort{lrx} nach der Phasenentfaltung angegeben.
+Durch Gleichung \ref{eq:registrierungX_mehrstufig} ist die deflektometrische Registrierung der Spaltenpositionen \acrshort{lrx} nach der Phasenentfaltung angegeben.
 Analog lässt sich dieses Verfahren auch für die deflektometrische Registrierung der Zeilenpositionen \acrshort{lry} anwenden.
 
 \p
