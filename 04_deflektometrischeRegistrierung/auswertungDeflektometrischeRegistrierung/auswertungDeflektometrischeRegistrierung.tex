@@ -86,13 +86,65 @@ Werden nun die Streifen durch besondere Oberflächeneigenschaften gekrümmt oder
 {
 	\begin{figure}[H]
 		\centering
-		\input{04_deflektometrischeRegistrierung/auswertungDeflektometrischeRegistrierung/figures/abbVerzerrungRegistrierung}
-		\label{tikz:abbVerzerrungRegistrierung}
+		\input{04_deflektometrischeRegistrierung/auswertungDeflektometrischeRegistrierung/figures/abbBrillenglasRegistrierung}
+		\label{tikz:abbBrillenglasRegistrierung}
 	\end{figure}
 }
 
 \noindent
-%TODO Über die Porzellanobjekte schreiben.
-%
-Diese resultierenden Bilder können durch herkömmliche Verfahren aus der Bildverarbeitung weiterverarbeitet und analysiert werden.
-Als hilfreich erweist sich dabei die Analyse von Gradientenbildern oder einer Hochpassfilterung zur Hervorhebung von lokalen Defekten\cite{kit_werling}.
+Die deflektometrische Registrierung macht bestimmte Fehlstellen in Abbildung \ref{tikz:abbBrillenglasRegistrierung} kenntlich.
+Diese Fehlstellen sind allerdings nur tiefe Eingravierungen, durch die die Phase des Streifenmusters lokal deformiert wird.
+Normale Kratzer beeinflussen besonders den gemessenen Grauwert.
+Die zugeordnete Monitorposition hingegen wird durch solche Kratzer nur geringfügig verändert, weshalb diese im Bild der deflektometrischen Registrierung kaum erkennbar sind.
+Besser funktioniert die Fehlstellenerkennung, indem man die Reflexionen bzw. die Spiegelbilder der Muster aufnimmt.
+So ist es z. B. möglich, wie in Abbildung \ref{tikz:abbRegistrierungDelle}, Dellen und Beulen auf reflektierenden Porzellanoberflächen durch die deflektometrische Registrierung deutlich hervorzuheben.
+
+% Abbildung: Objekt mit Delle
+{
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.47\textwidth]{04_deflektometrischeRegistrierung/auswertungDeflektometrischeRegistrierung/figures/delleBeleuchtet}
+		\caption[Spiegelndes Porzellanbruchstück mit Delle]{Spiegelndes Porzellanbruchstück mit Delle.}
+		\label{img:objektMitDelle}
+	\end{figure}
+}
+
+% Abbildung: Deflektometrische Registrierung bei Objekt mit Delle
+{
+	\begin{figure}[H]
+		\centering
+		\input{04_deflektometrischeRegistrierung/auswertungDeflektometrischeRegistrierung/figures/abbRegistrierungDelle}
+		\label{tikz:abbRegistrierungDelle}
+	\end{figure}
+}
+
+\noindent
+In Abbildung \ref{tikz:abbRegistrierungDelle} entsteht im Hintergrund um das Objekt herum eine Störumgebung.
+Der Grund dafür ist die fehlende Reflexion des Musters und somit ähnliche Grauwerte in den phasenverschobenen Bildern.
+Dies führt dazu, dass in der Bestimmung der Phase $\phi$ für solche Pixel numerisch instabile Ausdrücke und somit beliebige Werte vorkommen.
+
+\p
+Die resultierenden Bilder können durch herkömmliche Verfahren aus der Bildverarbeitung weiterverarbeitet und analysiert werden.
+Durch die weichen Grauwertverläufe an gleichmäßig gekrümmten Oberflächen in den \acrshort{frx} und \acrshort{fry}, lassen sich die Bilder effizient über Gradienten analysieren (siehe Abbildung \ref{tikz:abbGradientenbildReg}).
+Abrupte Änderungen der Grauwerte innerhalb des spiegelnden Objekts führen zu höheren Gradienten als in der Umgebung. Fehlstellen wie z. B. Dellen oder Pickel lassen sich damit gut detektieren.
+Aus demselben Grund erweisen sich auch Hochpassfilterungen als hilfreich \cite{kit_werling}.
+
+% Abbildung: Gradientenbild der deflektometrischen Registrierung.
+{
+	\begin{figure}[H]
+		\centering
+		\input{04_deflektometrischeRegistrierung/auswertungDeflektometrischeRegistrierung/figures/abbGradientenbildReg}
+		\label{tikz:abbGradientenbildReg}
+	\end{figure}
+}
+
+\noindent
+Das untersuchte Objekt aus Abbildung \ref{tikz:abbGradientenbildReg} weist am linken Rand vereinzelt matte Stellen auf.
+Dadurch treten im Bild der deflektometrischen Registrierung \acrshort{frx} einzelne dunkle Punkte am linken Rand auf.
+Diese erkennt man somit auch im Gradientenbild von \acrshort{frx} als Fehlstellen.
+
+%TODO Überprüfen ob das stimmt. (Ich glaube schon)
+\p
+Betrachtet man die Änderung der deflektometrischen Registrierung in spezielle Richtungen, wie z. B. über das Gradientenbild in $x$-Richtung aus Abbildung \ref{tikz:abbGradientenbildReg}, kann man direkt die wahrgenommene Krümmung in dieser Richtung beobachten.
+Die wahrgenommene Krümmung steht in direktem Zusammenhang mit der zweiten Ableitung der Objektoberfläche \cite{kit_werling}.
+Man erkennt in solchen Gradientenbildern an helleren Stellen treten größere Änderungen der Spaltenpositionen 
