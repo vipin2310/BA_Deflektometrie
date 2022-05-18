@@ -1,5 +1,5 @@
-Die deflektometrische Registrierung \acrshort{lr} kann ohne Weiteres nicht direkt ausgewertet werden.
-Deshalb wird im Folgenden die Weiterverarbeitung der deflektometrischen Registrierung beschrieben, sodass bekannte Algorithmen aus dem Gebiet der Bildverarbeitung angewendet werden können.
+Die deflektometrische Registrierung \acrshort{lr} kann nicht ohne Weiteres direkt ausgewertet werden.
+Deshalb wird im Folgenden die Weiterverarbeitung der deflektometrischen Registrierung beschrieben, sodass bekannte Methoden aus dem Gebiet der Bildverarbeitung angewendet werden können.
 
 \p
 Die graphische Darstellung der deflektometrischen Registrierung \acrshort{lr} stellt sich zunächst als schwierig heraus, da man mit einer Abbildung der Form $\mathbb{R}^2 \rightarrow \mathbb{R}^2$ arbeitet.
@@ -23,7 +23,7 @@ In der Form lässt sich die Analogie zu der mathematischen Beschreibung eines Gr
 Für die Darstellung als Bilder sind somit lediglich geeignete Transformationen der Wertemengen der deflektometrischen Registrierungen \acrshort{lrx} und \acrshort{lry} nötig.
 %
 \begin{Definition}{Darstellung der Deflektometrischen Registrierung}{def:graphDeflektometrischeRegistrierung}
-	Die deflektometrischen Registrierung \acrshort{lr} kann als zwei einzelne Bilder \acrshort{frx} und \acrshort{fry} dargestellt werden.
+	Die deflektometrischen Registrierung \acrshort{lr} kann als zwei einzelne Graubilder \acrshort{frx} und \acrshort{fry} dargestellt werden.
 	%	
 	\begin{equation*}
 		\acrshortmath{frx} : \mathbb{R}^2 \supset \acrshortmath{d}(\acrshortmath{lrx}) \rightarrow [I_{min},I_{max}] \subseteq \mathbb{R}
@@ -82,7 +82,7 @@ In Abbildung \ref{tikz:abbOptimaleSpaltenZeilenReg} wird direkt das Muster auf d
 Aus dem Grund lässt sich erkennen, dass die Zuordnung von Monitor- und Kamerapixeln in den Spalten und Zeilen linear verläuft.
 Werden nun die Streifen durch besondere Oberflächeneigenschaften gekrümmt oder verzerrt, dann werden an diesen Stellen in den Bildern der deflektometrischen Registrierung Abweichungen vom linearen Grauwerteverlauf sichtbar.
 
-% Abbildung: Verzerrung der Spalten- und Zeilenregistrierung durch Einkerbungen
+% Abbildung: Brillenglas Registrierung
 {
 	\begin{figure}[H]
 		\centering
@@ -93,11 +93,11 @@ Werden nun die Streifen durch besondere Oberflächeneigenschaften gekrümmt oder
 
 \noindent
 Die deflektometrische Registrierung macht bestimmte Fehlstellen in Abbildung \ref{tikz:abbBrillenglasRegistrierung} kenntlich.
-Diese Fehlstellen sind allerdings nur tiefe Eingravierungen, durch die die Phase des Streifenmusters lokal deformiert wird.
-Normale Kratzer beeinflussen besonders den gemessenen Grauwert.
+Diese Fehlstellen sind allerdings nur tiefe Eingravierungen, durch welche die Phase des Streifenmusters lokal deformiert wird.
+Normale Kratzer beeinflussen besonders den durch die Kamera gemessenen Grauwert.
 Die zugeordnete Monitorposition hingegen wird durch solche Kratzer nur geringfügig verändert, weshalb diese im Bild der deflektometrischen Registrierung kaum erkennbar sind.
 Besser funktioniert die Fehlstellenerkennung, indem man die Reflexionen bzw. die Spiegelbilder der Muster aufnimmt.
-So ist es z. B. möglich, wie in Abbildung \ref{tikz:abbRegistrierungDelle}, Dellen und Beulen auf reflektierenden Porzellanoberflächen durch die deflektometrische Registrierung deutlich hervorzuheben.
+So ist es möglich, wie in Abbildung \ref{tikz:abbRegistrierungDelle}, z. B. Dellen und Beulen auf spiegelnden Oberflächen durch die deflektometrische Registrierung deutlich hervorzuheben.
 
 % Abbildung: Objekt mit Delle
 {
@@ -125,7 +125,7 @@ Dies führt dazu, dass in der Bestimmung der Phase $\phi$ für solche Pixel nume
 
 \p
 Die resultierenden Bilder können durch herkömmliche Verfahren aus der Bildverarbeitung weiterverarbeitet und analysiert werden.
-Durch die weichen Grauwertverläufe an gleichmäßig gekrümmten Oberflächen in den \acrshort{frx} und \acrshort{fry}, lassen sich die Bilder effizient über Gradienten analysieren (siehe Abbildung \ref{tikz:abbGradientenbildReg}).
+Durch die weichen Grauwertverläufe an gleichmäßig gekrümmten Oberflächen in den \acrshort{frx} und \acrshort{fry}, lassen sich die Bilder effizient über ihre Gradienten analysieren (siehe Abbildung \ref{tikz:abbGradientenbildReg}).
 Abrupte Änderungen der Grauwerte innerhalb des spiegelnden Objekts führen zu höheren Gradienten als in der Umgebung. Fehlstellen wie z. B. Dellen oder Pickel lassen sich damit gut detektieren.
 Aus demselben Grund erweisen sich auch Hochpassfilterungen als hilfreich \cite{kit_werling}.
 
@@ -140,30 +140,31 @@ Aus demselben Grund erweisen sich auch Hochpassfilterungen als hilfreich \cite{k
 
 \noindent
 Das untersuchte Objekt aus Abbildung \ref{tikz:abbGradientenbildReg} weist am linken Rand vereinzelt matte Stellen auf.
-Dadurch treten im Bild der deflektometrischen Registrierung \acrshort{frx} einzelne dunkle Punkte am linken Rand auf.
+Dadurch treten im Bild der deflektometrischen Registrierung \acrshort{frx} einzelne dunkle Punkte bzw. Artefakte am linken Rand auf.
 Diese erkennt man somit auch im Gradientenbild von \acrshort{frx} als Fehlstellen.
 
 \p
-In dem Gradientenbild in $x$-Richtung aus Abbildung \ref{tikz:abbGradientenbildReg} lassen sich Aussagen über die Krümmung der Oberfläche entlang der Richtung treffen.
+In dem Gradientenbild in $x$-Richtung aus Abbildung \ref{tikz:abbGradientenbildReg} lassen sich Aussagen über die Krümmung der Oberfläche entlang der $x$-Richtung treffen.
 Allgemein betrachtet man zu\-nächst eine feste Gerade in der Kameraebene, bezeichnet als Bildkurve.
 Die Bildkurve entsteht durch die Spiegelung einer bestimmten Monitorkurve auf einer Oberfläche.
-Die Lichtstrahlen der Kurve in der Monitorebene schneiden dabei die Oberfläche entlang einer Oberflächenkurve.
+Von der Kurve in der Monitorebene schneiden die ausgehenden Lichtstrahlen die Oberfläche entlang einer Oberflächenkurve.
 Über den Zusammenhang der Spiegelabbildung von Geraden und Kurven an gekrümmten Oberflächen lässt sich zeigen, dass die Änderung der Monitorkurve vom linearen Verlauf proportional zur Änderung der Flächennormalen entlang der Oberflächenkurve ist \cite{kit_werling}.
 Deutlich wird dies nochmals, wenn man beachtet, dass Geraden bei der Spiegelung nur auf Geraden abgebildet werden können, wenn die Spiegeloberfläche an den Reflexionspunkten einer Ebene entspricht.
-Das heißt, dass lokale Änderungen der Tangente an der Monitorkurve lokalen Abweichungen der Spiegeloberfläche vom ebenen Verlauf entsprechen.
+Das heißt, dass lokale Änderungen der Tangenten an der Monitorkurve lokalen Abweichungen der Spiegeloberfläche vom ebenen Verlauf entsprechen.
 Bekanntlich stellt die deflektometrische Registrierung \acrshort{lr} den Zusammenhang zwischen der Bildebene und der Monitorebene dar.
 Demzufolge lässt sich durch das Ableiten der deflektometrischen Registrierung \acrshort{lr} in eine bestimmte Richtung direkt die Abweichung der Flächennormalen, also die wahrgenommene Krümmung der Oberfläche, entlang der Richtung bestimmen.
 Die wahrgenommene Krümmung steht in direktem Zusammenhang mit der zweiten Ableitung der Objektoberfläche \cite{kit_werling}.
 
 \p
 In Abbildung \ref{tikz:abbGradientenbildReg} erhält man durch die Faltung des Bildes \acrshort{frx} mit dem Sobel-Operator für die $x$-Richtung ein Bild, dass in direkter Beziehung zu der Ableitung der deflektometrischen Registrierung \acrshort{lr} in  $x$-Richtung steht.
-Ferner steht dieses Bild damit auch im Verhältnis mit der Krümmung der Oberfläche in $x$-Richtung.
+Somit steht dieses Bild auch im Verhältnis mit der Krümmung der Oberfläche in $x$-Richtung.
 Analog lässt sich auch die Krümmung in $y$-Richtung auswerten.
 
 \p
 Die deflektometrische Registrierung hat im Vergleich zur Rekonstruktion der Oberfläche essenzielle Vorteile.
-Zum Einen kann zur Oberflächenprüfung auf die aufwändige Systemkalibrierung verzichtet werden.
-Durch die Separierbarkeit und das Erzeugen von Bildern können effiziente Methoden aus dem Bereich der Bildverarbeitung eingesetzt werden um einige Oberflächenmerkmale zu prüfen.
+Zum Einen kann zur Oberflächenprüfung auf die aufwendige Systemkalibrierung verzichtet werden.
+Außerdem ermöglichen die Separierbarkeit und die Darstellung als Bilder den Einsatz von effizienten Methoden aus dem Bereich der Bildverarbeitung.
 Das ermöglicht den Einsatz dieser Verfahren für die Erkennung von verschiedenen Fehlstellen auf spiegelnden Oberflächen.
-Die Verwendung für transparente Objekten die Licht durchlassen ist nur eingeschränkt möglich, da die meiste Information in der Krümmung der Streifenmuster liegen.
+Die Verwendung für transparente Objekte, die Licht durchlassen, ist nur eingeschränkt möglich, da die meiste Information in der Krümmung der Streifenmuster liegt.
 Nutzt man also den Monitor als Durchlichtbeleuchtung ist die Zuordnung trotz vorhandener Fehlstellen überwiegend linear.
+Dies kann allerdings auch zum Vorteil genutzt werden, wenn nur die speziellen Informationen gesucht werden.
