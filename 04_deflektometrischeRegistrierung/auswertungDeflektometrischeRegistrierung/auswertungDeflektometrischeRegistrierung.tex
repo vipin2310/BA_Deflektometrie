@@ -143,8 +143,27 @@ Das untersuchte Objekt aus Abbildung \ref{tikz:abbGradientenbildReg} weist am li
 Dadurch treten im Bild der deflektometrischen Registrierung \acrshort{frx} einzelne dunkle Punkte am linken Rand auf.
 Diese erkennt man somit auch im Gradientenbild von \acrshort{frx} als Fehlstellen.
 
-%TODO Überprüfen ob das stimmt. (Ich glaube schon)
 \p
-Betrachtet man die Änderung der deflektometrischen Registrierung in spezielle Richtungen, wie z. B. über das Gradientenbild in $x$-Richtung aus Abbildung \ref{tikz:abbGradientenbildReg}, kann man direkt die wahrgenommene Krümmung in dieser Richtung beobachten.
+In dem Gradientenbild in $x$-Richtung aus Abbildung \ref{tikz:abbGradientenbildReg} lassen sich Aussagen über die Krümmung der Oberfläche entlang der Richtung treffen.
+Allgemein betrachtet man zu\-nächst eine feste Gerade in der Kameraebene, bezeichnet als Bildkurve.
+Die Bildkurve entsteht durch die Spiegelung einer bestimmten Monitorkurve auf einer Oberfläche.
+Die Lichtstrahlen der Kurve in der Monitorebene schneiden dabei die Oberfläche entlang einer Oberflächenkurve.
+Über den Zusammenhang der Spiegelabbildung von Geraden und Kurven an gekrümmten Oberflächen lässt sich zeigen, dass die Änderung der Monitorkurve vom linearen Verlauf proportional zur Änderung der Flächennormalen entlang der Oberflächenkurve ist \cite{kit_werling}.
+Deutlich wird dies nochmals, wenn man beachtet, dass Geraden bei der Spiegelung nur auf Geraden abgebildet werden können, wenn die Spiegeloberfläche an den Reflexionspunkten einer Ebene entspricht.
+Das heißt, dass lokale Änderungen der Tangente an der Monitorkurve lokalen Abweichungen der Spiegeloberfläche vom ebenen Verlauf entsprechen.
+Bekanntlich stellt die deflektometrische Registrierung \acrshort{lr} den Zusammenhang zwischen der Bildebene und der Monitorebene dar.
+Demzufolge lässt sich durch das Ableiten der deflektometrischen Registrierung \acrshort{lr} in eine bestimmte Richtung direkt die Abweichung der Flächennormalen, also die wahrgenommene Krümmung der Oberfläche, entlang der Richtung bestimmen.
 Die wahrgenommene Krümmung steht in direktem Zusammenhang mit der zweiten Ableitung der Objektoberfläche \cite{kit_werling}.
-Man erkennt in solchen Gradientenbildern an helleren Stellen treten größere Änderungen der Spaltenpositionen 
+
+\p
+In Abbildung \ref{tikz:abbGradientenbildReg} erhält man durch die Faltung des Bildes \acrshort{frx} mit dem Sobel-Operator für die $x$-Richtung ein Bild, dass in direkter Beziehung zu der Ableitung der deflektometrischen Registrierung \acrshort{lr} in  $x$-Richtung steht.
+Ferner steht dieses Bild damit auch im Verhältnis mit der Krümmung der Oberfläche in $x$-Richtung.
+Analog lässt sich auch die Krümmung in $y$-Richtung auswerten.
+
+\p
+Die deflektometrische Registrierung hat im Vergleich zur Rekonstruktion der Oberfläche essenzielle Vorteile.
+Zum Einen kann zur Oberflächenprüfung auf die aufwändige Systemkalibrierung verzichtet werden.
+Durch die Separierbarkeit und das Erzeugen von Bildern können effiziente Methoden aus dem Bereich der Bildverarbeitung eingesetzt werden um einige Oberflächenmerkmale zu prüfen.
+Das ermöglicht den Einsatz dieser Verfahren für die Erkennung von verschiedenen Fehlstellen auf spiegelnden Oberflächen.
+Die Verwendung für transparente Objekten die Licht durchlassen ist nur eingeschränkt möglich, da die meiste Information in der Krümmung der Streifenmuster liegen.
+Nutzt man also den Monitor als Durchlichtbeleuchtung ist die Zuordnung trotz vorhandener Fehlstellen überwiegend linear.
