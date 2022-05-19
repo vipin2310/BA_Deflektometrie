@@ -20,7 +20,7 @@ Die Phasen $\phi_x^i$ und $\phi_y^i$ der kodierten Monitorpunkte $(x_L, y_L)^\to
 \end{equation}
 
 \p
-O.B.d.A. wird nachfolgend nur die deflektometrische Registrierung der Spaltenpositionen \acrshort{lrx} ($x$-Richtung) betrachtet.
+O.B.d.A. wird unter Verwendung von Satz \ref{theo:separierbarkeitDeflektometrischeRegistrierung} nachfolgend nur die deflektometrische Registrierung der Spaltenpositionen \acrshort{lrx} ($x$-Richtung) betrachtet.
 Die deflektometrische Registrierung der Zeilenpositionen \acrshort{lry} ($y$-Richtung) kann analog bestimmt werden.
 Auf der Stufe $i$ hat das $k$-te Muster $m_k^i$ zur Kodierung der Monitorpunkte $(x_L, y_L)^\top$ somit die Form:
 %
@@ -42,7 +42,7 @@ Analog zu Kapitel \ref{sub:registrierungOhnePhasenentfaltung} nimmt die Kamera d
 \end{equation}
 %
 Analog zu Kapitel \ref{sub:registrierungOhnePhasenentfaltung} lässt sich aus den Bildern $g_k^i$ die Phase der $i$-ten Stufe $\phi_x^i$ berechnen.
-Vergleichbar mit Gleichung \ref{eq:registrierungX}, kann man in diesem Verfahren aus der Phase die Monitorkoordinaten relativ zum Intervall $[0,\acrshortmath{lwidth}/N_\lambda^i)$ bestimmen:
+Vergleichbar mit Gleichung \ref{eq:registrierungX} kann man in diesem Verfahren aus der Phase die Monitorkoordinaten relativ zum Intervall $[0,\acrshortmath{lwidth}/N_\lambda^i)$ bestimmen:
 %
 \begin{equation}\label{eq:registrierungX_relativ}
 	x_{L,relativ}^i =
@@ -65,7 +65,7 @@ In Abhängigkeit von $x_{L,relativ}^i$ bedeutet das für $x_L^i$:
 \end{equation}
 %
 Dabei ist $n^i$ ein unbekannter ganzzahliger Faktor, der die absolute Auswertung bestimmt.
-Zur Bestimmung des Faktors $n^i$ sollen zwei verschiedene Stufen des Verfahrens $i$,$j$ mit $i \neq j$ betrachtet werden.
+Zur Bestimmung des Faktors $n^i$ sollen zwei verschiedene Stufen $i$,$j$ des Verfahrens mit $i \neq j$ betrachtet werden.
 Zur eindeutigen Lösbarkeit des nachfolgenden Gleichungssystems müssen $N_\lambda^i$ und $N_\lambda^j$ teilerfremd sein.
 Das heißt es gilt:
 %
@@ -182,7 +182,7 @@ Da der Zusammenhang
 \end{equation*}
 %
 gelten soll, sind geeignete Wahlen für die Anzahl der Perioden $N_\lambda^i$ die Elemente aus der Menge der Primzahlen $\mathbb{P} = \lbrace 2, 3, 5, 7, 11,\ldots\rbrace$.
-Die festzulegenden Parameter $N_{shift}$ und $N_{step}$ haben zunächst keine großen Auswirkungen auf die Lösbarkeit des Verfahrens, dennoch empfiehlt es sich, eine genügend hohe Anzahl an Phasenverschiebungen und Mustern mit unterschiedlichen Perioden zu wählen, um die Genauigkeit des Verfahrens anzuheben.
+Die festzulegenden Parameter $N_{shift}$ und $N_{step}$ haben zunächst keine großen Auswirkungen auf die Lösbarkeit des Verfahrens, dennoch empfiehlt es sich, eine genügend hohe Anzahl von Phasenverschiebungen und Mustern mit unterschiedlichen Perioden zu wählen, um die Genauigkeit des Verfahrens anzuheben.
 Für die erfolgreiche Zuordnung der Phase zu einer relativen Spaltenposition $x_{L,relativ}^i$ ist eine Mindestanzahl von drei Phasenverschiebungen notwendig ($N_{shift} \geq 3$, vgl. Kapitel \ref{sub:registrierungOhnePhasenentfaltung}). 
 
 \p

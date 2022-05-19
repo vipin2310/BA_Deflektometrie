@@ -121,11 +121,11 @@ So ist es möglich, wie in Abbildung \ref{tikz:abbRegistrierungDelle}, z. B. Del
 \noindent
 In Abbildung \ref{tikz:abbRegistrierungDelle} entsteht im Hintergrund um das Objekt herum eine Störumgebung.
 Der Grund dafür ist die fehlende Reflexion des Musters und somit ähnliche Grauwerte in den phasenverschobenen Bildern.
-Dies führt dazu, dass in der Bestimmung der Phase $\phi$ für solche Pixel numerisch instabile Ausdrücke und somit beliebige Werte vorkommen.
+Dies führt dazu, dass in der Bestimmung der Phase $\phi$ für solche Pixel numerisch instabile Ausdrücke und somit schwankende Werte vorkommen.
 
 \p
 Die resultierenden Bilder können durch herkömmliche Verfahren aus der Bildverarbeitung weiterverarbeitet und analysiert werden.
-Durch die weichen Grauwertverläufe an gleichmäßig gekrümmten Oberflächen in den \acrshort{frx} und \acrshort{fry}, lassen sich die Bilder effizient über ihre Gradienten analysieren (siehe Abbildung \ref{tikz:abbGradientenbildReg}).
+Durch die weichen Grauwertverläufe an gleichmäßig gekrümmten Oberflächen in den \acrshort{frx} und \acrshort{fry}, lassen sich diese Bilder effizient über ihre Gradienten analysieren (siehe Abbildung \ref{tikz:abbGradientenbildReg}).
 Abrupte Änderungen der Grauwerte innerhalb des spiegelnden Objekts führen zu höheren Gradienten als in der Umgebung. Fehlstellen wie z. B. Dellen oder Pickel lassen sich damit gut detektieren.
 Aus demselben Grund erweisen sich auch Hochpassfilterungen als hilfreich \cite{kit_werling}.
 
@@ -156,7 +156,7 @@ Demzufolge lässt sich durch das Ableiten der deflektometrischen Registrierung \
 Die wahrgenommene Krümmung steht in direktem Zusammenhang mit der zweiten Ableitung der Objektoberfläche \cite{kit_werling}.
 
 \p
-In Abbildung \ref{tikz:abbGradientenbildReg} erhält man durch die Faltung des Bildes \acrshort{frx} mit dem Sobel-Operator für die $x$-Richtung ein Bild, dass in direkter Beziehung zu der Ableitung der deflektometrischen Registrierung \acrshort{lr} in  $x$-Richtung steht.
+In Abbildung \ref{tikz:abbGradientenbildReg} erhält man durch die Faltung des Bildes \acrshort{frx} mit dem Sobel-Operator für die $x$-Richtung ein Bild, das in direkter Beziehung zu der Ableitung der deflektometrischen Registrierung \acrshort{lr} in  $x$-Richtung steht.
 Somit steht dieses Bild auch im Verhältnis mit der Krümmung der Oberfläche in $x$-Richtung.
 Analog lässt sich auch die Krümmung in $y$-Richtung auswerten.
 
@@ -166,5 +166,5 @@ Zum Einen kann zur Oberflächenprüfung auf die aufwendige Systemkalibrierung ve
 Außerdem ermöglichen die Separierbarkeit und die Darstellung als Bilder den Einsatz von effizienten Methoden aus dem Bereich der Bildverarbeitung.
 Das ermöglicht den Einsatz dieser Verfahren für die Erkennung von verschiedenen Fehlstellen auf spiegelnden Oberflächen.
 Die Verwendung für transparente Objekte, die Licht durchlassen, ist nur eingeschränkt möglich, da die meiste Information in der Krümmung der Streifenmuster liegt.
-Nutzt man also den Monitor als Durchlichtbeleuchtung ist die Zuordnung trotz vorhandener Fehlstellen überwiegend linear.
-Dies kann allerdings auch zum Vorteil genutzt werden, wenn nur die speziellen Informationen gesucht werden.
+Nutzt man also den Monitor als Durchlichtbeleuchtung, ist die Zuordnung trotz vorhandener Fehlstellen überwiegend linear.
+Dies kann allerdings auch zum Vorteil genutzt werden, wenn nur diese speziellen Informationen gesucht werden.
