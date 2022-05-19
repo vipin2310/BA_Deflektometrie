@@ -7,80 +7,78 @@
 
 \begin{document}
 	\includepdf{deckblatt}
-    
-    \begin{abstract}
-    	\FloatBarrier %Verhindert Fehlpositionierung von Abbildungen aus vorherigen Abschnitten
-	    \setcounter{page}{2}
-	    \phantomsection
-    	\addcontentsline{toc}{chapter}{Zusammenfassung}
-    	\input{00_abstract/abstract}
-    \end{abstract}
-    
-    %Inhaltsverzeichnis
-    {
-    	\FloatBarrier %Verhindert Fehlpositionierung von Abbildungen aus vorherigen Abschnitten
-	    \setcounter{page}{3}
-	    \phantomsection
-	    \addcontentsline{toc}{chapter}{Inhaltsverzeichnis}
-	    {%\small
-	    	\tableofcontents
-	    }
-    }
-    
-    %Abbildungsverzeichnis
-    {
-	    \FloatBarrier %Verhindert Fehlpositionierung von Abbildungen aus vorherigen Abschnitten
-    	\newpage
-    	\phantomsection
-    	\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
-    	\listoffigures
-    }
-    
-    %Abkürzungsverzeichnis
-    {
-    	\FloatBarrier %Verhindert Fehlpositionierung von Abbildungen aus vorherigen Abschnitten
-			\newpage        
-			\phantomsection
-			\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
-			\printglossary[title=Abkürzungsverzeichnis, type=\acronymtype]
-			\input{glossary}
-    }
-    
-    %Einführung
-    {
-    	\FloatBarrier %Verhindert Fehlpositionierung von Abbildungen aus vorherigen Abschnitten
-    	\chapter{Einführung}
-      \label{chp:einfuehrung}
-      \input{01_einfuehrung/einfuehrung}
-    }
-    
-    %Sichtprüfung durch Lichtreflexionen
-    {
-    	\FloatBarrier %Verhindert Fehlpositionierung von Abbildungen aus vorherigen Abschnitten
-    	\chapter{Sichtprüfung durch Lichtreflexionen}
-    	\input{03_sichtpruefungDurchLichtreflexionen/sichtpruefungDurchLichtreflexionen}
-    }
-    
-    %Deflektometrische Registrierung
-    {
-    	\FloatBarrier %Verhindert Fehlpositionierung von Abbildungen aus vorherigen Abschnitten
-    	\chapter{Deflektometrische Registrierung}
-    	\input{04_deflektometrischeRegistrierung/deflektometrischeRegistrierung}
-    }
-    
-    %Fourier-Streifen-Analyse
-    {
-    	\FloatBarrier %Verhindert Fehlpositionierung von Abbildungen aus vorherigen Abschnitten
-    	\chapter{Fourier-Streifen-Analyse}
-    	\input{05_fourierStreifenAnalyse/fourierStreifenAnalyse}
-    }
-    
-    %Quellenverzeichnis
-    {
-    	\FloatBarrier %Verhindert Fehlpositionierung von Abbildungen aus vorherigen Abschnitten
-    	\newpage
-      \phantomsection
-      \addcontentsline{toc}{chapter}{Quellenverzeichnis}
-      \printbibliography[title = Quellenverzeichnis]
-    }
+	    
+	\begin{abstract}
+		\FloatBarrier %Verhindert Fehlpositionierung von Abbildungen aus vorherigen Abschnitten
+		\setcounter{page}{2}
+		\phantomsection
+		\addcontentsline{toc}{chapter}{Zusammenfassung}
+		\input{00_abstract/abstract}
+	\end{abstract}
+	    
+	%Inhaltsverzeichnis
+	{
+		\FloatBarrier %Verhindert Fehlpositionierung von Abbildungen aus vorherigen Abschnitten
+		\setcounter{page}{3}
+		\phantomsection
+		\addcontentsline{toc}{chapter}{Inhaltsverzeichnis}
+		\tableofcontents
+	}
+	    
+	%Abbildungsverzeichnis
+	{
+		\FloatBarrier %Verhindert Fehlpositionierung von Abbildungen aus vorherigen Abschnitten
+		\newpage
+		\phantomsection
+		\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+		\listoffigures
+	}
+	
+	%Abkürzungsverzeichnis
+	{
+		\FloatBarrier %Verhindert Fehlpositionierung von Abbildungen aus vorherigen Abschnitten
+		\newpage
+		\phantomsection
+		\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+		\printglossary[title=Abkürzungsverzeichnis, type=\acronymtype]
+		\input{glossary}
+	}
+	
+	%Einführung
+	{
+		\FloatBarrier %Verhindert Fehlpositionierung von Abbildungen aus vorherigen Abschnitten
+		\chapter{Einführung}
+		\label{chp:einfuehrung}
+		\input{01_einfuehrung/einfuehrung}
+	}
+	
+	%Sichtprüfung durch Lichtstreuung
+	{
+		\FloatBarrier %Verhindert Fehlpositionierung von Abbildungen aus vorherigen Abschnitten
+		\chapter{Sichtprüfung durch Lichtstreuung}
+		\input{03_sichtpruefungDurchLichtstreuung/sichtpruefungDurchLichtstreuung}
+	}
+	
+	%Deflektometrische Registrierung
+	{
+		\FloatBarrier %Verhindert Fehlpositionierung von Abbildungen aus vorherigen Abschnitten
+		\chapter{Deflektometrische Registrierung}
+		\input{04_deflektometrischeRegistrierung/deflektometrischeRegistrierung}
+	}
+	
+	%Fourier-Streifen-Analyse
+	{
+		\FloatBarrier %Verhindert Fehlpositionierung von Abbildungen aus vorherigen Abschnitten
+		\chapter{Fourier-Streifen-Analyse}
+		\input{05_fourierStreifenAnalyse/fourierStreifenAnalyse}
+	}
+	
+	%Quellenverzeichnis
+	{
+		\FloatBarrier %Verhindert Fehlpositionierung von Abbildungen aus vorherigen Abschnitten
+		\newpage
+		\phantomsection
+		\addcontentsline{toc}{chapter}{Quellenverzeichnis}
+		\printbibliography[title = Quellenverzeichnis]
+	}
 \end{document}
