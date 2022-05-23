@@ -1,11 +1,11 @@
 Nach dem Verknüpfen der Bilder verbleiben neben den Defekten noch schmale horizontale Streifen (vgl. Abbildung \ref{img:minAndMaxLink} und \ref{img:diffImage}).
 Wenn man die beiden Kamerabilder mit phasenverschobenen Streifenmustern übereinanderlegt, bilden sich Überlappungen der Streifen.
-Diese können durch eine Reihe an Ungenauigkeiten im gesamten Prozess entstehen.
+Diese können durch eine Reihe von Ungenauigkeiten im gesamten Prozess entstehen.
 Zum besseren Verständnis muss auf die Differenzen zwischen dem aufgenommenen Kamerabild und der tatsächlichen Szene eingegangen werden.
 
 \p
-Das Kameraobjektiv hat bestimmte Einstellungsmöglichkeiten.
-Aufgrund der festen\linebreak Brennweite des verwendeten Objektivs, wird der Einfluss der Brennweite nicht genauer betrachtet.
+Das Kameraobjektiv hat bestimmte Einstellungsmöglichkeiten, darunter die Blende und der Fokus.
+Aufgrund der festen Brennweite des verwendeten Objektivs wird der Einfluss der Brennweite nicht genauer betrachtet.
 Die entscheidenden Einstellungen für diesen Prozess sind also der Fokus und die Blende.
 Über die Fokussteuerung kann eine einzelne Tiefenebene im Bild scharf gestellt werden.
 Da das Prüfobjekt und das Streifenmuster in unterschiedlichen Tiefenebenen liegen, führt das bereits dazu, dass im Kamerabild nicht beides gleichzeitig fokussiert werden kann.
@@ -16,8 +16,9 @@ Die zweite Einstellungsmöglichkeit ist die Blende.
 Durch mehr einfallendes Licht vergrößern sich die Breiten der hellen Streifen im Bild. 
 Oberflächendefekte des Prüfobjekts werden gleichzeitig besser sichtbar.
 Die Belichtung lässt sich auch über eine Nachbearbeitung verstärken.
-Durch diese Beeinflussungen der Streifenbreiten müssen die Breiten der hellen und dunklen Streifen unter Berücksichtigung des Kamerabildes angepasst werden.
-Beispielsweise sind die vertikalen Streifenbreiten der erzeugten Muster aus den Abbildungen \ref{img:imageToLink} - \ref{img:diffImage}, fünf Pixel für die hellen und neun Pixel für die dunklen Streifen.
+Durch diese Beeinflussungen der Streifenbreiten im Kamerabild müssen die Breiten der hellen und dunklen Streifen angepasst werden.
+Das führt dazu, dass die Streifenmuster auf dem Monitor von der Gleichung \ref{eq:rstreifenmuster} abweichen und unterschiedliche Breiten für die hellen und dunklen Streifen haben.
+Beispielsweise sind die vertikalen Streifenbreiten der erzeugten Muster aus den Abbildungen \ref{img:imageToLink} - \ref{img:diffImage}, fünf Pixel für die hellen und neun Pixel für die dunklen Streifen (siehe Abbildung \ref{img:differenceCamPat}).
 
 \begin{figure}[H]
 	\centering
@@ -34,22 +35,37 @@ Es kommt hinzu, dass diese Genauigkeit sich auf den projizierenden Bildschirm be
 Also ist der Phasenwinkel im Kamerabild durch die Messung auch mit Fehlern behaftet, weshalb sich die Fehler akkumulieren.
 
 \p
-Da die Kameraeinstellungen auf die Prüfstation und Prüfbedingungen angepasst werden müssen, sind die Mög\-lich\-kei\-ten zur Eliminierung der Streifen im Vorhinein begrenzt.
+Das erzeugte Streifenmuster aus Abbildung \ref{img:differenceCamPat} hat nicht mehr den Grauwerteverlauf einer Rechteckschwingung entlang der Ausbreitungsrichtung.
+Dadurch lässt sich das Streifenmuster nicht mehr in der Form aus Gleichung \ref{eq:rstreifenmuster} darstellen.
+Der Grauwerteverlauf in einer Zeile bzw. Spalte eines solchen Streifenmusters sieht aus wie in Abbildung \ref{tikz:abbPulsewave}.
+%
+% Abbildung: Pulswave
+{
+	\begin{figure}[H]
+		\centering
+		\input{03_sichtpruefungDurchLichtstreuung/optimierungen/figures/abbPulsewave}
+		\label{tikz:abbPulsewave}
+	\end{figure}
+}
+%TODO Formel???
+\p
+Da die Kameraeinstellungen auf die Prüfstation und Prüfbedingungen angepasst werden müssen, sind die Möglichkeiten zur Eliminierung der Streifen im Vorhinein begrenzt.
 Die Nachbearbeitung kann über verschiedene Ansätze erfolgen.
 Aufgrund der Periodizität und der festen Ausbreitungsrichtung der Streifen bietet es sich an, die Fourier-Analyse anzuwenden.
 Man untersucht die Frequenzkomponenten der Streifen und filtert speziell diese aus dem Bild heraus, um sie zu entfernen.
 Diese Methode kann allerdings nicht die fehlende Information an den dunklen Streifen wiederherstellen, sondern lediglich eine Bildverbesserung durchführen.
-Eine andere Mög\-lich\-keit ist das Hinzuziehen von weiteren Bildern.
-Da an den Stellen der horizontalen Streifen die Information fehlt, kann man wie auch schon zuvor zusätzliche Muster zur Hand nehmen, um die Information aufzufüllen.
-Man zieht zwei weitere Muster hinzu, deren Überlappungen genau in den Zwischenräumen des verknüpften Bildes sind. 
+Eine andere Möglichkeit ist das Hinzuziehen von weiteren Bildern.
+Da an den Stellen der horizontalen Streifen die Information fehlt, kann man, wie auch schon zuvor, zusätzliche Muster zur Hand nehmen, um die Informationen zusammenzufassen.
+Man zieht weitere phasenverschobene Muster hinzu, sodass man eine gerade Anzahl an Phasenverschiebungen hat.
 Daraus kann man die Informationen vereinen und eliminiert die horizontalen Streifen.
-Für dieses Verfahren sind damit vier Streifenmuster nötig, die je eine versetzte Phase zueinander haben.
-Aus den vier aufgenommenen Bildern verknüpft man je zwei Bilder, die eine Phasendifferenz von $ \pi $ zueinander haben, mit der betragsmäßigen Differenz.
+Im Folgenden werden als Beispiel vier Bilder von Streifenmustern miteinander verknüpft, die je eine versetzte Phase zueinander haben.
+Aus den vier aufgenommenen Bildern verknüpft man je zwei Bilder, die eine Phasenverschiebung von $\pi$ zueinander haben, mit der betragsmäßigen Differenz.
 Die zwei resultierenden Bilder haben zueinander versetzte Streifen, die aus den Überlappungen entstehen.
 Zum Schluss kann man die beiden Bilder so verknüpfen, dass man stets den Bildpunkt mit dem höheren Helligkeitswert nimmt.
 Das entspricht der Maximierung.
 Analog kann man auch die horizontalen Streifen aus Abbildung \ref{img:minAndMaxLink} eliminieren, in welcher die Typen von Fehlstellen isoliert voneinander betrachtet wurden.
 In Abbildung \ref{img:imageTree} werden die einzelnen Schritte dieses Verfahrens veranschaulicht.
+Analog lässt sich auch die Verknüpfung von mehr als vier phasenverschobenen Streifenmustern durchführen.
 
 \begin{figure}[H]
 	\centering
@@ -60,9 +76,11 @@ In Abbildung \ref{img:imageTree} werden die einzelnen Schritte dieses Verfahrens
 
 \noindent
 Im praktischen Durchlauf verbleiben auch im letzten Bild noch sehr schwache horizontale Streifen.
-Das liegt an den oben genannten Ungenauigkeiten im Prüfprozess, wodurch die vier Streifenmuster nicht exakt den angegebenen Phasenwinkel haben.
-Deshalb kommt es dazu, dass die Überlappungen nicht exakt in den Zwischenräumen versetzt liegen und im Gesamtbild diese Struktur auftaucht.
-Zur Bildverbesserung hat man nun noch die Möglichkeit, die zuvor erwähnte Fourier-Analyse anzuwenden.
+Das liegt an den oben genannten Ungenauigkeiten im Prüfprozess und der Mustererzeugung.
+Da das Ergebnis mit weiteren phasenverschobenen Streifenmustern stetig besser wird, könnte man diese durch eine höhere Anzahl von Streifenmustern $N_{shift}$ eliminieren.
+Dabei gilt zu beachten, dass man im Diskreten arbeitet und bei einer sehr hohen Anzahl von Phasenverschiebungen Messfehler und Gleitpunktfehler zum Tragen kommen.
+Das bedeutet, man muss eine zum Prüfaufbau passende Anzahl an Mustern verwenden um bessere Ergebnisse dokumentieren zu können.
+Zur Bildverbesserung hat man aber auch die Möglichkeit, die zuvor erwähnte Fourier-Analyse anzuwenden.
 Die noch verbliebenen Strukturen lassen sich im Amplitudenspektrum des Bildes durch die Ausbreitungsrichtung finden.
 Da diese Strukturen nur noch sehr schwach im Bild vorhanden ist, sind die jeweiligen Frequenzkomponenten auch dementsprechend gering gewichtet (siehe Abbildung \ref{img:amplitudeSpectrum}).
 
