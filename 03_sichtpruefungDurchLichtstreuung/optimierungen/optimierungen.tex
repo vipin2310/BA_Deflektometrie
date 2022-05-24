@@ -47,8 +47,83 @@ Der Grauwerteverlauf in einer Zeile bzw. Spalte eines solchen Streifenmusters si
 		\label{tikz:abbPulsewave}
 	\end{figure}
 }
-%TODO Formel???
-\p
+%
+\noindent
+Um eine Gleichung für eine solche Impulsschwingung (siehe Abbildung \ref{tikz:abbPulsewave}) herzuleiten, kann man die periodische Sägezahn\-schwin\-gung verwenden.
+Eine Sägezahnschwingung lässt sich darstellen durch:
+%
+\begin{equation} \label{eq:saegezahnschwingung}
+	w_T(t) = 2 \left( \dfrac{t}{T} - \dfrac{1}{2} - \left\lfloor \dfrac{t}{T} \right\rfloor \right)
+\end{equation}
+%
+\noindent
+$T$ bezeichnet die Periodenlänge der Sägezahnschwingung.
+Mit $T = 3$ erhält man folgendes Schaubild (siehe Abbildung \ref{tikz:abbsaegezahnSchwingung}).
+%
+% Abbildung: Sägezahnschwingung
+{
+	\begin{figure}[H]
+		\centering
+		\input{03_sichtpruefungDurchLichtstreuung/optimierungen/figures/abbSaegezahnSchwingung}
+		\label{tikz:abbsaegezahnSchwingung}
+	\end{figure}
+}
+%
+\noindent
+Bildet man die Differenz von zwei versetzten Sägezahnfunktionen erhält man eine Impulsschwingung:
+%
+\begin{equation} \label{eq:pulsewave}
+	p_{T,D}(t) = w_T(t - D \cdot T) - w_T(t) - w_T(-D \cdot T),
+	\quad
+	D \in \left(0,1\right] \subset \acrshortmath{real}
+\end{equation}
+%
+\noindent
+$D$ wird Tastgrad (\textit{eng: duty cycle}) genannt und bezeichnet die Impulsdauer der Impulsschwingung im Verhältnis zur Periodenlänge $T$.
+Mit $D = 0.5$ erhält man eine Rechteckschwingung wie in Abbildung \ref{tikz:abbRechteckschwingung}.
+Das Schaubild der Gleichung \ref{eq:pulsewave} wird in Abbildung \ref{tikz:abbNormalPulsewave} dargestellt.
+%
+% Abbildung: Normale Impulsschwingung
+{
+	\begin{figure}[H]
+		\centering
+		\input{03_sichtpruefungDurchLichtstreuung/optimierungen/figures/abbNormalPulsewave}
+		\label{tikz:abbNormalPulsewave}
+	\end{figure}
+}
+%
+\noindent
+Aus Gleichung \ref{eq:pulsewave} lässt sich somit eine mathematische Darstellung für Streifenmuster mit unterschiedlicher Streifenbreite aufschreiben:
+%
+\begin{equation} \label{eq:impulsStreifenmuster}
+	\begin{gathered}
+		m_k(x,y) = A_m \left( 1 + p_{T,D}\left( x - \dfrac{T}{2\pi} \psi_k \right) \right),
+		\\
+		T = \dfrac{\acrshortmath{lwidth}}{N_p},
+		\quad
+		D \in \left(0,1\right] \subset \acrshortmath{real},
+		\quad
+		\psi_k = (k - 1)\dfrac{2\pi}{N_{shift}},
+		\quad
+		k \in \lbrace 1,\ldots,N_{shift}\rbrace
+	\end{gathered}
+\end{equation}
+%
+Wie auch in Gleichung \ref{eq:rstreifenmuster} gilt für dieses Muster die Periodizität.
+Auch hier bezeichnet $A_m$ die Amplitude, $N_p$ die Anzahl der Perioden über die Monitorbreite \acrshort{lwidth}, $N_{shift}$ die Anzahl der Phasenverschiebungen und $\psi_k$ die Phasenverschiebung des $k$-ten Musters.
+Zusätzlich zu diesen Parametern hat man den Tastgrad $D$, der in diesem Fall die Breite der hellen Streifen im Verhältnis zu der Periodenlänge $T$ angibt.
+Analog zu Gleichung \ref{eq:impulsStreifenmuster} lässt sich auch ein vertikales Streifenmuster mit Ausbreitungsrichtung in $y$ über die Monitorhöhe \acrshort{lheight} aufschreiben.
+Das Bild eines horizontalen Streifenmusters nach Gleichung \ref{eq:impulsStreifenmuster} wird in Abbildung \ref{img:impulsschwingungStreifenmuster} dargestellt.
+%
+\begin{figure}[H]
+	\centering
+	\includegraphics[frame,width=0.5\textwidth]{03_sichtpruefungDurchLichtstreuung/optimierungen/figures/impulsschwingungStreifenmuster}
+	\caption[Rechteckförmiges Streifenmuster]{Streifenmuster nach Gleichung \ref{eq:rstreifenmuster}, mit $A_m = 127.5$, $N_p = 6$, $\acrshortmath{lwidth} = 384$, $D = \dfrac{1}{4}$ und $\psi = 0$. Die hellen Streifen haben damit eine Breite von 16 Pixeln und die dunklen Streifen eine Breite von 48 Pixeln.}
+	\label{img:impulsschwingungStreifenmuster}
+\end{figure}
+
+%TODO Übergang optimieren evtll. mehrere Subsections
+\noindent
 Da die Kameraeinstellungen auf die Prüfstation und Prüfbedingungen angepasst werden müssen, sind die Möglichkeiten zur Eliminierung der Streifen im Vorhinein begrenzt.
 Die Nachbearbeitung kann über verschiedene Ansätze erfolgen.
 Aufgrund der Periodizität und der festen Ausbreitungsrichtung der Streifen bietet es sich an, die Fourier-Analyse anzuwenden.
@@ -70,7 +145,7 @@ Analog lässt sich auch die Verknüpfung von mehr als vier phasenverschobenen St
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{03_sichtpruefungDurchLichtstreuung/optimierungen/figures/imageTree}
-	\caption[Prozess der Hervorhebung von Oberflächendefekten]{Prozess zur Hervorhebung von Oberflächendefekten.}
+	\caption[Prozess der Hervorhebung von Oberflächendefekten]{Prozess zur Hervorhebung von Oberflächendefekten mit $N_{shift} = 4$.}
 	\label{img:imageTree}
 \end{figure}
 
