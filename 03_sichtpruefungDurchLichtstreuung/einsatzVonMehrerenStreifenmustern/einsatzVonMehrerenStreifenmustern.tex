@@ -1,4 +1,10 @@
 Die verwendeten Streifenmuster haben entlang ihrer Ausbreitungsrichtung den Grauwerteverlauf einer Rechteckschwingung (siehe \ref{tikz:abbRechteckschwingung}).
+
+\noindent
+Die Einheits-Rechteckschwingung
+\begin{equation*}
+	v_f(t) = 2 \left( 2 \left\lfloor ft \right\rfloor - \left\lfloor 2ft \right\rfloor \right) + 1
+\end{equation*}
 %
 % Abbildung: Rechteckschwingung
 {
@@ -8,14 +14,9 @@ Die verwendeten Streifenmuster haben entlang ihrer Ausbreitungsrichtung den Grau
 		\label{tikz:abbRechteckschwingung}
 	\end{figure}
 }
-
-\noindent
-Mithilfe der Darstellung der Einheits-Rechteckschwingung durch die Abrundungsfunktion
-\begin{equation*}
-	v_f(t) = 2 \left( 2 \left\lfloor ft \right\rfloor - \left\lfloor 2ft \right\rfloor \right) + 1
-\end{equation*}
+%
 lässt sich das zugehörige Streifenmuster mit Ausbreitungsrichtung aus Abbildung \ref{tikz:abbRechteckschwingung} ausdrücken als:
-%TODO Quellenangabe? -> Prof fragen
+%TODO Quellenangabe? -> Wikipedia :/
 \begin{equation} \label{eq:rstreifenmuster}
 	\begin{gathered}
 		m_k(x,y) = A_m 
@@ -43,7 +44,7 @@ Das Bild eines horizontalen Streifenmusters nach Gleichung \ref{eq:rstreifenmust
 \begin{figure}[H]
 	\centering
 	\includegraphics[frame,width=0.5\textwidth]{03_sichtpruefungDurchLichtstreuung/einsatzVonMehrerenStreifenmustern/figures/rechteckStreifenmuster}
-	\caption[Rechteckförmiges Streifenmuster]{Streifenmuster nach Gleichung \ref{eq:rstreifenmuster}, mit $A_m = 127.5$, $N_p = 6$, $\acrshortmath{lwidth} = 384$ und $\psi = 0$.}
+	\caption[Rechteckförmiges Streifenmuster]{Streifenmuster nach Gleichung \ref{eq:rstreifenmuster}, mit $A_m = 127.5$, $N_p = 6$, $\acrshortmath{lwidth} = 384$ und $\psi = 0$. Die Breite der Streifen betragen jeweils 32 Pixel.}
 	\label{img:rechteckStreifenmuster}
 \end{figure}
 

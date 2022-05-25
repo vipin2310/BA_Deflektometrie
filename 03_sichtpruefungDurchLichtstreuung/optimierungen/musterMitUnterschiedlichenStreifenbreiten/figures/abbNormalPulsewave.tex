@@ -3,7 +3,13 @@
 	
 		% Koordinatensystem
 		\draw[thick,-stealth,black] (-8,0)--(8,0) node[below] {$t$};
-		\draw[thick,-stealth,black] (0,-2.125)--(0,2.125) node[left] {$p_3(t)$};
+		\draw[thick,-stealth,black] (0,-2.125)--(0,2.125) node[left] {$p_{3,\tfrac{1}{3}}(t)$};
+		
+		% Funktion
+		\draw[name path = func1, red, dashed, domain=-8:8, samples=600] plot (\x, {sawtooth(\x-(1/3)*3)});
+
+		% Funktion
+		\draw[name path = func1, orange, dashed, domain=-8:8, samples=600] plot (\x, {sawtooth(\x)});
 		
 		% Funktion
 		\draw[name path = func1, blue, thick, domain=-8:8, samples=600] plot (\x, {sawtooth(\x - (1/3) * 3) - sawtooth(\x) - sawtooth(-(1/3) * 3)});
@@ -18,4 +24,4 @@
 		
 	\end{tikzpicture}
 \end{adjustbox}
-\caption[Impulsschwingung]{Impulsschwingung nach Gleichung \ref{eq:pulsewave} mit $T = 3$ und $D = \dfrac{1}{3}$.}
+\caption[Impulsschwingung]{Impulsschwingung nach Gleichung \ref{eq:pulsewave} mit $T = 3$ und $D = \tfrac{1}{3}$. In orange gestrichelt $s_3\left(t\right)$. In rot gestrichelt $s_3\left(t - \tfrac{1}{3} \cdot 3\right)$.}

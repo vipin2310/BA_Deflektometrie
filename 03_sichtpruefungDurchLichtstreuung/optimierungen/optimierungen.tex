@@ -1,184 +1,39 @@
 Nach dem Verknüpfen der Bilder verbleiben neben den Defekten noch schmale horizontale Streifen (vgl. Abbildung \ref{img:minAndMaxLink} und \ref{img:diffImage}).
 Wenn man die beiden Kamerabilder mit phasenverschobenen Streifenmustern übereinanderlegt, bilden sich Überlappungen der Streifen.
 Diese können durch eine Reihe von Ungenauigkeiten im gesamten Prozess entstehen.
-Zum besseren Verständnis muss auf die Differenzen zwischen dem aufgenommenen Kamerabild und der tatsächlichen Szene eingegangen werden.
+Zum besseren Verständnis muss auf die Differenzen zwischen dem aufgenommenen Kamerabild und der erzeugten Muster auf dem Bildschirm eingegangen werden.
 
-\p
-Das Kameraobjektiv hat bestimmte Einstellungsmöglichkeiten, darunter die Blende und der Fokus.
-Aufgrund der festen Brennweite des verwendeten Objektivs wird der Einfluss der Brennweite nicht genauer betrachtet.
-Die entscheidenden Einstellungen für diesen Prozess sind also der Fokus und die Blende.
-Über die Fokussteuerung kann eine einzelne Tiefenebene im Bild scharf gestellt werden.
-Da das Prüfobjekt und das Streifenmuster in unterschiedlichen Tiefenebenen liegen, führt das bereits dazu, dass im Kamerabild nicht beides gleichzeitig fokussiert werden kann.
-Der Fokus liegt zur Prüfung auf der Oberfläche des Objekts.
-Dadurch wird das Streifenmuster unter Umständen unschärfer, wodurch die Breiten der hellen und dunklen Streifen verändert werden.
-Die zweite Einstellungsmöglichkeit ist die Blende.
-Öffnet man diese weiter, lässt man mehr Licht in den Kamerasensor.
-Durch mehr einfallendes Licht vergrößern sich die Breiten der hellen Streifen im Bild. 
-Oberflächendefekte des Prüfobjekts werden gleichzeitig besser sichtbar.
-Die Belichtung lässt sich auch über eine Nachbearbeitung verstärken.
-Durch diese Beeinflussungen der Streifenbreiten im Kamerabild müssen die Breiten der hellen und dunklen Streifen angepasst werden.
-Das führt dazu, dass die Streifenmuster auf dem Monitor von der Gleichung \ref{eq:rstreifenmuster} abweichen und unterschiedliche Breiten für die hellen und dunklen Streifen haben.
-Beispielsweise sind die vertikalen Streifenbreiten der erzeugten Muster aus den Abbildungen \ref{img:imageToLink} - \ref{img:diffImage}, fünf Pixel für die hellen und neun Pixel für die dunklen Streifen (siehe Abbildung \ref{img:differenceCamPat}).
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\textwidth]{03_sichtpruefungDurchLichtstreuung/optimierungen/figures/differenceCameraPattern}
-	\caption[Unterschied zwischen Muster und Kameraaufnahme]{Unterschied zwischen Muster und Kameraaufnahme. Links erzeugtes Muster, Rechts Kameraaufnahme}
-	\label{img:differenceCamPat}
-\end{figure}
-
-\noindent
-Es kommt dazu, dass die hellen und dunklen Streifen im Kamerabild unter Umständen nicht exakt gleich breit sein können, da die Anpassung der Breiten der Streifen lediglich auf pixelgenauer Ebene durchgeführt werden kann.
-Außerdem gibt es auch bei der Phase der Streifenmuster die Beschränkung, dass die maximale Genauigkeit der Verschiebung auch ein Pixel beträgt.
-Das bedeutet, dass die Streifen selbst bei exakt gleicher Breite unter dem Kamerabild nicht genau versetzt voneinander liegen.
-Es kommt hinzu, dass diese Genauigkeit sich auf den projizierenden Bildschirm bezieht.
-Also ist der Phasenwinkel im Kamerabild durch die Messung auch mit Fehlern behaftet, weshalb sich die Fehler akkumulieren.
-
-\p
-Das erzeugte Streifenmuster aus Abbildung \ref{img:differenceCamPat} hat nicht mehr den Grauwerteverlauf einer Rechteckschwingung entlang der Ausbreitungsrichtung.
-Dadurch lässt sich das Streifenmuster nicht mehr in der Form aus Gleichung \ref{eq:rstreifenmuster} darstellen.
-Der Grauwerteverlauf in einer Zeile bzw. Spalte eines solchen Streifenmusters sieht aus wie in Abbildung \ref{tikz:abbPulsewave}.
-%
-% Abbildung: Pulswave
+% Unterschiede zwischen Kameraufnahme und Monitorbild
 {
-	\begin{figure}[H]
-		\centering
-		\input{03_sichtpruefungDurchLichtstreuung/optimierungen/figures/abbPulsewave}
-		\label{tikz:abbPulsewave}
-	\end{figure}
+	\FloatBarrier
+    \subsection{Unterschiede zwischen Kameraufnahme und Monitorbild}
+    \label{sub:unterschiedeKameraUndMonitor}
+    \input{03_sichtpruefungDurchLichtstreuung/optimierungen/unterschiedeKameraUndMonitor/unterschiedeKameraUndMonitor}
 }
-%
-\noindent
-Um eine Gleichung für eine solche Impulsschwingung (siehe Abbildung \ref{tikz:abbPulsewave}) herzuleiten, kann man die periodische Sägezahn\-schwin\-gung verwenden.
-Eine Sägezahnschwingung lässt sich darstellen durch:
-%
-\begin{equation} \label{eq:saegezahnschwingung}
-	w_T(t) = 2 \left( \dfrac{t}{T} - \dfrac{1}{2} - \left\lfloor \dfrac{t}{T} \right\rfloor \right)
-\end{equation}
-%
-\noindent
-$T$ bezeichnet die Periodenlänge der Sägezahnschwingung.
-Mit $T = 3$ erhält man folgendes Schaubild (siehe Abbildung \ref{tikz:abbsaegezahnSchwingung}).
-%
-% Abbildung: Sägezahnschwingung
+
+% Muster mit unterschiedlichen Breiten Streifenbreiten
 {
-	\begin{figure}[H]
-		\centering
-		\input{03_sichtpruefungDurchLichtstreuung/optimierungen/figures/abbSaegezahnSchwingung}
-		\label{tikz:abbsaegezahnSchwingung}
-	\end{figure}
+	\FloatBarrier
+    \subsection{Muster mit unterschiedlichen Streifenbreiten}
+    \label{sub:musterUnterschiedlichenStreifenbreiten}
+    \input{03_sichtpruefungDurchLichtstreuung/optimierungen/musterMitUnterschiedlichenStreifenbreiten/musterMitUnterschiedlichenStreifenbreiten}
 }
-%
-\noindent
-Bildet man die Differenz von zwei versetzten Sägezahnfunktionen erhält man eine Impulsschwingung:
-%
-\begin{equation} \label{eq:pulsewave}
-	p_{T,D}(t) = w_T(t - D \cdot T) - w_T(t) - w_T(-D \cdot T),
-	\quad
-	D \in \left(0,1\right] \subset \acrshortmath{real}
-\end{equation}
-%
-\noindent
-$D$ wird Tastgrad (\textit{eng: duty cycle}) genannt und bezeichnet die Impulsdauer der Impulsschwingung im Verhältnis zur Periodenlänge $T$.
-Mit $D = 0.5$ erhält man eine Rechteckschwingung wie in Abbildung \ref{tikz:abbRechteckschwingung}.
-Das Schaubild der Gleichung \ref{eq:pulsewave} wird in Abbildung \ref{tikz:abbNormalPulsewave} dargestellt.
-%
-% Abbildung: Normale Impulsschwingung
+
+% Verknüpfung von mehreren Kameraaufnahmen
 {
-	\begin{figure}[H]
-		\centering
-		\input{03_sichtpruefungDurchLichtstreuung/optimierungen/figures/abbNormalPulsewave}
-		\label{tikz:abbNormalPulsewave}
-	\end{figure}
+	\FloatBarrier
+    \subsection{Verknüpfung von mehreren Kameraaufnahmen}
+    \label{sub:verknuepfungMehrererKameraaufnahmen}
+    \input{03_sichtpruefungDurchLichtstreuung/optimierungen/verknuepfungMehrererKameraaufnahmen/verknuepfungMehrererKameraaufnahmen}
 }
-%
-\noindent
-Aus Gleichung \ref{eq:pulsewave} lässt sich somit eine mathematische Darstellung für Streifenmuster mit unterschiedlicher Streifenbreite aufschreiben:
-%
-\begin{equation} \label{eq:impulsStreifenmuster}
-	\begin{gathered}
-		m_k(x,y) = A_m \left( 1 + p_{T,D}\left( x - \dfrac{T}{2\pi} \psi_k \right) \right),
-		\\
-		T = \dfrac{\acrshortmath{lwidth}}{N_p},
-		\quad
-		D \in \left(0,1\right] \subset \acrshortmath{real},
-		\quad
-		\psi_k = (k - 1)\dfrac{2\pi}{N_{shift}},
-		\quad
-		k \in \lbrace 1,\ldots,N_{shift}\rbrace
-	\end{gathered}
-\end{equation}
-%
-Wie auch in Gleichung \ref{eq:rstreifenmuster} gilt für dieses Muster die Periodizität.
-Auch hier bezeichnet $A_m$ die Amplitude, $N_p$ die Anzahl der Perioden über die Monitorbreite \acrshort{lwidth}, $N_{shift}$ die Anzahl der Phasenverschiebungen und $\psi_k$ die Phasenverschiebung des $k$-ten Musters.
-Zusätzlich zu diesen Parametern hat man den Tastgrad $D$, der in diesem Fall die Breite der hellen Streifen im Verhältnis zu der Periodenlänge $T$ angibt.
-Analog zu Gleichung \ref{eq:impulsStreifenmuster} lässt sich auch ein vertikales Streifenmuster mit Ausbreitungsrichtung in $y$ über die Monitorhöhe \acrshort{lheight} aufschreiben.
-Das Bild eines horizontalen Streifenmusters nach Gleichung \ref{eq:impulsStreifenmuster} wird in Abbildung \ref{img:impulsschwingungStreifenmuster} dargestellt.
-%
-\begin{figure}[H]
-	\centering
-	\includegraphics[frame,width=0.5\textwidth]{03_sichtpruefungDurchLichtstreuung/optimierungen/figures/impulsschwingungStreifenmuster}
-	\caption[Rechteckförmiges Streifenmuster]{Streifenmuster nach Gleichung \ref{eq:rstreifenmuster}, mit $A_m = 127.5$, $N_p = 6$, $\acrshortmath{lwidth} = 384$, $D = \dfrac{1}{4}$ und $\psi = 0$. Die hellen Streifen haben damit eine Breite von 16 Pixeln und die dunklen Streifen eine Breite von 48 Pixeln.}
-	\label{img:impulsschwingungStreifenmuster}
-\end{figure}
 
-%TODO Übergang optimieren evtll. mehrere Subsections
-\noindent
-Da die Kameraeinstellungen auf die Prüfstation und Prüfbedingungen angepasst werden müssen, sind die Möglichkeiten zur Eliminierung der Streifen im Vorhinein begrenzt.
-Die Nachbearbeitung kann über verschiedene Ansätze erfolgen.
-Aufgrund der Periodizität und der festen Ausbreitungsrichtung der Streifen bietet es sich an, die Fourier-Analyse anzuwenden.
-Man untersucht die Frequenzkomponenten der Streifen und filtert speziell diese aus dem Bild heraus, um sie zu entfernen.
-Diese Methode kann allerdings nicht die fehlende Information an den dunklen Streifen wiederherstellen, sondern lediglich eine Bildverbesserung durchführen.
-Eine andere Möglichkeit ist das Hinzuziehen von weiteren Bildern.
-Da an den Stellen der horizontalen Streifen die Information fehlt, kann man, wie auch schon zuvor, zusätzliche Muster zur Hand nehmen, um die Informationen zusammenzufassen.
-Man zieht weitere phasenverschobene Muster hinzu, sodass man eine gerade Anzahl an Phasenverschiebungen hat.
-Daraus kann man die Informationen vereinen und eliminiert die horizontalen Streifen.
-Im Folgenden werden als Beispiel vier Bilder von Streifenmustern miteinander verknüpft, die je eine versetzte Phase zueinander haben.
-Aus den vier aufgenommenen Bildern verknüpft man je zwei Bilder, die eine Phasenverschiebung von $\pi$ zueinander haben, mit der betragsmäßigen Differenz.
-Die zwei resultierenden Bilder haben zueinander versetzte Streifen, die aus den Überlappungen entstehen.
-Zum Schluss kann man die beiden Bilder so verknüpfen, dass man stets den Bildpunkt mit dem höheren Helligkeitswert nimmt.
-Das entspricht der Maximierung.
-Analog kann man auch die horizontalen Streifen aus Abbildung \ref{img:minAndMaxLink} eliminieren, in welcher die Typen von Fehlstellen isoliert voneinander betrachtet wurden.
-In Abbildung \ref{img:imageTree} werden die einzelnen Schritte dieses Verfahrens veranschaulicht.
-Analog lässt sich auch die Verknüpfung von mehr als vier phasenverschobenen Streifenmustern durchführen.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\textwidth]{03_sichtpruefungDurchLichtstreuung/optimierungen/figures/imageTree}
-	\caption[Prozess der Hervorhebung von Oberflächendefekten]{Prozess zur Hervorhebung von Oberflächendefekten mit $N_{shift} = 4$.}
-	\label{img:imageTree}
-\end{figure}
-
-\noindent
-Im praktischen Durchlauf verbleiben auch im letzten Bild noch sehr schwache horizontale Streifen.
-Das liegt an den oben genannten Ungenauigkeiten im Prüfprozess und der Mustererzeugung.
-Da das Ergebnis mit weiteren phasenverschobenen Streifenmustern stetig besser wird, könnte man diese durch eine höhere Anzahl von Streifenmustern $N_{shift}$ eliminieren.
-Dabei gilt zu beachten, dass man im Diskreten arbeitet und bei einer sehr hohen Anzahl von Phasenverschiebungen Messfehler und Gleitpunktfehler zum Tragen kommen.
-Das bedeutet, man muss eine zum Prüfaufbau passende Anzahl an Mustern verwenden um bessere Ergebnisse dokumentieren zu können.
-Zur Bildverbesserung hat man aber auch die Möglichkeit, die zuvor erwähnte Fourier-Analyse anzuwenden.
-Die noch verbliebenen Strukturen lassen sich im Amplitudenspektrum des Bildes durch die Ausbreitungsrichtung finden.
-Da diese Strukturen nur noch sehr schwach im Bild vorhanden ist, sind die jeweiligen Frequenzkomponenten auch dementsprechend gering gewichtet (siehe Abbildung \ref{img:amplitudeSpectrum}).
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\textwidth]{03_sichtpruefungDurchLichtstreuung/optimierungen/figures/amplitudeSpectrum}
-	\caption[Amplitudenspektrum des Gesamtbildes]{Amplitudenspektrum des Gesamtbildes. (mit Markierungen)}
-	\label{img:amplitudeSpectrum}
-\end{figure}
-
-\noindent
-In Rot ist im Bild die Ausbreitungsrichtung der ersten Struktur markiert, die entsprechenden Gewichte der Frequenzkomponenten sind in derselben Farbe im Amplitudenspektrum gezeichnet.
-Analog sind in Grün die für die zweite Struktur relevante Ausbreitungsrichtung und Gewichte der Frequenzkomponenten markiert.
-Filtert man im Amplitudenspektrum die markierten Bereiche heraus und wendet die Inverse Fourier-Transformation an, erhält man ein Bild, indem die beiden störenden Strukturen nicht mehr vorhanden sind.
-Das Ergebnisbild wird durch ein geeignetes Online-Werkzeug \cite{fourierTool} berechnet und in Abbildung \ref{img:frequencyFiltered} dargestellt.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.4\textwidth]{03_sichtpruefungDurchLichtstreuung/optimierungen/figures/frequencyFiltered}
-	\caption[Bild mit angewandtem frequenzselektives Filter]{Angewandtes frequenzselektives Filter nach Abbildung \ref{img:amplitudeSpectrum}. Erstellt mit dem Online-Werkzeug \glqq Fourifier\grqq ~von © 2020 Ejectamenta.\cite{fourierTool}\footnotemark}
-	\label{img:frequencyFiltered}
-\end{figure}
-\footnotetext{Anmerkungen: Das Bild musste aufgrund der Anforderungen des verwendeten Online-Werkzeugs zugeschnitten werden. Außerdem wurden die Frequenzkomponenten \glqq händisch\grqq ~entfernt, weshalb das Bild fehlerbehaftet ist. Das Bild konnte auch nicht auf Korrektheit geprüft werden und dient nur der Veranschaulichung. Die Nutzungsrechte unterliegen der Lizenz von © 2020 Ejectamenta. Für weitere Informationen zu Geschäfts- und Nutzungsbedingungen siehe: \url{https://ejectamenta.com/about/terms-of-service/}}
+% Nachbearbeitung durch die Fourier-Analyse
+{
+	\FloatBarrier
+    \subsection{Nachbearbeitung durch die Fourier-Analyse}
+    \label{sub:nachbearbeitungFourierAnalyse}
+    \input{03_sichtpruefungDurchLichtstreuung/optimierungen/nachbearbeitungFourierAnalyse/nachbearbeitungFourierAnalyse}
+}
 
 \noindent
 Mit dem vorgestellten deflektometrischen Verfahren wurden Oberflächen\-de\-fekte wie z. B. Kratzer, Eingravierungen oder Partikel auf transparenten und spiegelnden Prüfobjekten sichtbar gemacht.
