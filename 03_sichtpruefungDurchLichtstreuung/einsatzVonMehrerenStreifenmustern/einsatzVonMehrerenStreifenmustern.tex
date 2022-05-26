@@ -1,11 +1,24 @@
-Die verwendeten Streifenmuster haben entlang ihrer Ausbreitungsrichtung den Grauwerteverlauf einer Rechteckschwingung (siehe \ref{tikz:abbRechteckschwingung}).
+Die verwendeten Streifenmuster haben entlang ihrer Ausbreitungsrichtung den Grauwerteverlauf einer Rechteckschwingung.
 
 \noindent
-Die Einheits-Rechteckschwingung
-\begin{equation*}
-	v_f(t) = 2 \left( 2 \left\lfloor ft \right\rfloor - \left\lfloor 2ft \right\rfloor \right) + 1
+Die periodische Einheits-Rechteckschwingung $s_f(t)$ sei definiert durch (vgl. \cite{squareWave}):
+%
+\begin{equation} \label{eq:einheitsrechteckschwingung}
+	s_f(t) := \sign \left( \sin \left(2 \pi f t \right) \right)
+\end{equation}
+%
+$\sign(x)$ bezeichnet hierbei die Vorzeichenfunktion definiert als:
+%
+\begin{equation*} \label{eq:vorzeichenfunktion}
+	\sign(x) = 
+		\begin{cases}
+	      -1 & \text{für $x < 0$}\\
+	      0 & \text{für $x = 0$}\\
+	      1 & \text{für $x > 0$}
+	    \end{cases} 
 \end{equation*}
 %
+Für $f = \tfrac{1}{3}$ und $f = \tfrac{1}{4}$ sieht das Schaubild der Funktion aus wie in Abbildung \ref{tikz:abbRechteckschwingung}:
 % Abbildung: Rechteckschwingung
 {
 	\begin{figure}[H]
@@ -14,19 +27,14 @@ Die Einheits-Rechteckschwingung
 		\label{tikz:abbRechteckschwingung}
 	\end{figure}
 }
-%
-lässt sich das zugehörige Streifenmuster mit Ausbreitungsrichtung aus Abbildung \ref{tikz:abbRechteckschwingung} ausdrücken als:
-%TODO Quellenangabe? -> Wikipedia :/
+
+\noindent
+Mithilfe der Einheits-Rechteckschwingung aus Gleichung \ref{eq:einheitsrechteckschwingung} lässt sich ein Streifenmuster mit Ausbreitungsrichtung in $x$ ausdrücken durch:
 \begin{equation} \label{eq:rstreifenmuster}
 	\begin{gathered}
 		m_k(x,y) = A_m 
 		\left(
-			2 + 2 
-			\left(2 
-				\left\lfloor f \left(x - \dfrac{1}{2\pi f} \psi_k \right) \right\rfloor 
-				- 
-				\left\lfloor 2 f \left(x - \dfrac{1}{2\pi f} \psi_k \right) \right\rfloor
-			\right)
+			1 + s_f \left(x - \dfrac{1}{2\pi f} \psi_k \right)
 		\right),\\
 		f = \dfrac{N_p}{\acrshortmath{lwidth}},
 		\quad

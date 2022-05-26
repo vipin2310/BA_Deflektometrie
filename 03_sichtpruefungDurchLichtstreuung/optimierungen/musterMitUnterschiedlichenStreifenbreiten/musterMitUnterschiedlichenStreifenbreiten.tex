@@ -12,11 +12,11 @@ Der Grauwerteverlauf in einer Zeile bzw. Spalte eines solchen Streifenmusters en
 }
 %
 \noindent
-Um eine Gleichung für eine solche Impulsschwingung (siehe Abbildung \ref{tikz:abbPulsewave}) herzuleiten, kann man die periodische Sägezahn\-schwin\-gung verwenden.
-Eine Sägezahnschwingung lässt sich darstellen durch:
+Um eine Gleichung für eine solche Impulsschwingung (siehe Abbildung \ref{tikz:abbPulsewave}) herzuleiten, kann man die periodische Sägezahnschwingung verwenden \cite{waveGeneration}.
+Eine Sägezahnschwingung lässt sich darstellen durch (vgl. \cite{sawtoothWave}):
 %
 \begin{equation} \label{eq:saegezahnschwingung}
-	s_T(t) = 2 \left( \dfrac{t}{T} - \left\lfloor \dfrac{t}{T} \right\rfloor \right) - 1
+	w_T(t) = 2 \left( \dfrac{t}{T} - \left\lfloor \dfrac{t}{T} \right\rfloor \right) - 1
 \end{equation}
 %
 \noindent
@@ -36,13 +36,13 @@ Mit $T = 3$ erhält man folgendes Schaubild (siehe Abbildung \ref{tikz:abbsaegez
 Bildet man die Differenz von zwei versetzten Sägezahnfunktionen erhält man eine Impulsschwingung:
 %
 \begin{equation} \label{eq:pulsewave}
-	p_{T,D}(t) = s_T(t - D \cdot T) - s_T(t) - s_T(-D \cdot T),
+	p_{T,D}(t) = w_T(t - D \cdot T) - w_T(t) - w_T(-D \cdot T),
 	\quad
 	D \in \left(0,1\right] \subset \acrshortmath{real}
 \end{equation}
 %
 \noindent
-$D$ wird Tastgrad (\textit{eng: duty cycle}) genannt und bezeichnet die Impulsdauer der Impulsschwingung im Verhältnis zur Periodenlänge $T$.
+$D$ wird Tastgrad (\textit{engl: duty cycle}) genannt und bezeichnet die Impulsdauer der Impulsschwingung im Verhältnis zur Periodenlänge $T$.
 Mit $D = \tfrac{1}{2}$ erhält man eine Rechteckschwingung wie in Abbildung \ref{tikz:abbRechteckschwingung}.
 Das Schaubild der Gleichung \ref{eq:pulsewave} wird in Abbildung \ref{tikz:abbNormalPulsewave} dargestellt.
 %
