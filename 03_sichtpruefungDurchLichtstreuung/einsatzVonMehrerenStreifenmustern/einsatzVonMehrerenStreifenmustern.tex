@@ -33,7 +33,7 @@ Für $f = \tfrac{1}{3}$ und $f = \tfrac{1}{4}$ sieht das Schaubild der Funktion 
 }
 
 \noindent
-Mithilfe der Einheits-Rechteckschwingung aus Gleichung \ref{eq:einheitsrechteckschwingung} lässt sich ein Streifenmuster mit Ausbreitungsrichtung in $x$ ausdrücken durch:
+Mithilfe der Einheitsrechteckschwingung aus Gleichung \ref{eq:einheitsrechteckschwingung} lässt sich ein Streifenmuster mit Ausbreitungsrichtung in $x$ ausdrücken durch:
 \begin{equation} \label{eq:rstreifenmuster}
 	\begin{gathered}
 		m_k(x,y) = A_m 
@@ -48,25 +48,25 @@ Mithilfe der Einheits-Rechteckschwingung aus Gleichung \ref{eq:einheitsrechtecks
 	\end{gathered}
 \end{equation}
 %
-Das Streifenmuster aus Gleichung \ref{eq:rstreifenmuster} ist periodisch.
+Das Streifenmuster aus Gleichung \ref{eq:rstreifenmuster} ist durch die Periodizität der Einheitsrechteckschwingung auch periodisch zur Ausbreitungsrichtung.
 $A_m$ bezeichnet die Amplitude, $f$ die Frequenz, $N_p$ die Anzahl der Perioden über die Monitorbreite \acrshort{lwidth}, $N_{shift}$ die Anzahl der Phasenverschiebungen und $\psi_k$ die Phasenverschiebung des $k$-ten Musters.
 Analog zu Gleichung \ref{eq:rstreifenmuster} lassen sich auch Streifenmuster mit Ausbreitungsrichtung in $y$ über die Monitorhöhe \acrshort{lheight} schreiben.
-Das Bild eines horizontalen Streifenmusters nach Gleichung \ref{eq:rstreifenmuster} wird in Abbildung \ref{img:rechteckStreifenmuster} dargestellt.
+Das Bild eines vertikalen Streifenmusters, d. h. mit Ausbreitungsrichtung in $x$, nach Gleichung \ref{eq:rstreifenmuster} wird in Abbildung \ref{img:rechteckStreifenmuster} dargestellt.
 %
 \begin{figure}[H]
 	\centering
 	\includegraphics[frame,width=0.5\textwidth]{03_sichtpruefungDurchLichtstreuung/einsatzVonMehrerenStreifenmustern/figures/rechteckStreifenmuster}
-	\caption[Rechteckförmiges Streifenmuster]{Streifenmuster nach Gleichung \ref{eq:rstreifenmuster}, mit $A_m = 127.5$, $N_p = 6$, $\acrshortmath{lwidth} = 384$ und $\psi = 0$. Die Breite der Streifen betragen jeweils 32 Pixel.}
+	\caption[Rechteckförmiges Streifenmuster]{Streifenmuster nach Gleichung \ref{eq:rstreifenmuster}, mit $A_m = 127.5$, $N_p = 6$, $\acrshortmath{lwidth} = 384$ und $\psi_0 = 0$. Die Breite der Streifen betragen jeweils 32 Pixel.}
 	\label{img:rechteckStreifenmuster}
 \end{figure}
 
 \noindent
 Die verschiedenen Streifenmuster $m_k$ können nach Gleichung \ref{eq:rstreifenmuster} als zueinander phasenverschoben bezeichnet werden.
-Die Phasenverschiebung $psi_k$ wird durch einen Phasenwinkel im Bogenmaß angegeben.
+Die Phasenverschiebung $\psi_k$ wird durch einen Phasenwinkel im Bogenmaß angegeben.
 Eine Phasenverschiebung von $ \pi $ bedeutet dementsprechend eine Phasenverschiebung um eine halbe Periode des Musters.
 Anschaulich stellt man fest, dass für gleich breite helle und dunkle Streifen diese ihre Positionen tauschen.
 Dies kann man sich zunutze machen, denn das bedeutet, dass die Schnittmenge der dunklen Streifen in den beiden Streifenmustern am kleinsten ist.
-Da bestimmte Fehlstellen entweder in den dunklen oder in den weißen Streifen deutlich zu erkennen sind, ergänzen sich die beiden Streifenmuster in ihrer Information.
+Da bestimmte Fehlstellen entweder in den dunklen oder in den weißen Streifen deutlich zu erkennen sind, ergänzen sich die beiden Streifenmuster durch die sichtbaren Fehlstellen.
 Verknüpft man die Kamerabilder von solchen Mustern, dann kann man damit die meiste Information aus zwei Bildern extrahieren.
 Durch zusätzliche Bildaufnahmen mit verschobenen Streifenmustern kann man detailliertere Oberflächeninformationen von dem Prüfobjekt gewinnen.
 
@@ -83,7 +83,7 @@ Die Auffälligkeiten in den Bildern z. B. Eingravierungen sind oft entweder im d
 Durch den Unterschied zum Streifenhintergrund erfasst man gewisse Oberflächeninformation des Prüfobjekts.
 Das heißt, dass die beiden Bilder sich durch den Versatz in ihrer Oberflächeninformation ergänzen.
 Zur Verknüpfung der Information in einem Gesamtbild überlegt man sich, wie bestimmte Defekte in den beiden Bildern aussehen.
-Dabei fällt auf, dass sich Defekt- und Fehlstellen in zwei Fällen abzeichnen (vgl. Abbildung \ref{img:imageToLink}).
+Dabei fällt auf, dass sich Defekt- bzw. Fehlstellen in zwei Fällen abzeichnen (vgl. Abbildung \ref{img:imageToLink}).
 
 \p
 \textbf{Fall 1: z. B. Kratzer}
@@ -125,12 +125,12 @@ In Abbildung \ref{img:minAndMaxLink} sollen diese Verknüpfungen dargestellt wer
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{03_sichtpruefungDurchLichtstreuung/einsatzVonMehrerenStreifenmustern/figures/minAndMaxLink}
-	\caption[Verknüpfte Bilder über Minimierung und Maximierung]{Verknüpfte Bilder, um Defekte von \textit{Fall 1} (rot umrahmt) und Defekte von \textit{Fall 2} (grün umrahmt) isoliert voneinander zu betrachten. Links über Minimierung und rechts über Maximierung verknüpft.}
+	\caption[Verknüpfte Bilder über Minimierung und Maximierung]{Verknüpfte Bilder, um Defekte von \textit{Fall 1} (rot umrahmt) und Defekte von \textit{Fall 2} (grün umrahmt) isoliert voneinander zu betrachten. Links über Minimierung und rechts über Maximierung verknüpft. Die verknüpften Quellbilder sind in Abbildung \ref{img:imageToLink} einzusehen.}
 	\label{img:minAndMaxLink}
 \end{figure}
 
 \noindent
-In diesen Bildern sind noch horizontale Streifen zu erkennen.
+In den Bildern aus Abbildung \ref{img:minAndMaxLink} sind noch horizontale Streifen zu erkennen.
 Diese sind keine Defekte, sondern entstehen aus Überlappungen der Streifenmuster in den Kamerabildern.
 Auf diese \glqq Fehler\grqq ~und Möglichkeiten zur Beseitigung dieser wird im nächsten Abschnitt \ref{sec:optimierungen} ~eingegangen.
 
@@ -139,8 +139,8 @@ Als Nächstes sollen beide Fälle in einem Gesamtbild kenntlich gemacht werden.
 Hierfür macht man sich die Gemeinsamkeiten von \textit{Fall 1} und \textit{Fall 2} zunutze.
 Man kann feststellen, dass die Helligkeit der Defekte in beiden Kamerabildern trotz Veränderung der Muster ungefähr gleich bleibt.
 Verknüpft man die beiden Bilder durch die punktweise betragsmäßige Differenz, werden Defekte aus den beiden Fällen dunkel.
-Die restliche, normal-spiegelnde Oberfläche wird hell, da jeder sonstige Bildpunkt in einem Muster dunkel und im anderen Muster hell erscheinen sollte, also eine hohe Differenz ergibt (siehe Abbildung \ref{img:diffImage}).
-Die Ausnahme bilden dabei auch hier die Überlappungen von Streifen.
+Die restliche, normal-spiegelnde Oberfläche wird hell, da jeder sonstige Bildpunkt in einem Muster dunkel und im anderen Muster hell erscheinen sollte, also eine hohe Differenz ergibt.
+Die Ausnahme bilden dabei auch hier die Überlappungen von Streifen (siehe Abbildung \ref{img:diffImage}).
 
 \begin{figure}[H]
 	\centering

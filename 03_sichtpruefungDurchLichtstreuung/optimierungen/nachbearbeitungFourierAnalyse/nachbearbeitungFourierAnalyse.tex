@@ -1,10 +1,9 @@
-\noindent
 Im praktischen Durchlauf verbleiben auch im letzten Bild noch sehr schwache horizontale Streifen.
 Das liegt an den oben genannten Ungenauigkeiten im Prüfprozess und der Mustererzeugung.
 Da das Ergebnis mit weiteren phasenverschobenen Streifenmustern stetig besser wird, könnte man diese durch eine höhere Anzahl von Streifenmustern $N_{shift}$ eliminieren.
-Dabei gilt zu beachten, dass man im Diskreten arbeitet und bei einer sehr hohen Anzahl von Phasenverschiebungen Messfehler und Gleitpunktfehler zum Tragen kommen.
+Dabei gilt zu beachten, dass man im Diskreten und Numerischen arbeitet und bei einer sehr hohen Anzahl von Phasenverschiebungen Messfehler und Gleitpunktfehler zum Tragen kommen.
 Das bedeutet, man muss eine zum Prüfaufbau passende Anzahl an Mustern verwenden, um bessere Ergebnisse dokumentieren zu können.
-Zur Bildverbesserung hat man aber auch die Möglichkeit, die zuvor erwähnte Fourier-Analyse anzuwenden.
+Zur Bildverbesserung hat man auch die Möglichkeit, die zuvor erwähnte Fourier-Analyse anzuwenden.
 Die noch verbliebenen Strukturen lassen sich im Amplitudenspektrum des Bildes durch die Ausbreitungsrichtung finden.
 Da diese Strukturen nur noch sehr schwach im Bild vorhanden ist, sind die jeweiligen Frequenzkomponenten auch dementsprechend gering gewichtet (siehe Abbildung \ref{img:amplitudeSpectrum}).
 
@@ -18,8 +17,9 @@ Da diese Strukturen nur noch sehr schwach im Bild vorhanden ist, sind die jeweil
 \noindent
 In Rot ist im Bild die Ausbreitungsrichtung der ersten Struktur markiert, die entsprechenden Gewichte der Frequenzkomponenten sind in derselben Farbe im Amplitudenspektrum gezeichnet.
 Analog sind in Grün die für die zweite Struktur relevante Ausbreitungsrichtung und Gewichte der Frequenzkomponenten markiert.
+Die grün gekennzeichnete Struktur entsteht in diesem Fall durch die Verwendung eines speziellen Polfilters, auf dessen Funktion nicht genauer eingegangen werden muss.
 Filtert man im Amplitudenspektrum die markierten Bereiche heraus und wendet die inverse Fourier-Transformation an, erhält man ein Bild, indem die beiden störenden Strukturen nicht mehr vorhanden sind.
-Das Ergebnisbild wird durch ein geeignetes Online-Werkzeug \cite{fourierTool} berechnet und in Abbildung \ref{img:frequencyFiltered} dargestellt.
+Das Ergebnisbild wird durch ein geeignetes Werkzeug \cite{fourierTool} berechnet und in Abbildung \ref{img:frequencyFiltered} dargestellt.
 
 \begin{figure}[H]
 	\centering
