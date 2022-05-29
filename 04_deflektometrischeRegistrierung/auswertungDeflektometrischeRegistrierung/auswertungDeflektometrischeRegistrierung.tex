@@ -2,22 +2,22 @@ Die deflektometrische Registrierung \acrshort{lr} kann nicht ohne Weiteres direk
 Deshalb wird im Folgenden die Weiterverarbeitung der deflektometrischen Registrierung beschrieben, sodass bekannte Methoden aus dem Gebiet der Bildverarbeitung angewendet werden können.
 
 \p
-Die graphische Darstellung der deflektometrischen Registrierung \acrshort{lr} stellt sich zunächst als schwierig heraus, da man mit einer Abbildung der Form $\mathbb{R}^2 \rightarrow \mathbb{R}^2$ arbeitet.
+Die graphische Darstellung der deflektometrischen Registrierung \acrshort{lr} stellt sich zunächst als schwierig heraus, da man mit einer Abbildung der Form $\acrshortmath{real}^2 \rightarrow \acrshortmath{real}^2$ arbeitet.
 Aus dem Grund wird die Separierbarkeit der deflektometrischen Registrierung aus Satz \ref{theo:separierbarkeitDeflektometrischeRegistrierung} angewendet.
-Daraus erhält man die beiden Abbildungen der Form $\mathbb{R}^2 \rightarrow \mathbb{R}$:
+Daraus erhält man die beiden Abbildungen der Form $\acrshortmath{real}^2 \rightarrow \acrshortmath{real}$:
 %
 \begin{equation*}
-	\acrshortmath{lrx} : \mathbb{R}^{2} \supset A_{Cam} \rightarrow \mathbb{R} ,\quad (x_{B}, y_{B}) \mapsto x_{L}
+	\acrshortmath{lrx} : \acrshortmath{real}^{2} \supset A_{Cam} \rightarrow \acrshortmath{real} ,\quad (x_{B}, y_{B}) \mapsto x_{L}
 \end{equation*}
 %
 \begin{equation*}
-	\acrshortmath{lry} : \mathbb{R}^{2} \supset A_{Cam} \rightarrow \mathbb{R} ,\quad (x_{B}, y_{B}) \mapsto y_{L}
+	\acrshortmath{lry} : \acrshortmath{real}^{2} \supset A_{Cam} \rightarrow \acrshortmath{real} ,\quad (x_{B}, y_{B}) \mapsto y_{L}
 \end{equation*}
 %
 In der Form lässt sich die Analogie zu der mathematischen Beschreibung eines Graubildes $f$ erkennen:
 %
 \begin{equation*}
-	f : \mathbb{R}^{2} \supseteq [x_{min},x_{max}] \times [y_{min},y_{max}] \rightarrow [I_{min},I_{max}] \subseteq \mathbb{R} ,\quad (x,y) \mapsto f(x,y)
+	f : \acrshortmath{real}^{2} \supseteq [x_{min},x_{max}] \times [y_{min},y_{max}] \rightarrow [I_{min},I_{max}] \subseteq \acrshortmath{real} ,\quad (x,y) \mapsto f(x,y)
 \end{equation*}
 %
 Für die Darstellung als Bilder sind somit lediglich geeignete Transformationen der Wertemengen der deflektometrischen Registrierungen \acrshort{lrx} und \acrshort{lry} nötig.
@@ -26,11 +26,11 @@ Für die Darstellung als Bilder sind somit lediglich geeignete Transformationen 
 	Die deflektometrischen Registrierung \acrshort{lr} kann als zwei einzelne Graubilder \acrshort{frx} und \acrshort{fry} dargestellt werden.
 	%	
 	\begin{equation*}
-		\acrshortmath{frx} : \mathbb{R}^2 \supset \acrshortmath{d}(\acrshortmath{lrx}) \rightarrow [I_{min},I_{max}] \subseteq \mathbb{R}
+		\acrshortmath{frx} : \acrshortmath{real}^2 \supset \acrshortmath{d}(\acrshortmath{lrx}) \rightarrow [I_{min},I_{max}] \subseteq \acrshortmath{real}
 	\end{equation*}
 	%
 	\begin{equation*}
-		\acrshortmath{fry} : \mathbb{R}^2 \supset \acrshortmath{d}(\acrshortmath{lry}) \rightarrow [I_{min},I_{max}] \subseteq \mathbb{R}
+		\acrshortmath{fry} : \acrshortmath{real}^2 \supset \acrshortmath{d}(\acrshortmath{lry}) \rightarrow [I_{min},I_{max}] \subseteq \acrshortmath{real}
 	\end{equation*}
 	%
 	Dabei lassen sich die Bilder \acrshort{frx} und \acrshort{fry} schreiben als:
@@ -47,11 +47,11 @@ Für die Darstellung als Bilder sind somit lediglich geeignete Transformationen 
 	Die Abbildungen $t_x$ und $t_y$ sind dabei lineare Transformationen der Wertemengen der deflektometrischen Abbildungen in Spalten und Zeilen zu den zulässigen Intensitäten für die Bilder \acrshort{frx} und \acrshort{fry}, angegeben durch das Intervall $[I_{min},I_{max}]$.
 	%
 	\begin{equation*}
-		t_x : \mathbb{R} \supset \acrshortmath{w}(\acrshortmath{lry}) \rightarrow [I_{min},I_{max}] \subseteq \mathbb{R}
+		t_x : \acrshortmath{real} \supset \acrshortmath{w}(\acrshortmath{lry}) \rightarrow [I_{min},I_{max}] \subseteq \acrshortmath{real}
 	\end{equation*}
 	%
 	\begin{equation*}
-		t_y : \mathbb{R} \supset \acrshortmath{w}(\acrshortmath{lry}) \rightarrow [I_{min},I_{max}] \subseteq \mathbb{R}
+		t_y : \acrshortmath{real} \supset \acrshortmath{w}(\acrshortmath{lry}) \rightarrow [I_{min},I_{max}] \subseteq \acrshortmath{real}
 	\end{equation*}
 	%
 	Die Transformationen $t_x$ und $t_y$ lassen sich schreiben als:

@@ -1,0 +1,92 @@
+Das erzeugte Streifenmuster in Abbildung \ref{img:differenceCamPat} hat nicht mehr den Grauwerteverlauf einer Rechteckschwingung (vgl. Abbildung \ref{tikz:abbRechteckschwingung}) entlang der Ausbreitungsrichtung.
+Dadurch lässt sich das Streifenmuster nicht mehr in der Form aus Gleichung \ref{eq:rstreifenmuster} darstellen.
+Der Grauwerteverlauf in einer Zeile bzw. Spalte eines solchen Streifenmusters entspricht einer Impulsschwingung (siehe Abbildung \ref{tikz:abbPulsewave}).
+%
+% Abbildung: Pulswave
+{
+	\begin{figure}[H]
+		\centering
+		\input{03_sichtpruefungDurchLichtstreuung/optimierungen/musterMitUnterschiedlichenStreifenbreiten/figures/abbPulsewave}
+		\label{tikz:abbPulsewave}
+	\end{figure}
+}
+%
+\noindent
+Um eine Gleichung für eine solche Impulsschwingung (siehe Abbildung \ref{tikz:abbPulsewave}) herzuleiten, kann man die periodische Sägezahnschwingung verwenden \cite{waveGeneration}.
+Eine Sägezahnschwingung lässt sich darstellen durch (vgl. \cite{sawtoothWave}):
+%
+\begin{equation} \label{eq:saegezahnschwingung}
+	w_f(t) = 2 \left( ft - \left\lfloor ft \right\rfloor \right) - 1
+\end{equation}
+%
+\noindent
+$f$ bezeichnet die Frequenz der Sägezahnschwingung und steht analog zu Gleichung \ref{eq:einheitsrechteckschwingung} über den Kehrwert im Zusammenhang mit der Periodenlänge der Sägezahnschwingung $w_f(t)$:
+%
+\begin{equation*}
+	f = \dfrac{1}{T}
+\end{equation*}
+%
+Mit $T = 3$ erhält man folgendes Schaubild (siehe Abbildung \ref{tikz:abbsaegezahnSchwingung}).
+%
+% Abbildung: Sägezahnschwingung
+{
+	\begin{figure}[H]
+		\centering
+		\input{03_sichtpruefungDurchLichtstreuung/optimierungen/musterMitUnterschiedlichenStreifenbreiten/figures/abbSaegezahnSchwingung}
+		\label{tikz:abbsaegezahnSchwingung}
+	\end{figure}
+}
+%
+\noindent
+Bildet man die Differenz von zwei zueinander versetzten Sägezahnfunktionen, erhält man die Impulsschwingung $p_{f,D}(t)$:
+%
+\begin{equation} \label{eq:pulsewave}
+	p_{f,D}(t) = w_f(t - \dfrac{D}{f}) - w_f(t) - w_f(- \dfrac{D}{f}),
+	\quad
+	D \in \left(0,1\right] \subset \acrshortmath{real}
+\end{equation}
+%
+\noindent
+$D$ wird Tastgrad (\textit{engl: duty cycle}) genannt und bezeichnet die Impulsdauer der Impulsschwingung im Verhältnis zur Periodenlänge $T$.
+Somit erhält man mit $D = \tfrac{1}{2}$ eine Rechteckschwingung wie auch in Abbildung \ref{tikz:abbRechteckschwingung}.
+Ein Schaubild der Gleichung \ref{eq:pulsewave} wird in Abbildung \ref{tikz:abbNormalPulsewave} dargestellt.
+%
+% Abbildung: Normale Impulsschwingung
+{
+	\begin{figure}[H]
+		\centering
+		\input{03_sichtpruefungDurchLichtstreuung/optimierungen/musterMitUnterschiedlichenStreifenbreiten/figures/abbNormalPulsewave}
+		\label{tikz:abbNormalPulsewave}
+	\end{figure}
+}
+%
+\noindent
+Aus Gleichung \ref{eq:pulsewave} lässt sich somit eine mathematische Darstellung für Streifenmuster mit unterschiedlichen Streifenbreiten aufschreiben:
+%
+\begin{equation} \label{eq:impulsStreifenmuster}
+	\begin{gathered}
+		m_k(x,y) = A_m \left( 1 + p_{f,D}\left( x - \dfrac{1}{2 \pi f} \psi_k \right) \right),
+		\\
+		f = \dfrac{N_p}{\acrshortmath{lwidth}},
+		\quad
+		D \in \left(0,1\right] \subset \acrshortmath{real},
+		\quad
+		\psi_k = (k - 1)\dfrac{2\pi}{N_{shift}},
+		\quad
+		k \in \lbrace 1,\ldots,N_{shift}\rbrace
+	\end{gathered}
+\end{equation}
+%
+Wie auch in Gleichung \ref{eq:rstreifenmuster} gilt für dieses Muster die Periodizität in der Ausbreitungsrichtung.
+Auch hier bezeichnet $A_m$ die Amplitude, $N_p$ die Anzahl der Perioden über die Monitorbreite \acrshort{lwidth}, $N_{shift}$ die Anzahl der Phasenverschiebungen und $\psi_k$ die Phasenverschiebung des $k$-ten Musters.
+Zusätzlich zu diesen Parametern hat man den Tastgrad $D$, der in diesem Fall die Breite der hellen Streifen im Verhältnis zu der Periodenlänge $T$ angibt.
+Die Periodenlänge $T$ ist im Streifenmuster die Summe der Breite eines einzelnen dunklen und eines einzelnen hellen Streifens.
+Analog zu Gleichung \ref{eq:impulsStreifenmuster} lässt sich auch ein horizontales Streifenmuster mit Ausbreitungsrichtung in $y$ über die Monitorhöhe \acrshort{lheight} aufschreiben.
+Das Bild eines vertikalen Streifenmusters, d. h. mit Ausbreitungsrichtung in $x$, nach Gleichung \ref{eq:impulsStreifenmuster} wird in Abbildung \ref{img:impulsschwingungStreifenmuster} dargestellt.
+%
+\begin{figure}[H]
+	\centering
+	\includegraphics[frame,width=0.5\textwidth]{03_sichtpruefungDurchLichtstreuung/optimierungen/musterMitUnterschiedlichenStreifenbreiten/figures/impulsschwingungStreifenmuster}
+	\caption[Rechteckförmiges Streifenmuster]{Streifenmuster nach Gleichung \ref{eq:rstreifenmuster}, mit $A_m = 127.5$, $N_p = 6$, $\acrshortmath{lwidth} = 384$, $D = \tfrac{1}{4}$ und $\psi_0 = 0$. Die hellen Streifen haben damit eine Breite von 16 Pixeln und die dunklen Streifen eine Breite von 48 Pixeln.}
+	\label{img:impulsschwingungStreifenmuster}
+\end{figure}

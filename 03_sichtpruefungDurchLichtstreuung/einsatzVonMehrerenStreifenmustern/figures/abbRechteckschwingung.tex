@@ -1,0 +1,63 @@
+\begin{adjustbox}{width=\textwidth}
+	\begin{tikzpicture}
+	
+		% Koordinatensystem 1
+		\draw[thick,-stealth,black] (-8,0)--(8,0) node[below] {$t$};
+		\draw[thick,-stealth,black] (0,-2.125)--(0,2.125) node[left] {$s_{\tfrac{1}{3}}(t)$};
+		
+		% Funktion 1
+		\draw[name path = func1, blue, thick, domain=-8:8, samples=600] plot (\x,{1.5*(sign(sin(2*pi*(1/3)*\x r))});
+
+		% Achsenbeschriftungen 1
+		\draw[thick,black] (0,-1.5) -- (-0.1,-1.5) node[anchor=east,fill=white] {$-1$};
+		\draw[thick,black] (0,1.5) -- (-0.1,1.5) node[anchor=east,fill=white] {$1$};
+		\draw[thick,black] (-7,0) -- (-7,-0.1) node[anchor=north,fill=white] {$-7$};
+		\draw[thick,black] (-6,0) -- (-6,-0.1) node[anchor=north,fill=white] {$-6$};
+		\draw[thick,black] (-5,0) -- (-5,-0.1) node[anchor=north,fill=white] {$-5$};
+		\draw[thick,black] (-4,0) -- (-4,-0.1) node[anchor=north,fill=white] {$-4$};
+		\draw[thick,black] (-3,0) -- (-3,-0.1) node[anchor=north,fill=white] {$-3$};
+		\draw[thick,black] (-2,0) -- (-2,-0.1) node[anchor=north,fill=white] {$-2$};
+		\draw[thick,black] (-1,0) -- (-1,-0.1) node[anchor=north,fill=white] {$-1$};
+		\draw[thick,black] (1,0) -- (1,-0.1) node[anchor=north,fill=white] {$1$};
+		\draw[thick,black] (2,0) -- (2,-0.1) node[anchor=north,fill=white] {$2$};
+		\draw[thick,black] (3,0) -- (3,-0.1) node[anchor=north,fill=white] {$3$};
+		\draw[thick,black] (4,0) -- (4,-0.1) node[anchor=north,fill=white] {$4$};
+		\draw[thick,black] (5,0) -- (5,-0.1) node[anchor=north,fill=white] {$5$};
+		\draw[thick,black] (6,0) -- (6,-0.1) node[anchor=north,fill=white] {$6$};
+		\draw[thick,black] (7,0) -- (7,-0.1) node[anchor=north,fill=white] {$7$};
+		
+		% Beschriftung für f
+		\draw[blue,thick] node[anchor=west] at (-8,2.125) {$f = \tfrac{1}{3}$:};
+		
+		
+		% Koordinatensystem 2
+		\draw[thick,-stealth,black] (-8,-5)--(8,-5) node[below] {$t$};
+		\draw[thick,-stealth,black] (0,-7.125)--(0,-2.875) node[left] {$s_{\tfrac{1}{4}}(t)$};
+				
+		% Funktion 2
+		\draw[name path = func2, Green, thick, domain=-8:8, samples=600] plot (\x,{(1.5*(sign(sin(2*pi*(1/4)*\x r)))-5});
+				
+		% Achsenbeschriftungen 2
+		\draw[thick,black] (0,-6.5) -- (-0.1,-6.5) node[anchor=east,fill=white] {$-1$};
+		\draw[thick,black] (0,-3.5) -- (-0.1,-3.5) node[anchor=east,fill=white] {$1$};
+		\draw[thick,black] (-7,-5) -- (-7,-5.1) node[anchor=north,fill=white] {$-7$};
+		\draw[thick,black] (-6,-5) -- (-6,-5.1) node[anchor=north,fill=white] {$-6$};
+		\draw[thick,black] (-5,-5) -- (-5,-5.1) node[anchor=north,fill=white] {$-5$};
+		\draw[thick,black] (-4,-5) -- (-4,-5.1) node[anchor=north,fill=white] {$-4$};
+		\draw[thick,black] (-3,-5) -- (-3,-5.1) node[anchor=north,fill=white] {$-3$};
+		\draw[thick,black] (-2,-5) -- (-2,-5.1) node[anchor=north,fill=white] {$-2$};
+		\draw[thick,black] (-1,-5) -- (-1,-5.1) node[anchor=north,fill=white] {$-1$};
+		\draw[thick,black] (1,-5) -- (1,-5.1) node[anchor=north,fill=white] {$1$};
+		\draw[thick,black] (2,-5) -- (2,-5.1) node[anchor=north,fill=white] {$2$};
+		\draw[thick,black] (3,-5) -- (3,-5.1) node[anchor=north,fill=white] {$3$};
+		\draw[thick,black] (4,-5) -- (4,-5.1) node[anchor=north,fill=white] {$4$};
+		\draw[thick,black] (5,-5) -- (5,-5.1) node[anchor=north,fill=white] {$5$};
+		\draw[thick,black] (6,-5) -- (6,-5.1) node[anchor=north,fill=white] {$6$};
+		\draw[thick,black] (7,-5) -- (7,-5.1) node[anchor=north,fill=white] {$7$};
+		
+		% Beschriftung für f
+		\draw[Green,thick] node[anchor=west] at (-8,-2.875) {$f = \tfrac{1}{4}$:};
+		
+	\end{tikzpicture}
+\end{adjustbox}
+\caption[Rechteckschwingung bzw. \textit{engl.: square wave}]{Einheitsrechteckschwingung (\textit{engl.: square wave}) für $f = \tfrac{1}{3}$ (in blau) und $f = \tfrac{1}{4}$ (in grün).}
