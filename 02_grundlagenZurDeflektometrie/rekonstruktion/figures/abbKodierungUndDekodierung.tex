@@ -17,7 +17,7 @@
 		\draw[->] (channel.south) |- (decoder.east);
 		\draw[->] (decoder.west) -- (drain.east);
 		
-		\node[right=of channel, font=\small	] (noise) {Rauschen};
+		\node[right=of channel, font=\small, align=center] (noise) {Rauschen,\\ Unschärfe};
 		\draw[->] (noise.west) -- (channel.east);
 		
 		\node[calloutnode] (surface) [callout absolute pointer=(source.north), above=of source.east, anchor=east] {Objektoberfläche};

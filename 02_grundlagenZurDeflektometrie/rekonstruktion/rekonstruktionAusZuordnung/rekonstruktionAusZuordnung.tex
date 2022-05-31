@@ -1,0 +1,12 @@
+Ist erstmal die Zuordnung durch die Dekodierung erfolgt, kann man weitergehend die Oberfläche rekonstruieren.
+Nimmt man zusätzlich die Informationen über den Systemaufbau hinzu bzw. führt eine Systemkalibrierung durch, kann aus der Zuordnung von Kamera- und Bildschirmpunkten der Reflexionswinkel $\theta$ aus Abbildung \ref{img:aufbau} berechnet werden.
+Da bei einer Reflexion die Lichtstrahlen genau an der Oberflächennormalen gespiegelt werden, lässt sich dann in einem weiteren Schritt die Oberflächennormale in diesem Punkt bestimmen.
+Führt man dies für jeden Punkt im Kamerabild durch, erhält man daraus die Neigungsinformationen des zu prüfenden Objektes in der Form eines Normalenfelds.
+
+\p
+Schließlich ist es möglich, aus diesem Normalenfeld räumliche Information der Oberfläche zu berechnen.
+Dafür kann man zunächst aus den Normalenvektoren die zugehörigen Tangentialebenen berechnen, die über je zwei Richtungsvektoren definiert sind.
+Diese Richtungsvektoren bilden die Tangentialfelder des Prüfobjekts.
+Man kann über eine Integration der Tangentialfelder in ausgewählte Richtungen Kurven bestimmen, die in der Oberfläche des Objekts liegen.
+Durch diese Integration erhält man einen Höhenzusammen\-hang der Oberflächenpunkte.
+Wenn zusätzlich ein Oberflächenpunkt gegeben ist, kann man die dreidimensionalen Positionen der Oberflächenpunkte im Raum angeben \cite{kit_werling}.
