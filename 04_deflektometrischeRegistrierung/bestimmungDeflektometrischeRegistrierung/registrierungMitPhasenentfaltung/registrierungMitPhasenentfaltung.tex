@@ -2,21 +2,23 @@ Die im Folgenden beschriebene Methodik zur Bestimmung der deflektometrischen Reg
 Ein solches Verfahren wird von Kammel in seiner Dissertation \cite{kit_kammel} vorgestellt.
 Das Verfahren von Kammel zeigt jedoch in der Praxis Kodierungsartefakte bzw. Phasensprünge insbesondere an den Periodengrenzen.
 Aus dem Grund stellt Werling darauf aufbauend in seiner Dissertation \cite{kit_werling} einen neuen Ansatz eines mehrstufigen Phasenschiebeverfahrens vor, der das Problem mit den Phasensprüngen minimiert.
-Die Idee des Ansatzes ist dabei, dass man zunächst analog zum Verfahren aus Kapitel \ref{sub:registrierungOhnePhasenentfaltung}, die $x$- bzw. $y$-Koordinaten relativ zu den Perioden der Muster bestimmt.
+Die Idee des Ansatzes ist dabei, dass man zunächst analog zum Verfahren aus dem vorigen Abschnitt \ref{sub:registrierungOhnePhasenentfaltung} die $x$- bzw. $y$-Koordinaten relativ zu den Perioden der Muster bestimmt.
 Durch mehrere Muster mit unterschiedlichen Perioden erhält man schließlich unterschiedliche relative $x$- bzw. $y$-Koordinaten.
 Diese müssen für das finale Ergebnis jeweils den richtigen Perioden zugeordnet werden, indem ein Gleichungssystem aufgestellt wird.
 
 \p
-Analog zum Verfahren aus Kapitel \ref{sub:registrierungOhnePhasenentfaltung} benötigt man $N_{shift}$-viele Muster um die Phase eines Bildpunkts $(x_B, y_B)^\top$ zu bestimmen.
+Analog zum Verfahren aus Kapitel \ref{sub:registrierungOhnePhasenentfaltung} benötigt man $N_{shift}$-viele phasenverschobene Muster, um die Phase eines Bildpunkts $(x_B, y_B)^\top$ zu bestimmen.
 Zusätzlich betrachtet man mehrere Stufen des Verfahrens.
-Das Musters auf der Stufe $i$ hat $N_\lambda^i$-viele Perioden über die Monitorbreite \acrshort{lwidth} bzw. Monitorhöhe \acrshort{lheight}.
-Dabei sollen sich für unterschiedliche Stufen auch die Perioden der verwendeten Muster unterscheiden.
+Die Muster auf der Stufe $i$ haben $N^i$-viele Perioden über die Monitorbreite \acrshort{lwidth} bzw. Monitorhöhe \acrshort{lheight}.
+Auf unterschiedlichen Stufen des Verfahrens sollen stets auch die Anzahlen der Perioden der Muster unterschiedlich sein.
+Auf jeder Stufe des Verfahrens befinden sich $N_{shift}$-viele phasenverschobene Muster, welche dieselbe Anzahl an Perioden $N^i$ entlang der Monitorbreite bzw. Monitorhöhe haben.
+Das heißt, dass die Muster auf der $i$-ten Stufe identisch sind, bis auf die Phasenverschiebung.
 Die Phasen $\phi_x^i$ und $\phi_y^i$ der kodierten Monitorpunkte $(x_L, y_L)^\top$ auf der $i$-ten Stufe sehen dann folgendermaßen aus:
 %
 \begin{equation}
-	\phi_x^i = \dfrac{2\pi N_\lambda^i}{\acrshortmath{lwidth}} x_L
+	\phi_x^i = \dfrac{2\pi N^i}{\acrshortmath{lwidth}} x_L,
 	\qquad
-	\phi_y^i = \dfrac{2\pi N_\lambda^i}{\acrshortmath{lheight}} y_L
+	\phi_y^i = \dfrac{2\pi N^i}{\acrshortmath{lheight}} y_L
 \end{equation}
 
 \p
@@ -33,20 +35,20 @@ Auf der Stufe $i$ hat das $k$-te Muster $m_k^i$ zur Kodierung der Monitorpunkte 
 	\end{gathered}
 \end{equation}
 %
-Es bezeichnet $A_m^i$ die Amplitude und $C_m^i$ den Kontrast des Musters der $i$-ten Stufe.
-Wie auch in Kapitel \ref{sub:registrierungOhnePhasenentfaltung} entspricht $\psi_k$ der Phasenverschiebung des $k$-ten Musters der Stufen und $N_{shift}$ der Anzahl der Phasenverschiebungen.
-Analog zu Kapitel \ref{sub:registrierungOhnePhasenentfaltung} nimmt die Kamera das Signal $g_k^i$ auf:
+$A_m^i$ bezeichnet die Amplitude und $C_m^i$ den Kontrast der Muster der $i$-ten Stufe.
+Wie auch in Kapitel \ref{sub:registrierungOhnePhasenentfaltung} entspricht $\psi_k$ der Phasenverschiebung des $k$-ten Musters und $N_{shift}$ der Anzahl der Phasenverschiebungen.
+Für jedes Muster jeder Stufe nimmt die Kamera Signale $g_k^i$ auf:
 %
 \begin{equation}\label{eq:kamerabild_mehrstufig}
-	g_k^i(x_B, y_B) = A_g^i(x_B, y_B) \left(1 + C_g^i(x_B, y_B) \cos \left(\dfrac{2\pi N_\lambda^i}{\acrshortmath{lwidth}}\acrshortmath{lrx}(x_B, y_B) + \psi_k\right)\right)
+	g_k^i(x_B, y_B) = A_g^i(x_B, y_B) \left(1 + C_g^i(x_B, y_B) \cos \left(\dfrac{2\pi N^i}{\acrshortmath{lwidth}}\acrshortmath{lrx}(x_B, y_B) + \psi_k\right)\right)
 \end{equation}
 %
 Analog zu Kapitel \ref{sub:registrierungOhnePhasenentfaltung} lässt sich aus den Bildern $g_k^i$ die Phase der $i$-ten Stufe $\phi_x^i$ berechnen.
-Vergleichbar mit Gleichung \ref{eq:registrierungX} kann man in diesem Verfahren aus der Phase die Monitorkoordinaten relativ zum Intervall $[0,\acrshortmath{lwidth}/N_\lambda^i)$ bestimmen:
+Vergleichbar mit Gleichung \ref{eq:registrierungX} kann man in diesem Verfahren aus der Phase die Monitorkoordinaten relativ zum Intervall $[0,\acrshortmath{lwidth}/N^i)$ bestimmen:
 %
 \begin{equation}\label{eq:registrierungX_relativ}
 	x_{L,relativ}^i =
-	\dfrac{\acrshortmath{lwidth}}{2\pi N_\lambda^i}
+	\dfrac{\acrshortmath{lwidth}}{2\pi N^i}
 	\arctan 
 	\left( 
 		-\dfrac
@@ -59,30 +61,30 @@ Die absolute Monitorkoordinate $x_L^i$ der $i$-ten Stufe lässt sich bestimmen, 
 In Abhängigkeit von $x_{L,relativ}^i$ bedeutet das für $x_L^i$:
 %
 \begin{equation}\label{eq:registrierungX_absolut}
-	x_L^i = x_{L,relativ}^i + n^i \dfrac{\acrshortmath{lwidth}}{N_\lambda^i},
+	x_L^i = x_{L,relativ}^i + n^i \dfrac{\acrshortmath{lwidth}}{N^i},
 	\qquad
 	(n^i \in \mathbb{N}_0)
 \end{equation}
 %
 Dabei ist $n^i$ ein unbekannter ganzzahliger Faktor, der die absolute Auswertung bestimmt.
 Zur Bestimmung des Faktors $n^i$ sollen zwei verschiedene Stufen $i$,$j$ des Verfahrens mit $i \neq j$ betrachtet werden.
-Zur eindeutigen Lösbarkeit des nachfolgenden Gleichungssystems müssen $N_\lambda^i$ und $N_\lambda^j$ teilerfremd sein.
-Das heißt es gilt:
+Zur eindeutigen Lösbarkeit des nachfolgenden Gleichungssystems müssen $N^i$ und $N^j$ teilerfremd sein, das heißt es gilt:
 %
 \begin{equation*}
-	ggT(N_\lambda^i, N_\lambda^j) = 1
+	ggT(N^i, N^j) = 1
 	\quad
 	\forall i \neq j
 \end{equation*}
 %
-Dadurch erhält man zwei unterschiedliche Muster $m_k^i$ und $m_k^j$ ($i \neq j$) und das eindeutig lösbare Gleichungssystem:
+Dadurch erhält man Bilder $g_k^i$ und $g_k^j$ von zwei unterschiedliche Musterserien $m_k^i$ und $m_k^j$ ($i \neq j$).
+Aufgrund der Teilerfremdheit von $N^i$ und $N^j$ der Musterserien erhält man aus Gleichung \ref{eq:registrierungX_relativ} unterschiedliche $x_{L,relativ}^i$ und das eindeutig lösbare Gleichungssystem:
 %
 \begin{equation}\label{eq:gleichungssystemRegistrierung}
 	\begin{split}
-		x_L & = x_{L,relativ}^i + n^i \dfrac{\acrshortmath{lwidth}}{N_\lambda^i},
-		\quad n^i \in \lbrace 0,\ldots, N_\lambda^i - 1 \rbrace \subset \mathbb{N}_0\\
-		x_L & = x_{L,relativ}^j + n^j \dfrac{\acrshortmath{lwidth}}{N_\lambda^j},
-		\quad n^j \in \lbrace 0,\ldots, N_\lambda^j - 1 \rbrace \subset \mathbb{N}_0
+		x_L & = x_{L,relativ}^i + n^i \dfrac{\acrshortmath{lwidth}}{N^i},
+		\quad n^i \in \lbrace 0,\ldots, N^i - 1 \rbrace \subset \mathbb{N}_0\\
+		x_L & = x_{L,relativ}^j + n^j \dfrac{\acrshortmath{lwidth}}{N^j},
+		\quad n^j \in \lbrace 0,\ldots, N^j - 1 \rbrace \subset \mathbb{N}_0
 	\end{split}
 \end{equation}
 %
@@ -95,16 +97,16 @@ Das heißt, gesucht ist folgende Näherungslösung $(n^i, n^j)$:
 		(n^i, n^j) = \argmin_{\alpha, \beta \in \mathbb{N}_0}
 		\left\lvert
 			\Bigg(
-				x_{L,relativ}^i + \alpha \dfrac{\acrshortmath{lwidth}}{N_\lambda^i}
+				x_{L,relativ}^i + \alpha \dfrac{\acrshortmath{lwidth}}{N^i}
 			\Bigg)
 			-
 			\Bigg(		
-				x_{L,relativ}^j + \beta \dfrac{\acrshortmath{lwidth}}{N_\lambda^j}
+				x_{L,relativ}^j + \beta \dfrac{\acrshortmath{lwidth}}{N^j}
 			\Bigg)
 		\right\rvert,\\
-		\alpha \in \lbrace 0,\ldots, N_\lambda^i - 1\rbrace,
+		\alpha \in \lbrace 0,\ldots, N^i - 1\rbrace,
 		\qquad
-		\beta \in \lbrace 0,\ldots, N_\lambda^j - 1\rbrace
+		\beta \in \lbrace 0,\ldots, N^j - 1\rbrace
 	\end{gathered}
 \end{equation}
 %
@@ -118,14 +120,14 @@ Das zu betrachtende Optimierungsproblem ergibt schließlich das Tupel $(n^1,\ldo
 		\sum\limits_{j = i + 1}^{N_{step}}
 		\left\lvert
 			\Bigg(
-				x_{L,relativ}^i + \alpha^i \dfrac{\acrshortmath{lwidth}}{N_\lambda^i}
+				x_{L,relativ}^i + \alpha^i \dfrac{\acrshortmath{lwidth}}{N^i}
 			\Bigg)
 			-
 			\Bigg(		
-				x_{L,relativ}^j + \alpha^j \dfrac{\acrshortmath{lwidth}}{N_\lambda^j}
+				x_{L,relativ}^j + \alpha^j \dfrac{\acrshortmath{lwidth}}{N^j}
 			\Bigg)
 		\right\rvert,\\
-		\text{mit} ~\mathrm{\textit{A}} = (\alpha^1,\ldots,\alpha^{N{step}}) ~\text{und} ~\alpha^i \in \lbrace 0,\ldots, N_\lambda^i - 1 \rbrace \subset \mathbb{N}_0
+		\text{mit} ~\mathrm{\textit{A}} = (\alpha^1,\ldots,\alpha^{N{step}}) ~\text{und} ~\alpha^i \in \lbrace 0,\ldots, N^i - 1 \rbrace \subset \mathbb{N}_0
 	\end{gathered}
 \end{equation}
 
@@ -144,7 +146,7 @@ Durch die zuvor erwähnten Schritte des Verfahrens erhält man für ein Kamerapi
 Unter Berücksichtigung der Teilerfremdheit erhält man durch die Bestimmung des minimalen Abstands die eindeutige Zuordnung $\mathrm{\textit{A}} = (\alpha^1,\ldots,\alpha^{N{step}})$ der relativen Spaltenpositionen zur richtigen Periode (siehe rote Punkte in Abb. \ref{tikz:abbBestimmungEindeutigerPosition}).
 
 \p
-Mit dieser Zuordnung aus Gleichung \ref{eq:optimierungsProblem_mehrstufig} lässt sich die absolute Monitorkoordinate in den Spalten $x_L^i$ berechnen.
+Mit dieser Zuordnung aus Gleichung \ref{eq:optimierungsProblem_mehrstufig} lässt sich die absolute Monitorkoordinate in den Spalten $x_L^i$ berechnen. 
 Durch die Berechnung eines Mittelwerts der $x_L^i$ erhält man die beste Annäherung an die tatsächliche Spaltenposition.
 %
 \begin{equation}\label{eq:registrierungX_mehrstufig}
@@ -155,18 +157,18 @@ Durch die Berechnung eines Mittelwerts der $x_L^i$ erhält man die beste Annähe
 		& =
 			\dfrac{1}{N_{step}}
 			\sum\limits_{i = 1}^{N_{step}}
-			x_{L,relativ}^i + n^i \dfrac{\acrshortmath{lwidth}}{N_\lambda^i}\\
+			x_{L,relativ}^i + n^i \dfrac{\acrshortmath{lwidth}}{N^i}\\
 		& =
 			\dfrac{1}{N_{step}}
 			\sum\limits_{i = 1}^{N_{step}}
-			\dfrac{\acrshortmath{lwidth}}{2\pi N_\lambda^i}
+			\dfrac{\acrshortmath{lwidth}}{2\pi N^i}
 			\arctan
 			\left(
 				-\dfrac
 				{\sum\limits_{k=1}^{N_{shift}} g_k^i(x_B, y_B) sin\left((k - 1)\dfrac{2\pi}{N_{shift}}\right)}
 				{\sum\limits_{k=1}^{N_{shift}} g_k^i(x_B, y_B) cos\left((k - 1)\dfrac{2\pi}{N_{shift}}\right)}
 			\right)
-			+ n^i \dfrac{\acrshortmath{lwidth}}{N_\lambda^i}
+			+ n^i \dfrac{\acrshortmath{lwidth}}{N^i}
 	\end{split}
 \end{equation}
 %
@@ -174,14 +176,14 @@ Durch Gleichung \ref{eq:registrierungX_mehrstufig} ist die deflektometrische Reg
 Analog lässt sich dieses Verfahren auch für die deflektometrische Registrierung der Zeilenpositionen \acrshort{lry} anwenden.
 
 \p
-Für die eindeutige Lösbarkeit des Gleichungssystems aus \ref{eq:gleichungssystemRegistrierung} ist die Wahl der Anzahl der Perioden im Muster $N_\lambda^i$ entscheidend.
+Für die eindeutige Lösbarkeit des Gleichungssystems aus \ref{eq:gleichungssystemRegistrierung} ist die Wahl der Anzahl der Perioden im Muster $N^i$ entscheidend.
 Da der Zusammenhang
 %
 \begin{equation*}
-	ggT(N_\lambda^1, \ldots, N_\lambda^{N_{step}}) = 1
+	ggT(N^1, \ldots, N^{N_{step}}) = 1
 \end{equation*}
 %
-gelten soll, sind geeignete Wahlen für die Anzahl der Perioden $N_\lambda^i$ die Elemente aus der Menge der Primzahlen $\mathbb{P} = \lbrace 2, 3, 5, 7, 11,\ldots\rbrace$.
+gelten soll, sind geeignete Wahlen für die Anzahl der Perioden $N^i$ die Elemente aus der Menge der Primzahlen $\mathbb{P} = \lbrace 2, 3, 5, 7, 11,\ldots\rbrace$.
 Die festzulegenden Parameter $N_{shift}$ und $N_{step}$ haben zunächst keine großen Auswirkungen auf die Lösbarkeit des Verfahrens, dennoch empfiehlt es sich, eine genügend hohe Anzahl von Phasenverschiebungen und Mustern mit unterschiedlichen Perioden zu wählen, um die Genauigkeit des Verfahrens anzuheben.
 Für die erfolgreiche Zuordnung der Phase zu einer relativen Spaltenposition $x_{L,relativ}^i$ ist eine Mindestanzahl von drei Phasenverschiebungen notwendig ($N_{shift} \geq 3$, vgl. Kapitel \ref{sub:registrierungOhnePhasenentfaltung}). 
 

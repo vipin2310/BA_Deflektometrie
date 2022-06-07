@@ -1,10 +1,10 @@
 Ohne eine Phasenentfaltung bekommt man eventuell eine mehrdeutige Zuordnung aufgrund der Periodizität der Kosinusfunktion.
 Soll eine eindeutige Zuordnung über das Phasenschiebeverfahren ohne Phasenentfaltung erfolgen, darf es demnach nur eine einzige Musterperiode auf der Monitorbreite bzw. Monitorhöhe geben.
-Damit lässt sich die Kodierung der Monitorkoordinaten $(x_{L}, y_{L})$ durch die Phasen $(\phi_{x}, \phi_{y})$ folgendermaßen aufstellen:
+Damit lassen sich die Monitorkoordinaten $(x_{L}, y_{L})$ durch die Phasen $(\phi_{x}, \phi_{y})$ folgendermaßen kodieren:
 \begin{equation}\label{eq:phasenkodierung}
-	x_{L} = \dfrac{\acrshortmath{lwidth}}{2\pi}\phi_{x},
+	\phi_{x}\left(x_L\right) := \dfrac{2\pi}{\acrshortmath{lheight}}x_{L},
 	\qquad
-	y_{L} = \dfrac{\acrshortmath{lheight}}{2\pi}\phi_{y}
+	\phi_{y}\left(y_L\right) := \dfrac{2\pi}{\acrshortmath{lheight}}y_{L}
 \end{equation}
 %
 \noindent
@@ -17,7 +17,7 @@ Das $k$-te Muster $m_k$ zur Kodierung der Monitorpunkte wird durch eine Kosinusf
 %
 \begin{equation}\label{eq:monitormuster}
 	\begin{gathered}	
-		m_k(x_L,y_L) = A_m \left(1 + C_m \cos \left(\dfrac{2\pi}{\acrshortmath{lwidth}} x_L + \psi_k\right)\right),\\
+		m_k(x_L,y_L) = A_m \left(1 + C_m \cos \left(\phi_{x}\left(x_L\right) + \psi_k\right)\right),\\
 		k \in \lbrace 1,\ldots,N_{shift}\rbrace,
 		\quad
 		\psi_k = (k - 1)\dfrac{2\pi}{N_{shift}}
@@ -26,7 +26,7 @@ Das $k$-te Muster $m_k$ zur Kodierung der Monitorpunkte wird durch eine Kosinusf
 %
 $A_m$ bezeichnet die Amplitude, $C_m$ den Kontrast, $\psi_k$ die Phasenverschiebung des $k$-ten Musters und $N_{shift}$ die Anzahl der Muster für das Phasenschiebeverfahren.
 Das Muster wird auf dem Monitor angezeigt und über eine spiegelnde Oberfläche durch die Kamera beobachtet.
-Durch die Reflexion an der Oberfläche trifft der Sichtstrahl ausgehend vom Bildpunkt $(x_B, y_B)^\top \in A_{Cam}$ den Monitor im Punkt $(x_L, y_L)^\top \in L \cup \varnothing$, welcher durch die Abbildung aus der Gleichung \ref{eq:deflektometrischeRegistrierungAbbildung} bestimmt wurde:
+Durch die Reflexion an der Oberfläche trifft der Sichtstrahl ausgehend vom Bildpunkt $(x_B, y_B)^\top \in A_{Cam}$ den Monitor im Punkt $(x_L, y_L)^\top \in L \cup \varnothing$, welcher durch die Abbildung aus Definition \ref{def:deflektometrischeRegistrierung} beschrieben werden kann:
 %
 \begin{equation}
 	\begin{pmatrix}
@@ -46,24 +46,26 @@ Dementsprechend lässt sich das $k$-te Kamerabild $g$ am Bildpunkt $(x_B, y_B)^\
 	g_k(x_B, y_B) = m_k(\acrshortmath{lrx}(x_B, y_B), \acrshortmath{lry}(x_B, y_B))
 \end{equation}
 %
-Setzt man für $m_k$ die Gleichung \ref{eq:monitormuster} unter Berücksichtigung der Veränderung durch die Oberfläche ein, erhält man:
+Aufgrund der Digitalisierung durch die Kamera und der Reflexionseigenschaften der Oberfläche verändert sich das aufgenommene Muster im Vergleich zum ausgesendeten Muster.
+Unter Berücksichtigung dieser Veränderungen kann man für $m_k$ die Gleichung \ref{eq:monitormuster} einsetzen.
+Man erhält:
 %
 \begin{equation}\label{eq:kamerabild}
-	g_k(x_B, y_B) = A_g(x_B, y_B) \left(1 + C_g(x_B, y_B) \cos \left(\dfrac{2\pi}{\acrshortmath{lwidth}}\acrshortmath{lrx}(x_B, y_B) + \psi_k\right)\right)
+	g_k(x_B, y_B) = A_g(x_B, y_B) \left(1 + C_g(x_B, y_B) \cos \left(\phi_{x}\left(\acrshortmath{lrx}(x_B, y_B)\right) + \psi_k\right)\right)
 \end{equation}
 %
 Dabei sind die Amplitude $A_g$ und der Kontrast $C_g$ des Musters im Kamerabild unter Umständen unterschiedlich zu dem angezeigten Muster im Monitorbild.
-Der Unterschied ist abhängig von dem Oberflächenpunkt an dem der Sichtstrahl reflektiert wird.
+Der Unterschied ist abhängig von dem Oberflächenpunkt, an dem der Sichtstrahl reflektiert wird.
 Aus dem Grund werden $A_g$ und $C_g$ in Abhängigkeit vom Kamerabildpunkt $(x_B, y_B)^\top$ angegeben.
 
 \p
-Durch Umstellung der Gleichung \ref{eq:phasenkodierung} nach der Phase und Einsetzen der deflektometrischen Registrierung \acrshort{lr}, erhält man die Phase $\phi_x$ des $k$-ten Musters in Abhängigkeit von den Kamerabildpunkten:
+Durch Einsetzen der Gleichung \ref{eq:phasenkodierung} und der deflektometrischen Registrierung \acrshort{lr}, erhält man die Phase $\phi_x$ des $k$-ten Musters in Abhängigkeit von den Kamerabildpunkten:
 %
 \begin{equation}\label{eq:phaseBildkoordinaten}
-	\phi_x = \dfrac{2\pi}{\acrshortmath{lwidth}}\acrshortmath{lrx}(x_B, y_B)
+	\phi_x\left(x_B,y_B\right) := \dfrac{2\pi}{\acrshortmath{lwidth}}\acrshortmath{lrx}(x_B, y_B)
 \end{equation}
 %
-Durch Einsetzen der Phase aus Gleichung \ref{eq:phaseBildkoordinaten} in die Gleichung \ref{eq:kamerabild} des Kamerabilds erhält man den Zusammenhang zwischen der Phase $\phi_x$ des $k$-ten Musters und dem Kamerabild   $g_k$:
+Durch Einsetzen der Phase aus Gleichung \ref{eq:phaseBildkoordinaten} in die Gleichung \ref{eq:kamerabild} des Kamerabilds erhält man den Zusammenhang zwischen der Phase $\phi_x$ des $k$-ten Musters und dem Kamerabild $g_k$:
 %
 \begin{equation}\label{eq:kamerabildMitPhase}
 	g_k(x_B, y_B) = A_g(x_B, y_B) \left(1 + C_g(x_B, y_B) \cos \left(\phi_x(x_B, y_B) + \psi_k\right)\right)
@@ -94,11 +96,13 @@ Die Anzahl der Muster bzw. Phasenverschiebungen $N_{shift}$ bleibt noch als Para
 Um eine eindeutige Zuordnung zu erhalten, benötigt man aufgrund der drei unbekannten Größen Amplitude $A_g$, Kontrast $C_g$ und Phase $\phi_x$ in Gleichung \ref{eq:kamerabildMitPhase} eine Mindestanzahl von drei Phasenverschiebungen.
 
 \p
-Durch die Eindeutigkeit der Zuordnung einer Spaltenposition aus Phase des verwendeten Musters spart man sich die Phasenentfaltung.
+Durch die Verwendung des Arkustangens in Gleichung \ref{eq:registrierungX} könnte man Mehrdeutigkeiten aufgrund des beschränkten Wertebereichs bekommen.
+Im hier beschriebenen Fall wird dies umgangen, indem man nur eine Periode zur Kodierung verwendet, damit ist Phase und auch die zugeordnete Spaltenposition des Monitors eindeutig bestimmt.
+D. h. man benötigt keine Phasenentfaltung.
 Dennoch ist das Phasenschiebeverfahren nach diesem Ansatz eher unpräzise und daher ungeeignet für Praxisanwendungen.
 Der Grund liegt darin, dass Bildschirme lediglich eine vergleichsweise kleine Anzahl von Helligkeitsstufen darstellen können.
 Die Anzahl zu kodierender Pixelpositionen sind in der Regel deutlich größer.
 Hinzu kommt die Limitierung durch die Kamera, welche eine maximale Auflösung und Anzahl Helligkeitsstufen aufnehmen kann.
 Zusammengenommen ist die Auflösung der Monitorpunkte stark begrenzt durch die Abhängigkeit von der Monitorbreite bzw. -höhe.
-Eine höhere Ortsauflösung, lässt sich erreichen indem man Muster mit mehreren Perioden über die Monitorbreite bzw. Monitorhöhe verwendet.
+Eine höhere Ortsauflösung lässt sich erreichen, indem man Muster mit mehreren Perioden über die Monitorbreite bzw. Monitorhöhe verwendet.
 Damit wird eine Phasenentfaltung als zusätzliche Aufgabe erforderlich.

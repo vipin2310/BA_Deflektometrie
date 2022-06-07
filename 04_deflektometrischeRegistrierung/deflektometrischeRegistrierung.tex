@@ -1,21 +1,42 @@
+Nachdem ein Verfahren aufgezeigt wurde, womit die abweichende Lichtstreuung an Oberflächendefekten erkannt werden kann, behandelt das folgende Kapitel die Reflexion von Lichtstrahlen an der Oberfläche im Detail.
+Aus dem Wissen über die Reflexion an dem Objekt können Aussagen über die Oberflächenkrümmung getroffen werden.
+Der Aufbau für dieses Verfahren sieht vor, die Spiegelung einer Szene auf einer spiegelnden Oberfläche zu beobachten (vgl. Abschnitt \ref{sec:rekonstruktion}).
+Für transparente Objekte eignet sich ein solcher Aufbau nicht, da der Effekt der Rückseitenreflexion dieses Verfahren behindert (siehe Abschnitt \ref{sec:spiegelndeOberflaechen}).
+Für transparente Objekte besteht aber die Möglichkeit einen Aufbau analog zu Abschnitt \ref{sec:pruefaufbau} zu verwenden.
+Es gilt hierfür allerdings zu beachten, dass sich damit auch die berechnete Information im Vergleich zum vorgesehenen Aufbau unterscheidet und deshalb nicht vergleichbar ist mit der Reflexionsinformation der Oberfläche.
+
+\p
+In diesem Rahmen soll auch ein Ansatz zur Auswertung der Reflexionsinformation in Form der deflektometrischen Registrierung einer spiegelnden Oberfläche aufgezeigt werden.
+Im Mittelpunkt steht hierbei die Krümmung der Oberfläche analysieren zu können.
+
+%
 \begin{Definition}{Deflektometrische Registrierung}{def:deflektometrischeRegistrierung}
-	Die \textit{deflektometrische Registrierung} \acrshort{lr} beschreibt die Abbildung von Bildpunkten zu Schirmpunkten. \cite{kit_werling}
+	Die \textit{deflektometrische Registrierung} \acrshort{lr} beschreibt die Abbildung von Kamerabildpunkten zu Bildschirmpunkten des mustererzeugenden Monitors \cite{kit_werling} (siehe Abbildung \ref{tikz:abbAbbildungssystem}):
 	%
 	\begin{equation*}
 		\acrshortmath{lr} : A_{Cam} \rightarrow L \cup \varnothing ,\quad P_{B} \rightarrow P_{L}
 	\end{equation*}
 	%
-	$ A_{Cam} \subset \acrshortmath{real}^{2} $ bezeichnet die Menge der Bildpunkte bzw. der Kamerapixel.
-	$ L \subset \acrshortmath{real}^{2} $ bezeichnet die Menge der Schirmpunkte bzw. der Monitorpixel.
+	$ A_{Cam} \subset \acrshortmath{real}^{2} $ bezeichnet die Menge der Kamerabildpunkte bzw. der Kamerapixel.
+	$ L \subset \acrshortmath{real}^{2} $ bezeichnet die Menge der Bildschirmpunkte bzw. der Monitorpixel.
 	In Koordinatenschreibweise lässt sich die Abbildung somit darstellen als:
 	%
-	\begin{equation*}\label{eq:deflektometrischeRegistrierungAbbildung}
+	\begin{equation*}
 		\acrshortmath{lr} : \acrshortmath{real}^{2} \supset A_{Cam} \rightarrow \acrshortmath{real}^2 ,\quad (x_{B}, y_{B}) \mapsto (x_{L}, y_{L})
 	\end{equation*}
 \end{Definition}
-
+%
+% Abbildung: Abbildungssystem
+{
+	\begin{figure}[H]
+		\centering
+		\input{04_deflektometrischeRegistrierung/figures/abbAbbildungssystem}
+		\label{tikz:abbAbbildungssystem}
+	\end{figure}
+}
+%
 \begin{Satz}{Separierbarkeit der deflektometrischen Registrierung}{theo:separierbarkeitDeflektometrischeRegistrierung}
-Ferner kann die \textit{deflektometrische Registrierung} \acrshort{lr} in zwei Abbildungen von Bildpunkten zu den Spalten- und Zeilenpositionen der Schirmpunkte separiert werden:
+Die \textit{deflektometrische Registrierung} \acrshort{lr} kann in zwei Abbildungen von Bildpunkten zu den Spalten- und Zeilenpositionen der Schirmpunkte separiert werden:
 	%
 	\begin{equation*}
 		\acrshortmath{lrx} : \acrshortmath{real}^{2} \supset A_{Cam} \rightarrow \acrshortmath{real} ,\quad (x_{B}, y_{B}) \mapsto x_{L}
@@ -28,10 +49,9 @@ Ferner kann die \textit{deflektometrische Registrierung} \acrshort{lr} in zwei A
 \end{Satz}
 
 \noindent
-Die deflektometrische Registrierung kann aus der Beobachtung des Monitors durch die Kamera aufgestellt werden.
-Wird der Monitor indirekt über eine spiegelnde Oberfläche beobachtet, können aus der deflektometrischen Registrierung Krümmungsmerkmale der spiegelnden Oberfläche bestimmt werden.
-Durch die Kalibrierung der Positionen der Systemkomponenten können mittels der deflektometrischen Registrierung Höheninformationen über die Oberfläche gewonnen werden.
-Der zugehörige Ansatz wurde im Abschnitt \ref{sec:rekonstruktion} bereits beschrieben.
+Zur Aufstellung der deflektometrischen Registrierung muss die Oberfläche über den Bildschirm kodiert werden, anschließend durch die Kamera aufgenommen und zum Schluss das aufgenommene Bild dekodiert werden (siehe Abschnitt \ref{sec:rekonstruktion}).
+Aus der deflektometrischen Registrierung können dann Krümmungsmerkmale der spiegelnden Oberfläche bestimmt werden.
+Durch die Kalibrierung der Positionen der Systemkomponenten können mittels der deflektometrischen Registrierung auch Höheninformationen über die Oberfläche gewonnen werden (siehe Abschnitt \ref{sub:rekonstruktionUndRegularisierungsproblem}).
 
 %Bestimmung der deflektometrischen Registrierung
 {
