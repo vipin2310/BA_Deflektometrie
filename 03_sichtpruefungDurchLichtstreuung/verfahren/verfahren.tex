@@ -1,7 +1,7 @@
 Es soll ein Verfahren beschrieben werden, dass es ermöglicht, Kratzer und ähnliche Defekte mittels Methoden aus der Deflektometrie sichtbar zu machen.
 Man nutzt die abweichende Lichtstreuung an Kratzern und anderen Oberflächenbeschädigungen im Gegensatz zur idealen Oberfläche des Objekts.
 Das beschriebene Verfahren lässt sich mit geeigneter Anpassung des Versuchsaufbaus auch auf spiegelnde Oberflächen anwenden.
-Dabei gilt zu beachten, dass Spiegelbilder anstelle von Bildern der Durchlichtprojektionen ausgewertet werden.
+Dabei gilt es zu beachten, dass Spiegelbilder anstelle von Bildern der Durchlichtprojektionen ausgewertet werden.
 
 \begin{figure}[H]
 	\centering
@@ -12,9 +12,10 @@ Dabei gilt zu beachten, dass Spiegelbilder anstelle von Bildern der Durchlichtpr
 
 \noindent
 In Abbildung \ref{img:lightreflection} wird schematisch die Überlegung hinter dem Ansatz dargestellt.
-Man nimmt ein Streifenmuster und projiziert dieses auf ein spiegelndes Prüfobjekt.
-Für ein transparentes Prüfobjekt kann man das Streifenmuster als Durchlichtbeleuchtung von unten projizieren.
-Mit der Kamera wird schließlich eben dieses projizierte Muster aufgenommen.
+Man nimmt ein Streifenmuster und projiziert dieses auf ein Prüfobjekt.
+Für spiegelnde transparente Prüfobjekt kann man das Streifenmuster als Durchlichtbeleuchtung von unten projizieren um den Rückseitenreflex (siehe Abschnitt \ref{sec:spiegelndeOberflaechen}) zu verhindern.
+Im Falle von spiegelnden Prüfobjekten projiziert man das Muster von oben auf das Prüfobjekt (vgl. auch den Aufbau im Abschnitt \ref{sec:rekonstruktion}).
+Mit der Kamera wird schließlich dieses projizierte Muster aufgenommen.
 Dabei fällt an den Hell-Dunkelübergängen Licht vom hellen Streifen in den Kratzer.
 Durch den Kratzer werden manche Lichtstrahlen so gestreut, dass diese an der Stelle des dunklen Streifens in den Kamerasensor gelangen (siehe roten Lichtstrahl in Abbildung \ref{img:lightreflection}).
 Man erkennt im Kamerabild eine lokale Fehlstelle, da der Kratzer heller ist als der umliegende dunkle Streifen.
@@ -38,15 +39,24 @@ Je ausgeprägter die Beschädigung in der Oberfläche ist, desto mehr Licht wird
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{03_sichtpruefungDurchLichtstreuung/verfahren/figures/minorScratch}
-	\caption[Eingravierung im Glas]{Schlecht erkennbare Eingravierung im Glas, nach Verschiebung des Streifenmusters.}
+	\includegraphics[frame,width=0.5\textwidth]{03_sichtpruefungDurchLichtstreuung/verfahren/figures/minorScratch}
+	\caption[Eingravierung im Glas]{Schlecht erkennbare Eingravierung im Glas.}
 	\label{img:engraving}
 \end{figure}
 
 \noindent
 In Abbildung \ref{img:engraving} stellt man fest, dass kleine Defekte der Oberflächenstruktur, wie hier z. B. die Eingravierung, nur zum Teil und besonders in der Nähe der Übergänge zu erkennen sind.
+Nach Verschiebung des Streifenmusters ist die Eingravierung, die sich im roten Rechteck in Abbildung \ref{img:engraving} befindet, nicht länger erkennbar.
+Zur Demonstration wurde hierfür das rote Rechteck aus Abbildung \ref{img:engraving} an dieselbe Stelle in Abbildung \ref{img:verschiebungEngraving} übertragen.
 
-\p
+\begin{figure}[H]
+	\centering
+	\includegraphics[frame,width=0.5\textwidth]{03_sichtpruefungDurchLichtstreuung/verfahren/figures/minorScratchTwo}
+	\caption[Eingravierung im Glas nach Verschiebung des Streifenmusters]{Nicht erkennbare Eingravierung im Glas, nach Verschiebung des Streifenmusters unter dem Prüfobjekt (siehe rotes Rechteck, vgl. Abbildung \ref{img:engraving}).}
+	\label{img:verschiebungEngraving}
+\end{figure}
+
+\noindent
 Daraus lassen sich bestimmte Folgerungen ziehen.
 Zunächst decken solche Streifenmuster nur unmittelbar an den Übergängen zuverlässig Defekte auf.
 Das bedeutet, um Defekte an bestimmten Stellen zu erfassen, muss das verwendete Streifenmuster an den Stellen Übergänge haben.

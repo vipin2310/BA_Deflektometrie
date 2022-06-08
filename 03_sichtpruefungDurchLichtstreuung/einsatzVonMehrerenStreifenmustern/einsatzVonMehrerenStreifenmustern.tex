@@ -51,15 +51,24 @@ Mithilfe der Einheitsrechteckschwingung aus Gleichung \ref{eq:einheitsrechtecksc
 Das Streifenmuster aus Gleichung \ref{eq:rstreifenmuster} ist durch die Periodizität der Einheitsrechteckschwingung auch periodisch zur Ausbreitungsrichtung.
 $A_m$ bezeichnet die Amplitude, $f$ die Frequenz, $N_p$ die Anzahl der Perioden über die Monitorbreite \acrshort{lwidth}, $N_{shift}$ die Anzahl der Phasenverschiebungen und $\psi_k$ die Phasenverschiebung des $k$-ten Musters.
 Analog zu Gleichung \ref{eq:rstreifenmuster} lassen sich auch Streifenmuster mit Ausbreitungsrichtung in $y$ über die Monitorhöhe \acrshort{lheight} schreiben.
-Das Bild eines vertikalen Streifenmusters, d. h. mit Ausbreitungsrichtung in $x$, nach Gleichung \ref{eq:rstreifenmuster} wird in Abbildung \ref{img:rechteckStreifenmuster} dargestellt.
-%
-\begin{figure}[H]
-	\centering
-	\includegraphics[frame,width=0.5\textwidth]{03_sichtpruefungDurchLichtstreuung/einsatzVonMehrerenStreifenmustern/figures/rechteckStreifenmuster}
-	\caption[Rechteckförmiges Streifenmuster]{Streifenmuster nach Gleichung \ref{eq:rstreifenmuster}, mit $A_m = 127.5$, $N_p = 6$, $\acrshortmath{lwidth} = 384$ und $\psi_0 = 0$. Die Breite der Streifen betragen jeweils 32 Pixel.}
-	\label{img:rechteckStreifenmuster}
-\end{figure}
+Das Bild eines vertikalen Streifenmusters, d. h. mit Ausbreitungsrichtung in $x$, nach Gleichung \ref{eq:rstreifenmuster} wird in Abbildung \ref{tikz:abbRechteckStreifenmuster} dargestellt.
 
+% Abbildung: Rechteck Streifenmuster
+{
+	\begin{figure}[H]
+		\centering
+		\input{03_sichtpruefungDurchLichtstreuung/einsatzVonMehrerenStreifenmustern/figures/abbRechteckStreifenmuster}
+		\label{tikz:abbRechteckStreifenmuster}
+	\end{figure}
+}
+%
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[frame,width=0.5\textwidth]{03_sichtpruefungDurchLichtstreuung/einsatzVonMehrerenStreifenmustern/figures/rechteckStreifenmuster}
+%	\caption[Rechteckförmiges Streifenmuster]{Streifenmuster nach Gleichung \ref{eq:rstreifenmuster}, mit $A_m = 127.5$, $N_p = 6$, $\acrshortmath{lwidth} = 384$ und $\psi_0 = 0$. Die Breite der Streifen betragen jeweils 32 Pixel.}
+%	\label{img:rechteckStreifenmuster}
+%\end{figure}
+%
 \noindent
 Die verschiedenen Streifenmuster $m_k$ können nach Gleichung \ref{eq:rstreifenmuster} als zueinander phasenverschoben bezeichnet werden.
 Die Phasenverschiebung $\psi_k$ wird durch einen Phasenwinkel im Bogenmaß angegeben.
@@ -79,14 +88,22 @@ Durch zusätzliche Bildaufnahmen mit verschobenen Streifenmustern kann man detai
 
 \noindent
 Wie man erkennt, sind die Streifen der beiden Bilder genau zueinander versetzt.
-Die Auffälligkeiten in den Bildern z. B. Eingravierungen sind oft entweder im dunklen oder im hellen Streifen zu erkennen.
+Die Auffälligkeiten in den Bildern wie z. B. Eingravierungen sind oft entweder im dunklen oder im hellen Streifen zu erkennen.
 Durch den Unterschied zum Streifenhintergrund erfasst man gewisse Oberflächeninformation des Prüfobjekts.
 Das heißt, dass die beiden Bilder sich durch den Versatz in ihrer Oberflächeninformation ergänzen.
 Zur Verknüpfung der Information in einem Gesamtbild überlegt man sich, wie bestimmte Defekte in den beiden Bildern aussehen.
-Dabei fällt auf, dass sich Defekt- bzw. Fehlstellen in zwei Fällen abzeichnen (vgl. Abbildung \ref{img:imageToLink}).
+Die Defekt- und Fehlstellen werden in zwei Fälle unterteilt (siehe Abbildung \ref{img:imageToLinkWithMarkings}).
 
-\p
-\textbf{Fall 1: z. B. Kratzer}
+%TODO Tikz-Picture und Beschriftung derTeilbilder (Muster m1, Muster m2)
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{03_sichtpruefungDurchLichtstreuung/einsatzVonMehrerenStreifenmustern/figures/imageToLinkWithMarkings}
+	\caption[Markierte Fehlstellen]{Kameraaufnahme eines Prüfobjekts mit Fehlstellen und deren Kennzeichnung.}
+	\label{img:imageToLinkWithMarkings}
+\end{figure}
+
+\noindent
+\textbf{Fall 1: z. B. Kratzer (siehe rotes Rechteck in Abbildung \ref{img:imageToLinkWithMarkings})}
 \nopagebreak
 \par\medskip\noindent
 \begin{tabular}{@{} p{0.438888889\textwidth} c p{0.438888889\textwidth} @{}}
@@ -95,7 +112,7 @@ $Muster ~m_1$ &  & $Muster ~m_2$ \\
 \end{tabular}
 
 \p
-\textbf{Fall 2: z. B. Partikel}
+\textbf{Fall 2: z. B. Partikel (siehe grünes Rechteck in Abbildung \ref{img:imageToLinkWithMarkings})}
 \nopagebreak
 \par\medskip\noindent
 \begin{tabular}{@{} p{0.438888889\textwidth} c p{0.438888889\textwidth} @{}}
