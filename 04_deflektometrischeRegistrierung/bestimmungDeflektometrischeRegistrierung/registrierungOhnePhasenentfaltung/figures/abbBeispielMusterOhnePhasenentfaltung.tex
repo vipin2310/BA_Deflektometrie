@@ -1,0 +1,16 @@
+\begin{adjustbox}{width=\textwidth}
+	\begin{tikzpicture}[every node/.style={inner sep=0,outer sep=0}]
+	
+		\node [anchor=north east] (img1) at (-0.03\textwidth,0) {\includegraphics[frame,width=.47\textwidth]{04_deflektometrischeRegistrierung/bestimmungDeflektometrischeRegistrierung/registrierungOhnePhasenentfaltung/figures/m_0_fullC_fullA}};
+		\node [below=0.2cm of img1, align=center] (cap1) {Muster mit $A_m = 127.5$, $C_m = 1.0$, \\$\acrshortmath{lwidth} = 384$, $N_{shift} = 4$, $k = 1 \Rightarrow \psi_1 = 0$};
+		\node [anchor=north west] (img2) at (0.03\textwidth,0) {\includegraphics[frame,width=.47\textwidth]{04_deflektometrischeRegistrierung/bestimmungDeflektometrischeRegistrierung/registrierungOhnePhasenentfaltung/figures/m_1_fullC_fullA}};
+		\node [below=0.2cm of img2, align=center] (cap2) {Muster mit $A_m = 127.5$, $C_m = 1.0$, \\$\acrshortmath{lwidth} = 384$, $N_{shift} = 4$, $k = 2 \Rightarrow \psi_2 = \tfrac{\pi}{2}$};
+		
+		\node [below=1.5cm of img1.south east, anchor=north east] (img3) {\includegraphics[frame,width=.47\textwidth]{04_deflektometrischeRegistrierung/bestimmungDeflektometrischeRegistrierung/registrierungOhnePhasenentfaltung/figures/m_0_halfC_fullA}};
+		\node [below=0.2cm of img3, align=center] {Muster mit $A_m = 127.5$, $C_m = 0.5$, \\$\acrshortmath{lwidth} = 384$, $N_{shift} = 4$, $k = 1 \Rightarrow \psi_1 = 0$};
+		\node [below=1.5cm of img2.south west, anchor=north west] (img4) {\includegraphics[frame,width=.47\textwidth]{04_deflektometrischeRegistrierung/bestimmungDeflektometrischeRegistrierung/registrierungOhnePhasenentfaltung/figures/m_0_fullC_halfA}};
+		\node [below=0.2cm of img4, align=center] {Muster mit $A_m = 63.75$, $C_m = 1.0$, \\$\acrshortmath{lwidth} = 384$, $N_{shift} = 4$, $k = 1 \Rightarrow \psi_1 = 0$};
+		
+	\end{tikzpicture}
+\end{adjustbox}
+\caption[Muster mit einer Periode zur Phasenkodierung]{Muster nach Gleichung \ref{eq:monitormuster} mit unterschiedlichen Parametern für die Amplitude, den Kontrast und die Phasenverschiebung}

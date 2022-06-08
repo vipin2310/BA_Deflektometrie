@@ -25,7 +25,19 @@ Das $k$-te Muster $m_k$ zur Kodierung der Monitorpunkte wird durch eine Kosinusf
 \end{equation}
 %
 $A_m$ bezeichnet die Amplitude, $C_m$ den Kontrast, $\psi_k$ die Phasenverschiebung des $k$-ten Musters und $N_{shift}$ die Anzahl der Muster für das Phasenschiebeverfahren.
-Das Muster wird auf dem Monitor angezeigt und über eine spiegelnde Oberfläche durch die Kamera beobachtet.
+Abbildung \ref{tikz:abbBeispielMusterOhnePhasenentfaltung} zeigt den Einfluss der verschiedenen Parameter aus Gleichung \ref{eq:monitormuster} auf die erzeugten Muster.
+
+% Abbildung: Beispiel Muster
+{
+	\begin{figure}[H]
+		\centering
+		\input{04_deflektometrischeRegistrierung/bestimmungDeflektometrischeRegistrierung/registrierungOhnePhasenentfaltung/figures/abbBeispielMusterOhnePhasenentfaltung}
+		\label{tikz:abbBeispielMusterOhnePhasenentfaltung}
+	\end{figure}
+}
+
+\noindent
+Die erzeugten Muster werden nacheinander auf dem Monitor angezeigt und über eine spiegelnde Oberfläche durch die Kamera beobachtet.
 Durch die Reflexion an der Oberfläche trifft der Sichtstrahl ausgehend vom Bildpunkt $(x_B, y_B)^\top \in A_{Cam}$ den Monitor im Punkt $(x_L, y_L)^\top \in L \cup \varnothing$, welcher durch die Abbildung aus Definition \ref{def:deflektometrischeRegistrierung} beschrieben werden kann:
 %
 \begin{equation}
@@ -71,7 +83,7 @@ Durch Einsetzen der Phase aus Gleichung \ref{eq:phaseBildkoordinaten} in die Gle
 	g_k(x_B, y_B) = A_g(x_B, y_B) \left(1 + C_g(x_B, y_B) \cos \left(\phi_x(x_B, y_B) + \psi_k\right)\right)
 \end{equation}
 %
-Unter Einbeziehung der $N_{shift}$-vielen phasenverschobenen Streifenmuster kann man die Phase $\phi_x$ berechnen \cite{kit_werling}:
+Unter Einbeziehung der $N_{shift}$-vielen phasenverschobenen Streifenmuster kann man die Phase $\phi_x$ durch ein Phasenschiebeverfahren bzw. Carré-Verfahren berechnen \cite{carre}\cite{kit_werling}:
 %
 \begin{equation}\label{eq:tanPhase}
 	\tan (\phi_x) = -\dfrac{\sum\limits_{k=1}^{N_{shift}} g_k(x_B, y_B) sin(\psi_k)}{\sum\limits_{k=1}^{N_{shift}} g_k(x_B, y_B) cos(\psi_k)}
