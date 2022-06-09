@@ -1,6 +1,6 @@
-Das erzeugte Streifenmuster in Abbildung \ref{img:differenceCamPat} hat nicht mehr den Grauwerteverlauf einer Rechteckschwingung (vgl. Abbildung \ref{tikz:abbRechteckschwingung}) entlang der Ausbreitungsrichtung.
+Das erzeugte Streifenmuster in Abbildung \ref{img:differenceCamPat} hat nicht mehr den Grauwertverlauf einer Rechteckschwingung (vgl. Abbildung \ref{tikz:abbRechteckschwingung}) entlang der Ausbreitungsrichtung.
 Dadurch lässt sich das Streifenmuster nicht mehr in der Form aus Gleichung \ref{eq:rstreifenmuster} darstellen.
-Der Grauwerteverlauf in einer Zeile bzw. Spalte eines solchen Streifenmusters entspricht einer Impulsschwingung (siehe Abbildung \ref{tikz:abbPulsewave}).
+Der Grauwertverlauf in einer Zeile bzw. Spalte eines solchen Streifenmusters entspricht einer Impulsschwingung (siehe Abbildung \ref{tikz:abbPulsewave}).
 %
 % Abbildung: Pulswave
 {
@@ -38,7 +38,7 @@ Mit $T = 3$ erhält man folgendes Schaubild (siehe Abbildung \ref{tikz:abbsaegez
 }
 %
 \noindent
-Bildet man die Differenz von zwei zueinander versetzten Sägezahnfunktionen, erhält man die Impulsschwingung $p_{f,D}(t)$:
+Bildet man die Differenz von zwei zueinander um $\tfrac{D}{f}$  in $t$-Richtung versetzten Sä\-ge\-zahn\-funk\-ti\-onen, erhält man die Impulsschwingung $p_{f,D}(t)$:
 %
 \begin{equation} \label{eq:pulsewave}
 	p_{f,D}(t) = w_f(t - \dfrac{D}{f}) - w_f(t) - w_f(- \dfrac{D}{f}),
@@ -48,6 +48,12 @@ Bildet man die Differenz von zwei zueinander versetzten Sägezahnfunktionen, erh
 %
 \noindent
 $D$ wird Tastgrad (\textit{engl: duty cycle}) genannt und bezeichnet die Impulsdauer der Impulsschwingung im Verhältnis zur Periodenlänge $T$.
+Auch für die Impulsschwingung gilt der Zusammenhang zwischen der Frequenz $f$ und der Periodendauer $T$ wie für die Sä\-ge\-zahn\-schwin\-gung:
+%
+\begin{equation*}
+	f = \dfrac{1}{T}
+\end{equation*}
+%
 Somit erhält man mit $D = \tfrac{1}{2}$ eine Rechteckschwingung wie auch in Abbildung \ref{tikz:abbRechteckschwingung}.
 Ein Schaubild der Gleichung \ref{eq:pulsewave} wird in Abbildung \ref{tikz:abbNormalPulsewave} dargestellt.
 %
@@ -82,11 +88,13 @@ Auch hier bezeichnet $A_m$ die Amplitude, $N_p$ die Anzahl der Perioden über di
 Zusätzlich zu diesen Parametern hat man den Tastgrad $D$, der in diesem Fall die Breite der hellen Streifen im Verhältnis zu der Periodenlänge $T$ angibt.
 Die Periodenlänge $T$ ist im Streifenmuster die Summe der Breite eines einzelnen dunklen und eines einzelnen hellen Streifens.
 Analog zu Gleichung \ref{eq:impulsStreifenmuster} lässt sich auch ein horizontales Streifenmuster mit Ausbreitungsrichtung in $y$ über die Monitorhöhe \acrshort{lheight} aufschreiben.
-Das Bild eines vertikalen Streifenmusters, d. h. mit Ausbreitungsrichtung in $x$, nach Gleichung \ref{eq:impulsStreifenmuster} wird in Abbildung \ref{img:impulsschwingungStreifenmuster} dargestellt.
+Das Bild eines horizontalen Streifenmusters, d. h. mit Ausbreitungsrichtung in $y$, nach Gleichung \ref{eq:impulsStreifenmuster} wird in Abbildung \ref{tikz:abbImpulsStreifenmuster} dargestellt.
 %
-\begin{figure}[H]
-	\centering
-	\includegraphics[frame,width=0.5\textwidth]{03_sichtpruefungDurchLichtstreuung/optimierungen/musterMitUnterschiedlichenStreifenbreiten/figures/impulsschwingungStreifenmuster}
-	\caption[Rechteckförmiges Streifenmuster]{Streifenmuster nach Gleichung \ref{eq:rstreifenmuster}, mit $A_m = 127.5$, $N_p = 6$, $\acrshortmath{lwidth} = 384$, $D = \tfrac{1}{4}$ und $\psi_1 = 0$. Die hellen Streifen haben damit eine Breite von 16 Pixeln und die dunklen Streifen eine Breite von 48 Pixeln.}
-	\label{img:impulsschwingungStreifenmuster}
-\end{figure}
+% Abbildung: Impuls-Streifenmuster
+{
+	\begin{figure}[H]
+		\centering
+		\input{03_sichtpruefungDurchLichtstreuung/optimierungen/musterMitUnterschiedlichenStreifenbreiten/figures/abbImpulsStreifenmuster}
+		\label{tikz:abbImpulsStreifenmuster}
+	\end{figure}
+}

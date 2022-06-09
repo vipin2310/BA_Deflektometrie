@@ -62,13 +62,6 @@ Das Bild eines vertikalen Streifenmusters, d. h. mit Ausbreitungsrichtung in $x$
 	\end{figure}
 }
 %
-%\begin{figure}[H]
-%	\centering
-%	\includegraphics[frame,width=0.5\textwidth]{03_sichtpruefungDurchLichtstreuung/einsatzVonMehrerenStreifenmustern/figures/rechteckStreifenmuster}
-%	\caption[Rechteckförmiges Streifenmuster]{Streifenmuster nach Gleichung \ref{eq:rstreifenmuster}, mit $A_m = 127.5$, $N_p = 6$, $\acrshortmath{lwidth} = 384$ und $\psi_0 = 0$. Die Breite der Streifen betragen jeweils 32 Pixel.}
-%	\label{img:rechteckStreifenmuster}
-%\end{figure}
-%
 \noindent
 Die verschiedenen Streifenmuster $m_k$ können nach Gleichung \ref{eq:rstreifenmuster} als zueinander phasenverschoben bezeichnet werden.
 Die Phasenverschiebung $\psi_k$ wird durch einen Phasenwinkel im Bogenmaß angegeben.
@@ -94,36 +87,35 @@ Das heißt, dass die beiden Bilder sich durch den Versatz in ihrer Oberflächeni
 Zur Verknüpfung der Information in einem Gesamtbild überlegt man sich, wie bestimmte Defekte in den beiden Bildern aussehen.
 Die Defekt- und Fehlstellen werden in zwei Fälle unterteilt (siehe Abbildung \ref{img:imageToLinkWithMarkings}).
 
-%TODO Tikz-Picture und Beschriftung derTeilbilder (Muster m1, Muster m2)
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{03_sichtpruefungDurchLichtstreuung/einsatzVonMehrerenStreifenmustern/figures/imageToLinkWithMarkings}
-	\caption[Markierte Fehlstellen]{Kameraaufnahme eines Prüfobjekts mit Fehlstellen und deren Kennzeichnung.}
+	\caption[Markierte Fehlstellen]{Kameraaufnahme eines Prüfobjekts mit Fehlstellen und deren Kennzeichnung. Im linken Teilbild Aufnahme des Musters $m_1$. Im rechten Teilbild Aufnahme des Musters $m_2$.}
 	\label{img:imageToLinkWithMarkings}
 \end{figure}
 
 \noindent
-\textbf{Fall 1: z. B. Kratzer (siehe rotes Rechteck in Abbildung \ref{img:imageToLinkWithMarkings})}
+\textbf{Fall 1: z. B. Kratzer (siehe rote Rechtecke in Abbildung \ref{img:imageToLinkWithMarkings})}
 \nopagebreak
 \par\medskip\noindent
 \begin{tabular}{@{} p{0.438888889\textwidth} c p{0.438888889\textwidth} @{}}
-$Muster ~m_1$ &  & $Muster ~m_2$ \\ 
+	Aufnahme von Muster $m_1$ &  & Aufnahme von Muster $m_2$ \\ 
 	Helle Fragmente in dunklen Streifen & $ \longleftrightarrow $ & Helle Fragmente in hellen Streifen \\ 
 \end{tabular}
 
 \p
-\textbf{Fall 2: z. B. Partikel (siehe grünes Rechteck in Abbildung \ref{img:imageToLinkWithMarkings})}
+\textbf{Fall 2: z. B. Partikel (siehe grüne Rechtecke in Abbildung \ref{img:imageToLinkWithMarkings})}
 \nopagebreak
 \par\medskip\noindent
 \begin{tabular}{@{} p{0.438888889\textwidth} c p{0.438888889\textwidth} @{}}
-	$Muster ~m_1$ &  & $Muster ~m_2$ \\ 
+	Aufnahme von Muster $m_1$ &  & Aufnahme von Muster $m_2$ \\ 
 	Dunkle Fragmente in hellen Streifen & $ \longleftrightarrow $ & Dunkle Fragmente in dunklen Streifen \\ 
 \end{tabular}
 
 \p
-Das Muster $m_1$ und das Muster $m_2$ sind Streifenmuster, die zueinander um $ \pi $ phasenverschoben sind.
+Die Muster $m_1$ und $m_2$ sind Streifenmuster, die zueinander um $ \pi $ phasenverschoben sind.
 Für eine Verknüpfung von Bildern errechnet man ein neues Bild, indem man zwei Bilder punktweise zusammen verrechnet.
-Das bedeutet, um für das Ergebnisbild den Bildpunkt an der Stelle $ (x,y) $ zu berechnen, nimmt man sich die beiden Bildpunkte der Eingangsbilder an derselben Stelle $ (x,y) $.
+Das bedeutet, um für das Ergebnisbild den Grauwert an der Stelle $ (x,y) $ zu berechnen, verknüpft man die beiden Grauwerte der Eingangsbilder an derselben Stelle $ (x,y) $.
 Daraus folgt auch, dass die zu verrechnenden Bilder dieselbe Größe haben müssen.
 Diese Bedingung ist hier durch dieselben Kameraeinstellungen gegeben.
 
