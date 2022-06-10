@@ -1,0 +1,33 @@
+Als Alternative zur Phasenkodierung kann man die Sinus-Funktion auch nutzen um die Ortskoordinaten des Bildschirms über Frequenzen zu kodieren.
+Hierfür eignet sich die Darstellung der Koordinaten in der Polarform.
+%
+\begin{equation*}
+	\left(x,y\right) \mapsto \left(r,\phi\right)
+\end{equation*}
+%
+Wenn man im Folgenden den Radius $r$ einer speziellen Frequenz und die Phase $\phi$ als Phasenverschiebung einer Sinus-Funktion zuweist, erhält man zeitabhängige Muster.
+So könnte zum Beispiel durch
+%
+\begin{equation*}
+	f_t \left(r,\phi\right) = 1 + \sin \left(2 \pi r t + \phi \right)
+\end{equation*}
+%
+die Kodierung der Szene in Abhängigkeit der Zeit $t$ angegeben sein.
+In Abbildung \ref{tikz:abbFrequenzkodierteMuster} wird eine Kodierung dieser Art zu bestimmten Zeitpunkten abgebildet.
+%
+\begin{figure}[H]
+	\centering
+	\input{02_grundlagenDerDeflektometrie/rekonstruktion/frequenzKodierung/figures/abbFrequenzkodierteMuster}
+	\label{tikz:abbFrequenzkodierteMuster}
+\end{figure}
+%
+\noindent
+Zur Dekodierung muss hier über eine gewisse Zeit die Frequenz der einzelnen Bildpunkte gemessen werden.
+Zusätzlich muss der Phasenwinkel bestimmt werden.
+Dafür kann ein ähnliches Verfahren wie auch bei der Bestimmung der Phase im vorhergehenden Abschnitt \ref{sub:phasenKodierung} eingesetzt werden.
+Zur Optimierung des Rechenaufwands ist es auch möglich, jeder Ortskoordinate eine eigene Frequenz zuzuweisen, damit man sich die Bestimmung der Phase sparen kann.
+
+\p
+Da in diesem Kodierverfahren nicht mehr die Grauwerte des Bildes selbst den Ort kodieren, ist es unempfindlich gegenüber Nichtlinearitäten in den Anzeige- oder Aufnahmefarben.
+Außerdem lassen sich mehrere Signale überlagern und genau durch die Frequenz trennen.
+Ein großer Nachteil im Vergleich zur Phasenkodierung ist allerdings die lange Messzeit der Frequenz \cite{jenaerOK}.
