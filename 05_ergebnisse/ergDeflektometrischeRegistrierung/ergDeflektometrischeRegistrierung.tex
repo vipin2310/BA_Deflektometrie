@@ -1,9 +1,10 @@
 Das Verfahren zur Bestimmung der \glqq deflektometrischen Registrierung\grqq ~wurde in Kapitel \ref{chp:deflektometrischeRegistrierung} eingeführt und bestimmt eine Zuordnung zwischen Bildschirm- und Kamerapunkten.
 Nach Abschnitt \ref{sec:auswertungDeflektometrischeRegistrierung} lässt sich diese Zuordnung auswerten und als Bilder darstellen.
+%TODO mehr Allgemeines über das Verfahren? -> Ich denke nicht nötig
+Die Parameter zur Erzeugung der Muster nach Gleichung \ref{eq:monitormuster_mehrstufig} können in Tabelle \ref{tab:paramSichtpruefung} abgelesen werden.
 
 \begin{table}[H]
 	\centering
-	\label{tab:paramDeflektometrischRegistrierung}
 	\begin{tabular}{lll}
 	\hline 
 	\textbf{Beschreibung} & \textbf{Name} & \textbf{Wert} \\ 
@@ -13,10 +14,16 @@ Nach Abschnitt \ref{sec:auswertungDeflektometrischeRegistrierung} lässt sich di
 	Anzahl Perioden des ersten Muster & $N_p^1$ & 3 \\ 
 	Anzahl Perioden des zweiten Muster & $N_p^2$ & 5 \\ 
 	Anzahl Perioden des dritten Muster & $N_p^3$ & 7 \\  
-	Anzahl Phasenverschiebungen jedes Musters & $N_{shift}$ & 16 \\ 
+	Anzahl Phasenverschiebungen jedes Musters & $N_{shift}$ & 4 \\ 
 	Bildschirmbreite (in Pixel) & \acrshort{lwidth} & 1920 \\
 	Bildschirmhöhe (in Pixel) & \acrshort{lheight} & 1080 \\
 	\hline 
 	\end{tabular} 
 	\caption{Parameter des Verfahrens}
+	\label{tab:paramDeflektometrischRegistrierung}
 \end{table}
+
+\noindent
+Durch diese Parameter erhält man eine Sequenz aus 12 Mustern die auf einem LCD-Bildschirm angezeigt und anschließend durch eine Kamera aufgenommen werden können.
+Zur Kodierung der Oberfläche werden insgesamt 256 Helligkeitsstufen auf die Oberfläche abgebildet.
+Zur Verbesserung der Ergebnisse werden die verwendeten Aufbauten durch geeignete Abschirmungen vor Fremdlicht geschützt.

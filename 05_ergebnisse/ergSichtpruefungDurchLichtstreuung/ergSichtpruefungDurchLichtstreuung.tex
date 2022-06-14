@@ -1,8 +1,9 @@
-Das Verfahren \glqq Sichtprüfung durch Lichtstreuung\grqq ~wurde in Kapitel \ref{chp:sichtpruefungDurchLichtstreuung} eingeführt und lässt kleine Defekte auf spiegelnden Oberflächen sichtbar werden.
+Das Verfahren \glqq Sichtprüfung durch Lichtstreuung\grqq ~wurde in Kapitel \ref{chp:sichtpruefungDurchLichtstreuung} eingeführt und lässt insbesondere kleine Defekte auf spiegelnden Oberflächen sichtbar werden.
+%TODO mehr Allgemeines über das Verfahren? -> Ich denke nicht nötig
+Die Parameter zur Erzeugung der Muster nach Gleichung \ref{eq:impulsStreifenmuster} können in Tabelle \ref{tab:paramSichtpruefung} abgelesen werden.
 
 \begin{table}[H]
 	\centering
-	\label{tab:paramSichtpruefung}
 	\begin{tabular}{lll}
 		\hline 
 		\textbf{Beschreibung} & \textbf{Name} & \textbf{Wert} \\ 
@@ -10,10 +11,33 @@ Das Verfahren \glqq Sichtprüfung durch Lichtstreuung\grqq ~wurde in Kapitel \re
 		Tastgrad (beeinflusst die Streifenbreiten) & $D$ & $\tfrac{2}{5}$ \\ 
 		Amplitude (beeinflusst die Helligkeit) & $A_m$ & 127.5 \\ 
 		Kontrast & $C_m$ & 1.0 \\ 
+		Anzahl Perioden des Musters & $N_p$ & 128 \\
 		Anzahl Phasenverschiebungen & $N_{shift}$ & 16 \\ 
 		Bildschirmbreite (in Pixel) & \acrshort{lwidth} & 1920 \\
 		Bildschirmhöhe (in Pixel) & \acrshort{lheight} & 1080 \\ 
 		\hline 
 	\end{tabular}
 	\caption{Parameter des Verfahrens}
+	\label{tab:paramSichtpruefung}
 \end{table}
+
+\noindent
+Durch diese Parameter erhält man eine Sequenz aus 16 Mustern die auf einem LCD-Bildschirm angezeigt und anschließend durch eine Kamera aufgenommen werden können.
+Zur Kodierung der Oberfläche werden insgesamt 256 Helligkeitsstufen auf die Oberfläche abgebildet.
+Zur Verbesserung der Ergebnisse werden die verwendeten Aufbauten durch geeignete Abschirmungen vor Fremdlicht geschützt.
+
+% Durchlichtauswertung
+{
+	\FloatBarrier
+    \subsection{Durchlichtauswertung}
+    \label{sub:durchlichtAuswertungLichtstreuung}
+    \input{05_ergebnisse/ergSichtpruefungDurchLichtstreuung/durchlichtAuswertungLichtstreuung/durchlichtAuswertungLichtstreuung}
+}
+
+% Spiegelbildauswertung
+{
+	\FloatBarrier
+    \subsection{Spiegelbildauswertung}
+    \label{sub:spiegelbildAuswertungLichtstreuung}
+    \input{05_ergebnisse/ergSichtpruefungDurchLichtstreuung/spiegelbildAuswertungLichtstreuung/spiegelbildAuswertungLichtstreuung}
+}

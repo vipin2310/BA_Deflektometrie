@@ -1,6 +1,30 @@
 Dieses Kapitel beschäftigt sich mit der Analyse und der Bewertung von den eingeführten Verfahren aus den Kapiteln \ref{chp:sichtpruefungDurchLichtstreuung} und \ref{chp:deflektometrischeRegistrierung} zur Auswertung von Oberflächeninformationen spiegelnder Prüfobjekte.
 Im Anschluss an der Beschreibung der Ergebnisse der einzelnen Verfahren soll eine Diskussion und ein direkter Vergleich anhand bestimmter Kriterien erfolgen.
 
+\p
+Die angegebenen Ergebnisse in diesem Abschnitt wurden auf einem Computer mit Intel(R) Core(TM) i5-7400 CPU @3.00GHz, 4 Kerne, 8GB Arbeitsspeicher, Intel(R) HD Graphics 630 und Microsoft Windows 10 Pro (10.0, Build 19044) erreicht.
+Die Implementierung der Verfahren erfolgte als Plug-in für die Software NeuroCheck (Version 6.2) in der Programmiersprache C\#.
+NeuroCheck ist ein Bildverarbeitungssystem zur Erstellung von Prüfprogrammen für die optische Qualitätssicherung.
+Nach einem Baukastenprinzip lassen sich Lösungen für individuelle Problemstellungen in den Bereichen der industriellen Bildverarbeitung entwickeln.
+Über das Plug-in Interface von NeuroCheck können selbst entworfene Funktionen in die Software integriert und mit einer Auswahl an Methoden weiterverarbeitet werden.
+
+% Abbildung: Fotos der verwendeten Aufbauten
+{
+	\begin{figure}[H]
+		\centering
+		\input{05_ergebnisse/figures/abbAufbauFotos}
+		\label{tikz:abbAufbauFotos}
+	\end{figure}
+}
+
+\noindent
+Abbildung \ref{tikz:abbAufbauFotos} zeigt die verwendeten Aufbauten um Bilder für die Verfahren zu erzeugen.
+Die Durchlichtauswertung eignet sich nur für transparente Prüfobjekte, während die Spiegelbildauswertung allgemein auf spiegelnde Prüfobjekte, also auch auf transparente Prüfobjekte, anwendbar ist.
+Die verwendete Kamera hat eine Auflösung von 500 x 370 Pixeln und nimmt nur die Helligkeitsstufen auf, d. h. es werden nur Graubilder verarbeitet.
+Bei den folgenden Aufnahmen gilt zu berücksichtigen, dass ein spezieller Polfilter fest auf der verwendeten Kamera angebracht ist.
+In den Aufnahmen ergibt sich dadurch stets eine diagonale Struktur.
+Die Objektive wurden an die jeweilige Szene angepasst um geeignete Bilder aufnehmen zu können.
+
 %Sichtprüfung durch Lichtstreuung
 {
 	\FloatBarrier
