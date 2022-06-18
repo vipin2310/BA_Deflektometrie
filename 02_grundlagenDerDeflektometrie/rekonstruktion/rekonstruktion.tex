@@ -17,9 +17,16 @@ Dies kann durch Strahlenverfolgungen erreicht werden.
 In Abbildung \ref{img:aufbau} lässt sich das über die in Rot eingezeichneten Vektoren erkennen.
 Die Schwierigkeit liegt in der eindeutigen Zuordnung zwischen der Szene und dem Spiegelbild.
 Hierfür gibt es verschiedene Ansätze, dies zu erreichen.
-Grundlegend ist dabei die Kodierung der Objektoberfläche, damit diese durch die Kamera aufgenommen werden kann.
+Grundlegend ist dabei die Kodierung der Objektoberfläche (siehe Definition \ref{def:kodierungOberflaeche}), damit diese durch die Kamera aufgenommen werden kann.
 Die Kamera digitalisiert dann die kodierte Oberfläche zu einem oder mehreren Bildern.
 Unter Berücksichtigung der Kodierung können die Bilder durch einen entsprechenden Softwarealgorithmus dekodiert werden und man erhält damit die Zuordnung zwischen der Szene und dem Spiegelbild (siehe Abbildung \ref{tikz:abbKodierungUndDekodierung}).
+%
+% Definition: Kodierung der Objektoberfläche
+\begin{Definition}{Kodierung der Objektoberfläche}{def:kodierungOberflaeche}
+	Die Abbildung einer oder mehrerer vordefinierter Szenen auf eine spiegelnde Oberfläche wird als \textit{Kodierung der Objektoberfläche} bezeichnet.
+	Das Ziel ist es dabei die Punkte aus der Szene eindeutig durch eine oder mehrere Aufnahmen der Oberfläche zu identifizieren.
+\end{Definition}
+%
 %
 % Abbildung: Kodierung und Dekodierung
 {
@@ -32,7 +39,7 @@ Unter Berücksichtigung der Kodierung können die Bilder durch einen entsprechen
 
 \noindent
 Die Art, wie man die Informationen in den digitalen Kanal überträgt, ist entscheidend für eine gute Zuordnung.
-Aus dem Grund wird sich in wissenschaftlichen Forschungsarbeiten einige Gedanken über die Kodierung der Objektoberfläche gemacht.
+Aus dem Grund werden sich in wissenschaftlichen Forschungsarbeiten einige Gedanken über die Kodierung der Objektoberfläche gemacht.
 Auf eine Auswahl von Möglichkeiten aus dem heutigen wissenschaftlichen Stand soll im Folgenden eingegangen werden.
 %
 % Phasenkodierung

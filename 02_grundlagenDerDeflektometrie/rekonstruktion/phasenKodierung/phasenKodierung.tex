@@ -1,6 +1,6 @@
-Die am weitest eingesetzte Kodiermethode in dem Kontext der Deflektometrie ist die Phasenkodierung.
-Diese Verfahren werden in dem Themengebiet der \glqq Phasenmessende Deflektometrie\grqq ~beschrieben.
-Dabei verwendet man Streifenmuster, die entlang der Ausbreitung der Streifen, den Grauwertverlauf einer trigonometrischen Funktion (z. B. Sinus- oder Kosinus-Funktion) annehmen.
+Die am häufigsten eingesetzte Kodiermethode im Kontext der Deflektometrie ist die Phasenkodierung.
+Dieser Ansatz wird im Themengebiet der \glqq Phasenmessende Deflektometrie\grqq ~beschrieben.
+Dabei verwendet man Streifenmuster die entlang der Ausbreitung der Streifen, den Grauwertverlauf einer trigonometrischen Funktion (z. B. Sinus- oder Kosinus-Funktion) annehmen.
 Solche Muster nennt man auch sinusoidale Streifenmuster.
 Die Szene bzw. der Monitor wird dabei über die Phase der Sinus-Funktion kodiert.
 Das heißt, jeder Punkt auf einem Monitor, angegeben durch eine $x$- und eine $y$-Koordinate, wird durch eine Phase $\phi_x$ in $x$-Richtung und eine Phase $\phi_y$ in $y$-Richtung kodiert.
@@ -18,7 +18,7 @@ Der Vorteil ist dabei die Kodierung durch die Grauwerte, die unabhängig von ben
 Zur Dekodierung müssen aus den Grauwerten zunächst die Phasen bestimmt werden.
 Dies funktioniert über ein sogenanntes Phasenschiebeverfahren \cite{carre}, bei dem weitere Bildaufnahmen mit Phasenverschiebungen der trigonometrischen Funktion vorgenommen werden.
 Durch die Periodizität der verwendeten trigonometrischen Funktion sind die bestimmten Phasen zunächst noch relativ zu den einzelnen Perioden angegeben.
-In einem weiteren Schritt muss eine sogenannte Phasenentfaltung bzw. ein \glqq Phase Unwrap\grqq ~durchgeführt werden (siehe auch Definition \ref{def:phasenentfaltung}), damit die absoluten Phasen $\left(\phi_x,\phi_y\right)$ bestimmt werden.
+In einem weiteren Schritt muss eine sogenannte Phasenentfaltung bzw. ein \glqq Phase Unwrap\grqq ~durchgeführt werden (siehe auch Definition \ref{def:phasenentfaltung}), damit die absoluten Phasen $\left(\phi_x,\phi_y\right)$ bestimmt werden können.
 Die Dekodierung über das \glqq Phase Unwrap\grqq ~erfolgt dabei durch die Verwendung von weiteren sinusoidalen Streifenmustern mit unterschiedlicher Frequenz.
 Diese Art der Kodierung erfordert deshalb weitere Bilder.
 Ein solches Verfahren wird im Kapitel \ref{sec:bestimmungDeflektometrischeRegistrierung} genauer beschrieben.
