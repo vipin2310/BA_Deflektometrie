@@ -64,11 +64,48 @@ Für die Spiegelbildauswertung durch Bestimmung der deflektometrischen Registrie
 }
 
 \noindent
-%TODO MACH DIE SCHEISSE FERTIG!!!
-%TODO Pro: Oberflächenbeschriftungen/-aufdrucke
-%TODO Pro: tatsächliche Krümmungsinformationen vorhanden
-%TODO Contra: Fremdlicheinwirkungen und ungewollte Reflexionen -> Übergang zu Rückseitenreflex
-%TODO Rückseitenreflex -> Zeige Beispielbild von deflektometrische Registrierung -> Übergang zu Rückseitenreflex bei Sichtprüfung mit Lichtstreuung
-%TODO Konkreter Vergleich der Ergebnisse (Ansprechen von Stabilität des Lichtstreuungsverfahren und Weiterverarbeitbarkeit)-> Empfehlungen des Verfahrens für die jeweilige Anwendung (mit Aufbauempfehlung)
-%TODO Aber: Laufzeit entscheidend für die Anwendung -> Zeige Laufzeitdiagramme
-%TODO Abschluss :D
+Ein großer Vorteil der Auswertung über die deflektometrische Registrierung ist die Unabhängigkeit von Oberflächenbeschriftungen oder -aufdrucken.
+Es ist also möglich Objekte mit verschiedenen Farben oder Lackierungen zu prüfen.
+Außerdem erhält man durch das Verfahren tatsächliche Krümmungsinformationen der Objektoberfläche die ausgewertet werden können.
+Eine Schwäche der deflektometrischen Registrierung ist die Empfindlichkeit gegenüber Fremdlichteinwirkungen oder störende Reflexionen, wie z. B. den Rückseitenreflex bei spiegelnden Objektoberflächen (siehe Abbildung \ref{tikz:abbRückseitenreflexRegistrierung}).
+
+% Abbildung: Rückseitenreflex Registrierung
+{
+	\begin{figure}[H]
+		\centering
+		\input{05_ergebnisse/ergDiskussion/figures/abbRückseitenreflexRegistrierung}
+		\label{tikz:abbRückseitenreflexRegistrierung}
+	\end{figure}
+}
+
+\noindent
+Durch die Überlagerung der Reflexionen im Kamerabild ist es nicht länger möglich die Dekodierung korrekt durchzuführen.
+Es kommt an manchen Stellen zu Fehlern und Phasensprüngen.
+Dadurch wird auch die Auswertung des Bildes keine nützlichen Ergebnisse mehr erbringen können.
+
+\p
+Die Problematik des Rückseitenreflexes trifft auch auf das Verfahren \glqq Sichtprüfung durch Lichtstreuung\grqq ~zu.
+Durch die überlagerten Streifenmuster kann es passieren, dass fehlerhafte Strukturen durch das Verfahren entstehen (siehe Abbildung \ref{tikz:abbRückseitenreflexLichtstreuung}).
+
+% Abbildung: Rückseitenreflex Lichtstreuung
+{
+	\begin{figure}[H]
+		\centering
+		\input{05_ergebnisse/ergDiskussion/figures/abbRückseitenreflexLichtstreuung}
+		\label{tikz:abbRückseitenreflexLichtstreuung}
+	\end{figure}
+}
+
+\noindent
+Durch die bisherigen Ausführungen lassen sich in den vorgestellten Verfahren Stärken und Schwächen erkennen.
+Ausgehend davon soll nun die Eignung der Verfahren für spezielle Anwendungen vermittelt werden.
+Aus Abbildungen \ref{tikz:abbRückseitenreflexRegistrierung} und \ref{tikz:abbRückseitenreflexLichtstreuung} lässt sich schließen, dass transparente Objekte durch den Rückseitenreflex nicht für die Spiegelbildauswertung mit den vorgestellten Verfahren geeignet sind.
+Aufgrund der hohen Präzision bei der Durchlichtauswertung bietet sich deshalb besonders das Verfahren \glqq Sichtprüfung durch Lichtstreuung\grqq an, wenn die qualitative Sichtprüfung des Objekts ausreichend ist.
+Sobald weitere Informationen, wie z. B. die Oberflächenkrümmung erforderlich sind, sollte für die Objekte die deflektometrische Registrierung des Spiegelbilds bestimmt werden.
+Dabei muss dann auch das Problem des Rückseitenreflexes behandelt werden.
+
+\p
+Es wird ersichtlich, dass das Verfahren zur Auswertung der deflektometrischen Registrierung bessere Ergebnisse für nicht-transparente spiegelnde Objekte bei der Spiegelbildanalyse erzielen kann.
+Im Vergleich zum Verfahren \glqq Sichtprüfung durch Lichtstreuung\grqq ist die deflektometrische Registrierung besser geeignet für stärker gekrümmte oder lackierte Objekte.
+Die deflektometrische Registrierung kann durch weitere Verarbeitungen auch genutzt werden um die Oberfläche des Prüfobjekts zu rekonstruieren.
+Diese Möglichkeiten machen die deflektometrische Registrierung zu einer nützlichen Information über Oberflächen zur Erfassung von Oberflächendefekten für spiegelnde Objekte.

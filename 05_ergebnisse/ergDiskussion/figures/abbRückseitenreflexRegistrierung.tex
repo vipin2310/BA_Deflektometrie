@@ -1,0 +1,13 @@
+\begin{adjustbox}{width=\textwidth}
+	\begin{tikzpicture}[every node/.style={inner sep=0,outer sep=0}]
+	
+		\node [anchor=north east] (img1) at (-0.05\textwidth,0) {\includegraphics[width=.45\textwidth]{05_ergebnisse/ergDiskussion/figures/sinusBeleuchtung_RR}};
+		\node [below=0.2cm of img1, align=center] {Aufnahme des sinusoidalen Streifen- \\ musters mit Rückseitenreflex};
+		\node [anchor=north west] (img2) at (0.05\textwidth,0) {\includegraphics[width=.45\textwidth]{05_ergebnisse/ergDiskussion/figures/registrierung_RR}};
+		\node [below=0.2cm of img2, align=center] {Bild der deflektometrischen \\ Zeilenregistrierung};
+		
+		\draw[very thick,-{Latex[width=3mm]},shorten >=0.02\textwidth,shorten <=0.02\textwidth] (img1.east) -- (img2.west);
+		
+	\end{tikzpicture}
+\end{adjustbox}
+\caption[Rückseitenreflex bei der deflektometrischen Registrierung]{Auswirkungen des Rückseitenreflexes bei der deflektometrischen Registrierung. Es entstehen Phasensprünge trotz gleichmäßiger Krümmung der Oberfläche.}
