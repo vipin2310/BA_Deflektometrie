@@ -1,0 +1,42 @@
+Das Ziel dieser Arbeit war es allgemein anwendbare Methoden zur Analyse von spiegelnden und transparenten Oberflächen zu untersuchen, auszuarbeiten und anschließend anzuwenden.
+Hierzu wurden zu Beginn der vorliegenden Arbeit die theoretischen Grundlagen der Deflektometrie betrachtet.
+
+\p
+Innerhalb der Betrachtungen wurde auf die Ansätze und Möglichkeiten der Deflektometrie eingegangen.
+Im Zentrum stand dabei, dass spiegelnde Oberflächen stets über ihre Umgebung wahrgenommen werden müssen und durch geeignete Szenen, die sich auf der Oberfläche spiegeln, Informationen über die Krümmung gewonnen werden können.
+Es wurden dabei konkrete Mustersequenzen erklärt, die auf dem heutigen Stand der Technik eingesetzt werden um die Informationen aus der Szene kodiert in den Bildkanal zu übertragen.
+
+\p
+Nachdem die deflektometrischen Verfahren zur Rekonstruktion der Objektoberfläche mit ihren Schwierigkeiten und Problemen behandelt wurden, sollten Verfahren zur qualitativen Sichtprüfung dargestellt werden.
+Aufgrund weniger zu berücksichtigender Parameter und Einschränkungen sind diese Verfahren besser geeignet für die allgemeine Anwendung.
+Durch das bessere Verständnis der Grundlagen konnten im Anschluss Ansätze aufgestellt und Verfahren entwickelt werden, mit denen man die Problemstellung bewältigen kann.
+Es wurden zwei Verfahren im Detail beschrieben, um sowohl transparente Objekte, als auch spiegelnde Oberflächen zu untersuchen:
+%
+\begin{itemize}
+	\item Das erste Verfahren wurde in Kapitel \ref{chp:sichtpruefungDurchLichtstreuung} beschrieben. Es werden Streifenmuster verwendet um die abweichende Lichtstreuung an Oberflächendefekten zu nutzen. Im Vergleich zur spiegelnden Oberfläche sind diese Stellen nicht spekular reflektierend. Durch bestimmte Verknüpfungsregeln von Bildern ist es damit möglich die Stellen mit abweichender Lichtstreuung hervorzuheben und daraus Fehlstellen zu erfassen.
+	
+	\item Das zweite Verfahren wurde in Kapitel \ref{chp:deflektometrischeRegistrierung} beschrieben. Es wird hierbei der Ansatz der Kodierung der Objektoberfläche mithilfe von sinusoidalen Streifenmustern verfolgt. Durch bestimmte Methoden ist es mithilfe von speziellen Mustersequenzen möglich, eine eindeutige Zuordnung von Kamerapunkten und Punkten auf einem Bildschirm bzw. der Szene vorzugeben (deflektometrische Registrierung). Es wurde gezeigt, wie es möglich ist herkömmliche Bildverarbeitungsalgorithmen anzuwenden, um mit der Zuordnung Fehlstellen zu erfassen.
+\end{itemize}
+%
+Diese beiden Verfahren sind zur Anwendung mit in der Bildverarbeitungssoftware NeuroCheck implementiert worden.
+Im Anschluss wurden die Ergebnisse der Arbeit an der Implementierung getestet.
+Die Tests sollten dazu dienen die Funktionalität der Verfahren und der Implementierung zu prüfen.
+Außerdem sollten im Rahmen der Präsentation der Ergebnisse auch die beiden Verfahren für die Anwendung auf spiegelnde und transparente Oberflächen verglichen werden.
+Bei den Anwendungen wurden zwei verschiedene Aufbauten gegeneinander getestet (siehe auch Abbildung \ref{tikz:abbAufbauFotos}).
+%
+\begin{itemize}
+	\item Der erste Aufbau umfasste die Auswertung der Bilder durch eine Durchlichtszene. Dies ist nur für transparente Prüfobjekte möglich, da das Objekt zwischen der Szene (ein LCD-Bildschirm) und der Kamera liegt. Die Szenen werden direkt beobachtet und in der Kameraaufnahme durch die transparenten Objekte verzerrt.
+	
+	\item Der zweite Aufbau umfasste die Auswertung der Bilder durch eine Spiegelbildszene. Dies ist sowohl für spiegelnde, aber auch für transparente Prüfobjekte möglich. Die Szene wird über die Spiegelung auf der Objektoberfläche beobachtet und in der Kameraaufnahme durch die Oberflächenkrümmungen verzerrt.
+\end{itemize}
+%
+Bei den Tests ist deutlich geworden, dass sich für transparente Objekte das erste Verfahren (Sichtprüfung durch Lichtstreuung) sehr gut eignet.
+Die besseren Ergebnisse wurden dabei mit dem Durchlichtaufbau erzielt, da der Rückseitenreflex transparenter Objekte mit den vorhandenen Mitteln nicht verhindert werden konnte.
+Für spiegelnde Oberflächen zeigte Verfahren dieses allerdings Schwächen bei stärkeren Krümmungen und unterschiedlichen Farben auf den Objekten.
+Für spiegelnde Objekte ließ sich feststellen, dass das zweite Verfahren (Deflektometrische Registrierung) genauere Ergebnisse liefert hinsichtlich größerer Krümmungen oder unterschiedlichen Farben der Oberflächen.
+Außerdem wird es durch die Ergebnisse des Verfahrens möglich tatsächliche Krümmungen der Oberfläche bis zu einer bestimmten Genauigkeit zu erkennen. Hierfür konnte die Ableitung der deflektometrischen Registrierung hinzugezogen werden.
+
+\p
+Im Rahmen dieser Arbeit konnte gezeigt werden, dass durch die Beobachtung von Spiegelbildern für spiegelnde Objekte zuverlässig kleinere und größere Oberflächendefekte erfasst werden können.
+Für transparente Objekte ist dies auch möglich, allerdings muss das Problem des Rückseitenreflexes dafür gelöst werden. 
+Durch die Verwendung des Durchlichtaufbaus war es daher auch möglich Oberflächendefekte zu erfassen.
