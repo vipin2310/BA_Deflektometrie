@@ -1,13 +1,17 @@
 Nachdem das Verfahren für die Durchlichtauswertung Fehlstellen auf transparenten Objekten sichtbar machen konnte, stellt man sich die Frage, ob ähnliche Ergebnisse auch für nicht-transparente spiegelnde Objekte erzielt werden können.
-Für diese Objekte wird das Verfahren mit der Spiegelbildauswertung durchgeführt.
+Für diese Objekte wird das Verfahren mit der Spiegelbildauswertung angewandt.
 Hierfür wählt man den Aufbau aus dem rechten Teilbild aus Abbildung \ref{tikz:abbAufbauFotos}.
 
 \p
-Für einen Vergleich der Spiegelbildauswertung zur Durchlichtauswertung für transparente Prüfobjekte wird das Brillenglas 1 (siehe linkes Teilbild aus Abbildung \ref{tikz:abbStreifenaufnahmen}) gewählt, da es durch ein polarisierendes Sonnenbrillenglas ist.
-Das bedeutet, dass das Brillenglas das auftreffende Licht je nach Polarisierung des Lichts deutlich stärker reflektiert.
-Somit gelangt nahezu nur noch Licht mit einer speziellen Polarisation durch das Glas.
-Diese Eigenschaft kann man für die Spiegelbildauswertung nutzen um den Rückseitenreflex (vgl. Abschnitt \ref{sec:spiegelndeOberflaechen}) zu minimieren.
+Für einen Vergleich der Spiegelbildauswertung zur Durchlichtauswertung für transparente Prüfobjekte wird das Brillenglas 1 (siehe linkes Teilbild aus Abbildung \ref{tikz:abbStreifenaufnahmen}) untersucht, da es ein polarisierendes Sonnenbrillenglas ist.
+Das bedeutet, dass das Brillenglas das auftreffende Licht je nach Polarisation des Lichts deutlich stärker reflektiert.
+Somit gelangt nahezu nur noch Licht mit einer speziellen Polarisation\footnote{
+Die Polarisation beschreibt die Schwingungsrichtung der Lichtwellen.
+Für den weiteren Verlauf sind die Details irrelevant, weshalb nicht konkreter darauf eingegangen werden muss.
+} durch das Glas.
+Diese Eigenschaft kann man für die Spiegelbildauswertung nutzen, um den Rückseitenreflex (vgl. Abschnitt \ref{sec:spiegelndeOberflaechen}) zu minimieren.
 Die weiteren Objekte sind spiegelnde Keramikbruchstücke.
+Die Prüfobjekte werden mittels eines Gelenkarms über dem Bildschirm positioniert und durch die Kamera aufgenommen (siehe Abbildung \ref{tikz:abbStreifenaufnahmenSpLichtstreuung}).
 
 % Abbildung: Streifenaufnahmen
 {
@@ -32,7 +36,7 @@ Durch Anwendung des Verfahrens \glqq Sichtprüfung durch Lichtstreuung\grqq ~erh
 
 \noindent
 Es wurde als Verknüpfungsmethode des Verfahrens die betragsmäßige Differenz gewählt, um die Bilder aus Abbildung \ref{tikz:abbCombinePatternPicturesSpLichtstreuung} zu erzeugen.
-Auch hier ist die Begründung der höhere Kontrast zwischen den Prüfobjekten und dem Hintergrund.
+Auch hier begründet durch den höheren Kontrast zwischen den Prüfobjekten und dem Hintergrund.
 In einem weiterem Schritt wurden die Bilder durch lokale Kontrastverbesserungen und geeigneter Kennlinientransformationen nachbearbeitet, um die Fehlstellen besser zu erkennen:
 
 % Abbildung: Nachbearbeitung der Ergebnisbilder
@@ -49,5 +53,3 @@ In Abbildung \ref{tikz:abbNachbearbeitungSpLichtstreuung} sind die Fehlstellen i
 Analog wie auch im vorherigen Abschnitt \ref{sub:durchlichtAuswertungLichtstreuung} erkennt man für Brillenglas 1 im grünen Rechteck eine Gravur des Markenzeichens auf der Oberfläche.
 Für das Keramikobjekt 1 fallen einige dunkle Punkte im Objektbereich auf, welche durch sogenannte \glqq Pickel \grqq ~auf der Oberfläche entstehen.
 Auf dem Keramikobjekt 2 befindet sich eine Delle, die im größeren roten Rechteck zu sehen ist.
-
-%TODO Abschluss der Section?

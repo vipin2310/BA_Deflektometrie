@@ -1,9 +1,9 @@
 Im Folgenden sollen die beschriebenen Ergebnisse aus den vorherigen Abschnitten \ref{sec:ergebnisseSichtpruefungDurchLichtstreuung} und \ref{sec:ergebnisseDeflektometrischeRegistrierung} aufgegriffen und bewertet werden.
-Das Ziel ist es abhängig vom Anwendungsfall ein passendes Verfahren vorzuschlagen und die Schwächen und Stärken der Verfahren darzulegen.
+Das Ziel ist es, abhängig vom Anwendungsfall ein passendes Verfahren vorzuschlagen und die Schwächen und Stärken der Verfahren darzulegen.
 
 \p
 Für das Verfahren \glqq Sichtprüfung durch Lichtstreuung\grqq ~fällt im Abschnitt \ref{sec:ergebnisseSichtpruefungDurchLichtstreuung} auf, dass es sich besonders gut für die Durchlichtauswertung von transparenten Prüfobjekten eignet.
-Es ist möglich bereits sehr kleine Defekte, wie z. B. sehr leichte Kratzer oder Laser-Gravuren auf den Objektoberflächen zu erkennen (siehe Abbildung \ref{tikz:abbErkennbareKleineDefekteLichtstreuung}).
+Es ist möglich bereits sehr kleine Defekte, wie z. B. leichte Kratzer oder Laser-Gravuren auf den Objektoberflächen zu erkennen (siehe Abbildung \ref{tikz:abbErkennbareKleineDefekteLichtstreuung}).
 
 % Abbildung: Erkennbare kleine Defekte
 {
@@ -15,14 +15,14 @@ Es ist möglich bereits sehr kleine Defekte, wie z. B. sehr leichte Kratzer oder
 }
 
 \noindent
-Außerdem ist es möglich für transparente Objekte durch die Durchlichtauswertung auch Defekte im Objekt, wie z. B. Lufteinschlüsse in Gläsern festzustellen.
+Außerdem ist es möglich für transparente Objekte durch die Durchlichtauswertung auch Defekte im Inneren des Objekts, wie z. B. Lufteinschlüsse in Gläsern festzustellen.
 Dies konnte allerdings nicht nachgeprüft werden, da solche Defekte in den zur Verfügung stehenden Prüfobjekten nicht vorhanden waren.
 
 \p
-Für nicht-transparente Prüfobjekte kann das Verfahren \glqq Sichtprüfung durch Lichtstreuung\grqq ~durch eine Spiegelbildaufwertung ebenfalls verwertbare Bilder erzeugen um Defekte zu detektieren, allerdings gibt es hierbei schon erste Probleme.
+Für nicht-transparente Prüfobjekte kann das Verfahren \glqq Sichtprüfung durch Lichtstreuung\grqq ~durch eine Spiegelbildaufwertung ebenfalls geeignete Bilder erzeugen, um Defekte zu detektieren, allerdings gibt es hierbei schon erste Probleme.
 Eine große Schwäche des Verfahrens ist die Abhängigkeit von Oberflächenbeschriftungen oder -aufdrucken.
-Da stets Grauwerte der Kamerabilder verknüpft werden beeinflussen unterschiedliche Farben auf der Oberfläche das Ergebnis (siehe Abbildung \ref{img:delleBeschriftung}).
-Das gleiche Phänomen lässt sich auch beobachten wenn das Objekt abhängig von der Position unterschiedlich stark reflektierend ist.
+Da stets Grauwerte der Kamerabilder verknüpft werden, beeinflussen unterschiedliche Farben auf der Oberfläche das Ergebnis (siehe Abbildung \ref{img:delleBeschriftung}).
+Das gleiche Phänomen lässt sich auch beobachten, wenn das Objekt abhängig von der Position unterschiedlich stark reflektierend ist.
 
 % Abbildung: Beschriftung Delle
 {
@@ -35,24 +35,26 @@ Das gleiche Phänomen lässt sich auch beobachten wenn das Objekt abhängig von 
 }
 
 \noindent
-Dieser Einfluss kann zu Problemen in der nachfolgenden Auswertung des Ergebnisbilds durch herkömmliche Bildverarbeitungsalgorithmen führen.
+Dieser Einfluss kann zu Fehlern in der nachfolgenden Auswertung des Ergebnisbilds durch herkömmliche Bildverarbeitungsalgorithmen führen.
 Für dieses Verfahren ist es also notwendig, dass das Prüfobjekt einfarbig und ohne Beschriftungen vorliegt.
 Außerdem sollte das Prüfobjekt an allen zu untersuchenden Stellen das Licht gleich stark reflektieren.
-Damit können kleinere Defekte, wie z. B. Oberflächenpickel oder Kratzer in Brillengläsern detektiert werden.
-Größere Defekte wie z. B. die Delle auf der Oberfläche des Keramikobjekts 2 (siehe Abbildung \ref{tikz:abbNachbearbeitungSpLichtstreuung}) sind hingegen schwerer zu identifizieren.
+Damit können kleinere Defekte, wie z. B. Oberflächenpickel oder Kratzer in Brillengläsern effizient detektiert werden.
+Größere Defekte, wie z. B. die Delle auf der Oberfläche des Keramikobjekts 2 (siehe Abbildung \ref{tikz:abbNachbearbeitungSpLichtstreuung}) sind hingegen schwerer zu identifizieren.
 Dieselben Effekte in den Ergebnisbildern wie bei Dellen können auch bei stärker gekrümmten Objekten oder an matten Stellen auftreten.
 
 \p
-Die deflektometrische Registrierung erzeugt lediglich Zuordnungsinformationen die durch spezielle Algorithmen weiterverarbeitet werden muss um Untersuchungen der Oberfläche zu treffen.
-In dem Abschnitt \ref{sec:ergebnisseDeflektometrischeRegistrierung} wurde zunächst ein Bild aus der  deflektometrischen Registrierung der Zeilen erzeugt, dass man Bildverarbeitungsalgorithmen anwenden kann um bestimmte Auffälligkeiten hervorheben zu können.
+Die deflektometrische Registrierung erzeugt lediglich die Zuordnungsinformation, die durch spezielle Algorithmen weiterverarbeitet werden muss, um Untersuchungen der Oberfläche zu treffen.
+In dem Abschnitt \ref{sec:ergebnisseDeflektometrischeRegistrierung} musste zunächst ein Bild aus der deflektometrischen Registrierung der Zeilen erzeugt werden, damit sich Bildverarbeitungsalgorithmen anwenden lassen.
+Die Bildverarbeitung konnte damit bestimmte Auffälligkeiten der Oberflächen hervorheben.
 Allerdings verliert man nach dem vorgestellten Ansatz eventuell Informationen über sehr kleine Defekte, da bei der Bilderzeugung je nach verwendeter Farbtiefe mehrere Zeilenpositionen demselben Grauwert zugeordnet werden.
-Man verliert kleine Details der deflektometrischen Registrierung, das macht es schwieriger sehr kleine Abweichungen der Reflexionen, wie z. B. Kratzer oder Laser-Gravuren zu erkennen.
-Die tatsächlichen Reflexionsabweichungen sind bei der Durchlichtauswertung kleiner als bei dem Spiegelbild.
-Es lässt sich auch in Abbildung \ref{tikz:abbAbleitungRegistrierungDurchlicht} erkennen, dass sich das Verfahren für die Durchlichtauswertung von Brillengläsern nur begrenzt eignet.
+Man verliert kleine Details der deflektometrischen Registrierung.
+Das macht es schwieriger, sehr kleine Abweichungen der Reflexionen, wie z. B. Kratzer oder Laser-Gravuren zu erkennen.
+Die tatsächlichen Reflexionsabweichungen sind bei der Durchlichtauswertung kleiner als im Spiegelbild.
+Es lässt sich auch in Abbildung \ref{tikz:abbAbleitungRegistrierungDurchlicht} erkennen, dass sich das deflektometrische Registrierung für die Durchlichtauswertung von Brillengläsern nur begrenzt eignet.
 Auch die Auswertung des Spiegelbilds von Brillenglas 1 zeigt keine Auffälligkeiten, da die Kratzer und Laser-Gravuren die Reflexion des Lichts nur minimal beeinflussen (siehe Abbildung \ref{tikz:abbAbleitungRegistrierungSpiegel}).
 
 \p
-Für die Spiegelbildauswertung durch Bestimmung der deflektometrischen Registrierung der Zeilen sind für die untersuchten Keramikobjekte bessere Ergebnisse zu erkennen (siehe Abbildung \ref{tikz:abbErkennbareDefekteRegistrierung}).
+Für die Spiegelbildauswertung durch die Bestimmung der deflektometrischen Registrierung der Zeilen sind für die untersuchten Keramikobjekte bessere Ergebnisse zu erkennen (siehe Abbildung \ref{tikz:abbErkennbareDefekteRegistrierung}).
 
 % Abbildung: Erkennbare Defekte
 {
@@ -65,9 +67,9 @@ Für die Spiegelbildauswertung durch Bestimmung der deflektometrischen Registrie
 
 \noindent
 Ein großer Vorteil der Auswertung über die deflektometrische Registrierung ist die Unabhängigkeit von Oberflächenbeschriftungen oder -aufdrucken.
-Es ist also möglich Objekte mit verschiedenen Farben oder Lackierungen zu prüfen.
-Außerdem erhält man durch das Verfahren tatsächliche Krümmungsinformationen der Objektoberfläche die ausgewertet werden können.
-Eine Schwäche der deflektometrischen Registrierung ist die Empfindlichkeit gegenüber Fremdlichteinwirkungen oder störende Reflexionen, wie z. B. den Rückseitenreflex bei spiegelnden Objektoberflächen (siehe Abbildung \ref{tikz:abbRückseitenreflexRegistrierung}).
+Es ist also möglich ein Objekt mit verschiedenen Farben oder Lackierungen zu prüfen.
+Außerdem erhält man durch das Verfahren tatsächliche Krümmungsinformationen der Objektoberfläche, die ausgewertet werden können.
+Eine Schwäche der deflektometrischen Registrierung ist die Empfindlichkeit gegenüber Fremdlichteinwirkungen oder störenden Reflexionen, wie z. B. dem Rückseitenreflex bei spiegelnden Oberflächen (siehe Abbildung \ref{tikz:abbRückseitenreflexRegistrierung}).
 
 % Abbildung: Rückseitenreflex Registrierung
 {
@@ -79,7 +81,7 @@ Eine Schwäche der deflektometrischen Registrierung ist die Empfindlichkeit gege
 }
 
 \noindent
-Durch die Überlagerung der Reflexionen im Kamerabild ist es nicht länger möglich die Dekodierung korrekt durchzuführen.
+Durch die Überlagerung der Reflexionen im Kamerabild ist es nicht länger möglich, die Dekodierung korrekt durchzuführen.
 Es kommt an manchen Stellen zu Fehlern und Phasensprüngen.
 Dadurch wird auch die Auswertung des Bildes keine nützlichen Ergebnisse mehr erbringen können.
 
@@ -98,14 +100,14 @@ Durch die überlagerten Streifenmuster kann es passieren, dass fehlerhafte Struk
 
 \noindent
 Durch die bisherigen Ausführungen lassen sich in den vorgestellten Verfahren Stärken und Schwächen erkennen.
-Ausgehend davon soll nun die Eignung der Verfahren für spezielle Anwendungen vermittelt werden.
+Ausgehend davon soll die Eignung der Verfahren für spezielle Anwendungen vermittelt werden.
 Aus Abbildungen \ref{tikz:abbRückseitenreflexRegistrierung} und \ref{tikz:abbRückseitenreflexLichtstreuung} lässt sich schließen, dass transparente Objekte durch den Rückseitenreflex nicht für die Spiegelbildauswertung mit den vorgestellten Verfahren geeignet sind.
-Aufgrund der hohen Präzision bei der Durchlichtauswertung bietet sich deshalb besonders das Verfahren \glqq Sichtprüfung durch Lichtstreuung\grqq an, wenn die qualitative Sichtprüfung des Objekts ausreichend ist.
+Aufgrund der hohen Empfindlichkeit bei der Durchlichtauswertung bietet sich deshalb besonders das Verfahren \glqq Sichtprüfung durch Lichtstreuung\grqq ~an, wenn die qualitative Sichtprüfung des transparenten Objekts ausreichend ist.
 Sobald weitere Informationen, wie z. B. die Oberflächenkrümmung erforderlich sind, sollte für die Objekte die deflektometrische Registrierung des Spiegelbilds bestimmt werden.
 Dabei muss dann auch das Problem des Rückseitenreflexes behandelt werden.
 
 \p
 Es wird ersichtlich, dass das Verfahren zur Auswertung der deflektometrischen Registrierung bessere Ergebnisse für nicht-transparente spiegelnde Objekte bei der Spiegelbildanalyse erzielen kann.
-Im Vergleich zum Verfahren \glqq Sichtprüfung durch Lichtstreuung\grqq ist die deflektometrische Registrierung besser geeignet für stärker gekrümmte oder lackierte Objekte.
-Die deflektometrische Registrierung kann durch weitere Verarbeitungen auch genutzt werden um die Oberfläche des Prüfobjekts zu rekonstruieren.
-Diese Möglichkeiten machen die deflektometrische Registrierung zu einer nützlichen Information über Oberflächen zur Erfassung von Oberflächendefekten für spiegelnde Objekte.
+Im Vergleich zum Verfahren \glqq Sichtprüfung durch Lichtstreuung\grqq ~ist die deflektometrische Registrierung besser geeignet für stärker gekrümmte oder lackierte Objekte.
+Die deflektometrische Registrierung kann durch weitere Verarbeitungen auch genutzt werden, um die Oberfläche des Prüfobjekts zu rekonstruieren.
+Diese Möglichkeiten machen die deflektometrische Registrierung zu einer nützlichen Information über Oberflächen zur Erfassung von Oberflächendefekten spiegelnder Objekte.
