@@ -46,12 +46,22 @@ Dieselben Effekte in den Ergebnisbildern wie bei Dellen können auch bei stärke
 Die deflektometrische Registrierung erzeugt lediglich die Zuordnungsinformation, die durch spezielle Algorithmen weiterverarbeitet werden muss, um Untersuchungen der Oberfläche zu treffen.
 In dem Abschnitt \ref{sec:ergebnisseDeflektometrischeRegistrierung} musste zunächst ein Bild aus der deflektometrischen Registrierung der Zeilen erzeugt werden, damit sich Bildverarbeitungsalgorithmen anwenden lassen.
 Die Bildverarbeitung konnte damit bestimmte Auffälligkeiten der Oberflächen hervorheben.
-Allerdings verliert man nach dem vorgestellten Ansatz eventuell Informationen über sehr kleine Defekte, da bei der Bilderzeugung je nach verwendeter Farbtiefe mehrere Zeilenpositionen demselben Grauwert zugeordnet werden.
-Man verliert kleine Details der deflektometrischen Registrierung.
+Allerdings verliert man nach dem vorgestellten Ansatz eventuell Informationen über sehr kleine Defekte, da bei der Bilderzeugung je nach verwendeter Farbtiefe\footnote
+{
+Die Farbtiefe eines Bildes bestimmt die Anzahl differenzierbarer Helligkeitsstufen pro Bildpunkt.
+Herkömmlich werden 256 Helligkeitsabstufungen bzw. 8-Bit verwendet.
+Mit einer Farbtiefe von 16-Bit hat man bereits 65536 Helligkeitsabstufungen, aber der Speicherbedarf steigt stark an.
+%
+} mehrere Zeilenpositionen demselben Grauwert zugeordnet werden.
+Zur Erzeugung der Ergebnisse in Abschnitt \ref{sec:ergebnisseDeflektometrischeRegistrierung} werden 256 verschiedene Grauwerte unterschieden.
+Da aber die Monitorhöhe mehr Positionen als die 256 zu vergebenden Grauwerte hat, fallen verschiedene Zeilen auf denselben Grauwert.
+Man verliert Detailinformationen der deflektometrischen Registrierung.
 Das macht es schwieriger, sehr kleine Abweichungen der Reflexionen, wie z. B. Kratzer oder Laser-Gravuren zu erkennen.
 Die tatsächlichen Reflexionsabweichungen sind bei der Durchlichtauswertung kleiner als im Spiegelbild.
 Es lässt sich auch in Abbildung \ref{tikz:abbAbleitungRegistrierungDurchlicht} erkennen, dass sich das deflektometrische Registrierung für die Durchlichtauswertung von Brillengläsern nur begrenzt eignet.
 Auch die Auswertung des Spiegelbilds von Brillenglas 1 zeigt keine Auffälligkeiten, da die Kratzer und Laser-Gravuren die Reflexion des Lichts nur minimal beeinflussen (siehe Abbildung \ref{tikz:abbAbleitungRegistrierungSpiegel}).
+Ein mögliche Begründung könnte deshalb die zu geringe Farbtiefe der erzeugten Bilder aus der deflektometrischen Registrierung sein.
+Allerdings konnte dies nicht nachgeprüft werden, weshalb die Verbesserung durch eine höhere Farbtiefe in den Ausblick verschoben wird.
 
 \p
 Für die Spiegelbildauswertung durch die Bestimmung der deflektometrischen Registrierung der Zeilen sind für die untersuchten Keramikobjekte bessere Ergebnisse zu erkennen (siehe Abbildung \ref{tikz:abbErkennbareDefekteRegistrierung}).
