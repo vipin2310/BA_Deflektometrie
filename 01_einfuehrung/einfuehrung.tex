@@ -1,9 +1,30 @@
-Durch die optischen Besonderheiten von spiegelnd glänzenden Oberflächen werden solche in der Industrie an vielen Stellen verwendet.
-Speziell in der Automobilindustrie werden täglich große Karosserieflächen glänzend lackiert.
+Die optischen Besonderheiten von glänzenden Oberflächen faszinieren zahlreiche Menschen.
+So wird Glanz bereits seit Jahrhunderten mit Luxus und Reichtum verbunden.
+Dieser Zusammenhang wird durch den imposanten Spiegelsaal im Schloss von Versailles untermauert (siehe Abbildung \ref{img:spiegelSaal}).
+Nach langer Bauzeit im 17. Jahrhundert bildete dieser Saal die Hauptattraktion des Schlosses und zieht heute noch sehr viele Touristen an.
+
+% Abbildung: Spiegelsaal
+{
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.5\textwidth]{01_einfuehrung/figures/spiegelSaal}
+		\caption[Spiegelsaal im Schloss von Versailles]{Spiegelsaal im Schloss von Versailles}
+		\label{img:spiegelSaal}
+	\end{figure}
+}
+
+\noindent
+Bereits Neugeborene fühlen sich den Reflexionen von Glanzobjekten hingezogen \cite{shinyObjects}.
+Verhaltensforscher stellten anhand von Studien die Theorie auf, dass die Zuneigung zu spiegelnden Objekten evolutionär bedingt ist.
+Durch die Reflexionen auf den Oberflächen sollen Menschen glänzende Objekte mit Wasser assoziieren \cite{waterAndShininess}.
+Auch die industriellen Bereiche wollen diese Faszination der Menschen ansprechen.
+So finden sich an vielen Stellen im Alltag glänzende Oberflächen, um Menschen zu begeistern.
+Z. B. in der Automobilindustrie werden täglich große Karosserieflächen glänzend lackiert.
 Alleine in Deutschland wurden in den Jahren von 1990 bis 2021 im Durchschnitt ungefähr 5 Millionen Personenkraftwagen pro Jahr produziert \cite{statistaPKW}.
-Ein großer Teil der Fahrzeuge erhalten nach der Lackierung eine spiegelnde Oberfläche.
-Solche Oberflächen müssen durch besondere Verfahren auf Defekte überprüft werden.
-Dabei sorgen spekulare Reflexionen dafür, dass die Oberflächen nicht direkt, sondern über ihre Spiegelbilder der Umgebung betrachtet werden müssen (siehe Abbildung \ref{img:spiegelndeKarosserie}).
+Ein großer Teil der Fahrzeuge erhält nach der Lackierung eine spiegelnde Oberfläche.
+Solche Oberflächen müssen zur Qualitätssicherung durch besondere Verfahren auf Defekte überprüft werden.
+Dabei stellen sich diese anziehenden Spiegelungen als Probleme heraus.
+Die spekularen Reflexionen sorgen dafür, dass die Oberflächen nicht direkt, sondern über die Spiegelbilder ihrer Umgebung betrachtet werden müssen (siehe Abbildung \ref{img:spiegelndeKarosserie}).
 
 % Abbildung: Beschriftung Delle
 {
@@ -16,36 +37,39 @@ Dabei sorgen spekulare Reflexionen dafür, dass die Oberflächen nicht direkt, s
 }
 
 \noindent
-Die riesige Menge an Oberflächen macht es für die Qualitätssicherung unumgänglich die Prüfung durch automatisierte Prozesse zu integrieren.
+Die riesige Menge an Oberflächen macht es unumgänglich die Prüfung durch automatisierte Prozesse zu integrieren.
 Dabei stoßen die üblichen Verfahren der industriellen Bildverarbeitung auf ihre Grenzen, sodass neue Methoden eingeführt werden müssen.
-Diese speziellen Anwendungen erfordern den Einsatz von deflektometrischen Prüfaufbauten.
+Diese speziellen Anwendungen erfordern den Einsatz von deflektometrischen Prüfaufbauten, die sich die Spiegelung von bestimmten Szenen zunutze machen.
 In der Industrie sind solche Verfahren schon seit Längerem zur Analyse der Topographie von spiegelnden Freiformflächen etabliert.
 Deflektometrische Verfahren funktionieren nach einem ähnlichen Prinzip, wie auch die Inspektion von spiegelnden Oberflächen durch Menschen. 
-Durch die Reflexionen und Verzerrungen auf glänzenden Oberflächen ist es möglich auf die Form und Krümmung der Oberfläche zu schließen.
+Durch die Reflexionen und Verzerrungen auf glänzenden Oberflächen schließt man auf die Form und Krümmung der Oberfläche.
 Das wissenschaftliche Gebiet der Deflektometrie ist auch heute noch Thema für viele Forschungsarbeiten und wird stetig weiterentwickelt.
 
 \p
-Im Rahmen der Arbeit werden spekular reflektierende Objektoberflächen unter Projektion von bekannten Mustern durch eine Kamera aufgenommen, anschließend analysiert und auf Defekte überprüft.
+Im Rahmen der Arbeit werden spekular reflektierende Objektoberflächen unter Projektion von bekannten Mustern durch eine Kamera aufgenommen, anschließend ausgewertet und auf Defekte überprüft.
 Welche Informationen können aus der Beobachtung von Spiegelbildern gewonnen werden?
-Wie sehen allgemein anwendbare Methoden aus, um spiegelnde Oberflächen erfolgreich zu bewerten?
+Wie sehen allgemein anwendbare Methoden aus, um spiegelnde Oberflächen qualitativ zu bewerten?
 Das Ziel der Arbeit ist es, diese Fragen zu erforschen und aufzuklären.
 Des Weiteren sollen ein Aufbau, die Ansteuerung von Beleuchtung und Kamera und die notwendige Auswertung des Bildmaterials entwickelt werden, durch welche eine Erkennung von Oberflächendefekten ermöglicht wird.
-Die Umsetzung soll dabei in Form einer Softwareerweiterung für NeuroCheck erfolgen, eines sogenannten \textit{Plug-ins}.
+Die Umsetzung soll dabei in Form einer Softwareerweiterung, eines sogenannten \textit{Plug-ins}, für NeuroCheck erfolgen.
 
 \p
-Während der Arbeit soll außerdem ein bestimmter Sonderfall genauer betrachtet werden - transparente Prüfobjekte.
+Während der Arbeit soll außerdem auch ein bestimmter Sonderfall betrachtet werden - transparente Prüfobjekte.
 Die Problematik ist dabei, dass man neben der Reflexion des Lichts, mit der Transmission zu kämpfen hat.
-Dafür gibt es verschiedene Lösungsansätze wie z. B. die Auftragung einer undurchsichtigen Beschichtung.
-Eine andere Möglichkeit ist eine Veränderung in dem Prüfaufbau.
-Anstatt ein Muster auf das Objekt zu projizieren, kann man eine Durchlichtbeleuchtung nutzen.
-Das heißt, dass man auf einem Bildschirm unter dem transparenten Prüfobjekt verschiedene Muster anzeigt.
+Wie auch bei den regulären deflektometrischen Verfahren ist das Ziel, anhand einer verzerrten Szene Aussagen über die Oberflächenbeschaffenheit zu treffen.
+Für die transparenten Objekte gibt es dafür verschiedene Lösungsansätze, um den negativen Einflüssen der Transmission entgegenzuwirken.
 
 \p
-Durch die aufgenommenen Muster können Aussagen über die Oberflächenbeschaffenheit getroffen werden.
-Abhängig von den verwendeten Mustern und der Auswertung sollen damit bestimmte Fehlstellen kenntlich gemacht werden.
-Als Fehlstellen gelten Verformungen und Oberflächendefekte wie z. B. Dellen, Kratzer oder matte Stellen.
-%TODO Weiteres schreiben im Bezug auf die nachfolgende Arbeit (vermutlich eher gegen Ende)
-%Zur Detektion dieser Defekte kann man verschiedene deflektometrische Verfahren einsetzen.
-%Die Verfahren können verschiedene Ergebnisse liefern, abhängig davon sind eventuell aus den Ergebnissen weitere Verarbeitungen und Auswertungen nötig.
-%Im Rahmen des Projektes werden speziell die deflektometrischen Verfahren betrachtet, welche für eine Vielzahl von Anwendungen genutzt werden können.
-%Nachfolgende Verarbeitungen, z. B. Detektion von Zeichen und Kratzern, werden im Rahmen des Projekts und der Bachelor-Arbeit nicht genauer behandelt.
+Die Arbeit wird zur Bearbeitung der Frage- und Problemstellungen in sechs Kapitel unterteilt. 
+Dieses erste Kapitel soll kurz die Relevanz der Thematik und das Vorhaben der Arbeit beschreiben.
+
+\p
+Im zweiten Kapitel soll sich mit den theoretischen Grundlagen zur Entwicklung von deflektometrischen Verfahren befasst werden.
+
+\p
+Im Anschluss werden in Kapitel \ref{chp:sichtpruefungDurchLichtstreuung} und \ref{chp:deflektometrischeRegistrierung} zwei deflektometrische Verfahren beschrieben, um die Fragestellungen der Arbeit bearbeiten zu können.
+\p
+Das fünfte Kapitel dient der Erfassung und Diskussion der Ergebnisse, die durch die eingeführten Verfahren und verwendeten Aufbauten erreicht werden können.
+
+\p
+Das letzte Kapitel soll einen Überblick über die erzielten Erkenntnisse dieser Thesis schaffen und einen Ausblick auf zukünftige Verbesserungen der vorgestellten Verfahren geben.
