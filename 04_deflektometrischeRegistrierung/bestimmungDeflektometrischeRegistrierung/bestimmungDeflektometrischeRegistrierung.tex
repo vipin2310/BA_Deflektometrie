@@ -1,0 +1,36 @@
+Die Bestimmung der deflektometrischen Registrierung nach Definition \ref{def:deflektometrischeRegistrierung} bedeutet die Zuordnung von Kamerapixeln zu Monitorpixeln.
+Es soll jeder Lichtstrahl, der vom Bildschirm über das Prüfobjekt in die Kamera reflektiert wird, im Kamerabild eindeutig identifiziert und dem passenden Kamerapixel zugeordnet werden.
+Eine einfache Möglichkeit, eine solche Zuordnung zu erreichen, bekommt man, indem man die Pixel des Monitors einzeln einschaltet und dabei die Veränderung im Kamerabild betrachtet.
+Bei kleinen Bildern ist dies noch umsetzbar, allerdings wird die Anzahl von Pixeln mit zunehmender Auflösung schnell sehr groß und unübersichtlich, sodass dieser Ansatz nicht praktikabel ist.
+Aus dem Grund ist es effektiver, Bilder auf dem Monitor anzuzeigen, die Positionen visuell codieren können.
+Durch die visuelle Erfassung des Spiegelbilds können somit die zugehörigen Positionen auf dem Monitor berechnet werden.
+
+\p
+Ein herkömmliches Kodierverfahren für solche Prozesse ist das Phasenschiebeverfahren.
+Der Ansatz bei dem Verfahren ist es, die Zeilen- und Spaltenpositionen des Monitors durch periodische Muster zu kodieren.
+Die Grauwerte von periodischen Mustern nehmen dabei Werte an, die über die periodische Funktion bestimmt wurden.
+Die hier verwendeten Funktionen sind Kosinusfunktionen.
+Damit können die Pixel des Musters Phaseninformationen eines lokalen Orts übertragen.
+Durch die Periodizität der Funktionen kann aus der reinen Phaseninformation noch nicht die genaue Monitorposition bestimmt werden.
+Die Lösung dieses Problems wird als Phasenentfaltung bezeichnet (siehe Definition \ref{def:phasenentfaltung}).
+Hierzu stellt Werling in seiner Arbeit \cite{kit_werling} ein mehrstufiges Phasenschiebeverfahren vor, das Muster mit unterschiedlichen Perioden verwendet.
+
+\begin{Definition}{Phasenentfaltung}{def:phasenentfaltung}
+	Die \textit{Phasenentfaltung} bezeichnet den Vorgang zur Auflösung der mehrdeutigen Zuordnung der Phaseninformation zu unterschiedlichen Perioden.
+\end{Definition}
+
+%Deflektometrische Registrierung ohne Phasenentfaltung
+{
+	\FloatBarrier
+    \subsection{Deflektometrische Registrierung ohne Phasenentfaltung}
+    \label{sub:registrierungOhnePhasenentfaltung}
+    \input{04_deflektometrischeRegistrierung/bestimmungDeflektometrischeRegistrierung/registrierungOhnePhasenentfaltung/registrierungOhnePhasenentfaltung}
+}
+
+%Deflektometrische Registrierung mit Phasenentfaltung
+{
+	\FloatBarrier
+    \subsection{Deflektometrische Registrierung mit Phasenentfaltung}
+    \label{sub:registrierungMitPhasenentfaltung}
+    \input{04_deflektometrischeRegistrierung/bestimmungDeflektometrischeRegistrierung/registrierungMitPhasenentfaltung/registrierungMitPhasenentfaltung}
+}

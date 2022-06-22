@@ -1,0 +1,47 @@
+\begin{adjustbox}{width=\textwidth}
+	\begin{tikzpicture}[every node/.style={inner sep=0,outer sep=0}]
+		
+		%Bilder Stufe 1
+		\node [anchor=north west] (img11) at (0.1\textwidth,0) {\includegraphics[frame,width=.28\textwidth]{04_deflektometrischeRegistrierung/bestimmungDeflektometrischeRegistrierung/registrierungMitPhasenentfaltung/figures/m_1_1}};
+		\node [anchor=north west] (img21) at (0.41\textwidth,0) {\includegraphics[frame,width=.28\textwidth]{04_deflektometrischeRegistrierung/bestimmungDeflektometrischeRegistrierung/registrierungMitPhasenentfaltung/figures/m_2_1}};
+		\node [anchor=north west] (img31) at (0.72\textwidth,0) {\includegraphics[frame,width=.28\textwidth]{04_deflektometrischeRegistrierung/bestimmungDeflektometrischeRegistrierung/registrierungMitPhasenentfaltung/figures/m_3_1}};
+		
+		%Bilder Stufe 2
+		\node [below=1cm of img11.south west, anchor=north west] (img12) {\includegraphics[frame,width=.28\textwidth]{04_deflektometrischeRegistrierung/bestimmungDeflektometrischeRegistrierung/registrierungMitPhasenentfaltung/figures/m_1_2}};
+		\node [below=1cm of img21.south west, anchor=north west] (img22) {\includegraphics[frame,width=.28\textwidth]{04_deflektometrischeRegistrierung/bestimmungDeflektometrischeRegistrierung/registrierungMitPhasenentfaltung/figures/m_2_2}};
+		\node [below=1cm of img31.south west, anchor=north west] (img32) {\includegraphics[frame,width=.28\textwidth]{04_deflektometrischeRegistrierung/bestimmungDeflektometrischeRegistrierung/registrierungMitPhasenentfaltung/figures/m_3_2}};
+	
+		%Bilder Stufe 3
+		\node [below=1cm of img12.south west, anchor=north west] (img13) {\includegraphics[frame,width=.28\textwidth]{04_deflektometrischeRegistrierung/bestimmungDeflektometrischeRegistrierung/registrierungMitPhasenentfaltung/figures/m_1_3}};
+		\node [below=1cm of img22.south west, anchor=north west] (img23) {\includegraphics[frame,width=.28\textwidth]{04_deflektometrischeRegistrierung/bestimmungDeflektometrischeRegistrierung/registrierungMitPhasenentfaltung/figures/m_2_3}};
+		\node [below=1cm of img32.south west, anchor=north west] (img33) {\includegraphics[frame,width=.28\textwidth]{04_deflektometrischeRegistrierung/bestimmungDeflektometrischeRegistrierung/registrierungMitPhasenentfaltung/figures/m_3_3}};
+		
+		%Captions Stufe 1
+		\node [below=0.2cm of img11] (cap11) {Muster $m_1^1$};
+		\node [below=0.2cm of img21] (cap21) {Muster $m_2^1$};
+		\node [below=0.2cm of img31] (cap31) {Muster $m_3^1$};
+		
+		%Captions Stufe 2
+		\node [below=0.2cm of img12] (cap12) {Muster $m_1^2$};
+		\node [below=0.2cm of img22] (cap22) {Muster $m_2^2$};
+		\node [below=0.2cm of img32] (cap32) {Muster $m_3^2$};
+		
+		%Captions Stufe 3
+		\node [below=0.2cm of img13] (cap13) {Muster $m_1^3$};
+		\node [below=0.2cm of img23] (cap23) {Muster $m_2^3$};
+		\node [below=0.2cm of img33] (cap33) {Muster $m_3^3$};
+		
+		
+		%Beschriftung Stufen
+		\node [left=0.7cm of img11.west, anchor=east] {Stufe 1:};
+		\node [left=0.7cm of img12.west, anchor=east] {Stufe 2:};
+		\node [left=0.7cm of img13.west, anchor=east] {Stufe 3:};
+		
+		%Beschriftungen Phasenverschiebungen
+		\node [above=0.2cm of img11] {$k = 1$ $\left(\psi_1 = 0\right)$};
+		\node [above=0.2cm of img21] {$k = 2$ $\left(\psi_2 = \tfrac{2\pi}{3}\right)$};
+		\node [above=0.2cm of img31] {$k = 3$ $\left(\psi_3 = \tfrac{4\pi}{3}\right)$};
+		
+	\end{tikzpicture}
+\end{adjustbox}
+\caption[Muster mit unterschiedlichen Perioden zur Phasenkodierung]{Musterserie nach Gleichung \ref{eq:monitormuster_mehrstufig} mit $A_m =127.5$, $C_m = 1.0$, $N_{shift} = 3$, $\acrshortmath{lwidth} = 384$, Anzahlen an Perioden $N_p^1 = 2$, $N_p^2 = 3$ und $N_p^3 = 5$}

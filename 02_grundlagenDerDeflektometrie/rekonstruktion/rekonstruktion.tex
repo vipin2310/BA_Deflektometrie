@@ -1,0 +1,76 @@
+Das Hauptforschungsgebiet der gegenwärtigen Deflektometrie ist die Generierung von dreidimensionalen Modellen von spiegelnden Objektoberflächen.
+Der Aufbau eines solchen Anwendungsfalls sieht eine Beleuchtungseinheit (z. B. einen Bildschirm), einen Sensor (z. B. eine Kamera) und ein zu untersuchendes Objekt vor.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{02_grundlagenDerDeflektometrie/rekonstruktion/figures/nature-articel-nr1}
+	\caption[Aufbau einer Deflektometrie-Prüfstation]{Aufbau einer Deflektometrie-Prüfstation. \textit{in Anlehnung an} \cite{aufbau}}
+	\label{img:aufbau}
+\end{figure}
+
+\noindent
+Wie in Abbildung \ref{img:aufbau} angedeutet, wird ein Muster als bekannte Szene auf ein Prüfobjekt abgebildet und anschließend von einer Kamera aufgenommen.
+Das grundlegende Prinzip basiert darauf, dass jeder durch die Kamera aufgenommene Punkt des Objekts dem Punkt auf dem Bildschirm zugeordnet wird, der den Objektpunkt beleuchtet bzw. der am Objektpunkt in die Kamera reflektiert wird.
+Dabei ordnet man jedem Pixel des projizierten Musters sein zugehöriges Pixel des erzeugten Musters auf dem Bildschirm zu.
+Durch diese Zuordnung von Kamera- und Bildschirmpunkten lassen sich Neigungsinformationen der Oberfläche berechnen.
+Dies kann durch Strahlenverfolgungen erreicht werden.
+In Abbildung \ref{img:aufbau} lässt sich das über die in Rot eingezeichneten Vektoren erkennen.
+Die Schwierigkeit liegt in der eindeutigen Zuordnung zwischen der Szene und dem Spiegelbild.
+Hierfür gibt es verschiedene Ansätze, dies zu erreichen.
+Grundlegend ist dabei die Kodierung der Objektoberfläche (siehe Definition \ref{def:kodierungOberflaeche}), damit diese durch die Kamera aufgenommen werden kann.
+Die Kamera digitalisiert dann die kodierte Oberfläche zu einem oder mehreren Bildern.
+Unter Berücksichtigung der Kodierung können die Bilder durch einen entsprechenden Softwarealgorithmus dekodiert werden und man erhält damit die Zuordnung zwischen der Szene und dem Spiegelbild (siehe Abbildung \ref{tikz:abbKodierungUndDekodierung}).
+%
+% Definition: Kodierung der Objektoberfläche
+\begin{Definition}{Kodierung der Objektoberfläche}{def:kodierungOberflaeche}
+	Die Abbildung einer oder mehrerer vordefinierter Szenen auf eine spiegelnde Oberfläche wird als \textit{Kodierung der Objektoberfläche} bezeichnet.
+	Das Ziel ist es dabei die Punkte aus der Szene eindeutig durch eine oder mehrere Aufnahmen der Oberfläche zu identifizieren.
+\end{Definition}
+%
+%
+% Abbildung: Kodierung und Dekodierung
+{
+	\begin{figure}[H]
+		\centering
+		\input{02_grundlagenDerDeflektometrie/rekonstruktion/figures/abbKodierungUndDekodierung}
+		\label{tikz:abbKodierungUndDekodierung}
+	\end{figure}
+}
+
+\noindent
+Die Art, wie man die Informationen in den digitalen Kanal überträgt, ist entscheidend für eine gute Zuordnung.
+Aus dem Grund werden sich in wissenschaftlichen Forschungsarbeiten einige Gedanken über die Kodierung der Objektoberfläche gemacht.
+Auf eine Auswahl von Möglichkeiten aus dem heutigen wissenschaftlichen Stand soll im Folgenden eingegangen werden.
+%
+% Phasenkodierung
+{
+	\FloatBarrier
+    \subsection{Phasenkodierung}
+    \label{sub:phasenKodierung}
+    \input{02_grundlagenDerDeflektometrie/rekonstruktion/phasenKodierung/phasenKodierung}
+}
+%
+% Frequenzkodierung
+{
+	\FloatBarrier
+    \subsection{Frequenzkodierung}
+    \label{sub:frequenzKodierung}
+    \input{02_grundlagenDerDeflektometrie/rekonstruktion/frequenzKodierung/frequenzKodierung}
+}
+%
+% Stochastische Kodierung
+{
+	\FloatBarrier
+    \subsection{Stochastische Kodierung}
+    \label{sub:stochastischeKodierung}
+    \input{02_grundlagenDerDeflektometrie/rekonstruktion/stochastischeKodierung/stochastischeKodierung}
+}
+%
+% Rekonstruktion der Oberfläche und Regularisierungsproblem
+{
+	\FloatBarrier
+    \subsection{Rekonstruktion der Oberfläche und Regularisierungsproblem}
+    \label{sub:rekonstruktionUndRegularisierungsproblem}
+    \input{02_grundlagenDerDeflektometrie/rekonstruktion/rekonstruktionUndRegularisierungsproblem/rekonstruktionUndRegularisierungsproblem}
+}
+%

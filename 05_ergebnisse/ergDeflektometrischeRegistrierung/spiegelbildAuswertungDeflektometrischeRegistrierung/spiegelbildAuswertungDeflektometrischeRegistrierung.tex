@@ -1,0 +1,70 @@
+Das Verfahren zur Bestimmung der deflektometrischen Registrierung konnte bestimmte Fehlstellen auch bei der Durchlichtauswertung sichtbar machen.
+Allerdings sind schwächere Kratzer und Gravuren untergegangen.
+Aus dem Grund wird zum Vergleich das Brillenglas 1 untersucht und durch den Aufbau für die Spiegelbildauswertung (siehe rechtes Teilbild aus Abbildung \ref{tikz:abbAufbauFotos}) geprüft, ob bessere Ergebnisse erzielt werden können.
+Wie auch im Abschnitt \ref{sub:spiegelbildAuswertungLichtstreuung} kann für Brillenglas 1 der Rückseitenreflex durch den Polarisationsfilter und der Färbung nahezu vollständig vermieden werden.
+Die Spiegelbildauswertung ermöglicht auch die Anwendung des Verfahrens für nicht-transparente spiegelnde Objekte, weshalb die Keramikobjekte 1 und 2 aus Abbildung \ref{tikz:abbStreifenaufnahmenSpLichtstreuung} zur Prüfung herangezogen werden.
+
+\p
+In Abbildung \ref{tikz:abbSinusStreifenmusterSpiegel} werden die Prüfobjekte unter der Spiegelung eines sinusoidalen Streifenmusters nach den Parametern aus Tabelle \ref{tab:paramDeflektometrischRegistrierung} dargestellt.
+
+% Abbildung: Aufnahmen mit sinusoidalen Streifenmustern
+{
+	\begin{figure}[H]
+		\centering
+		\input{05_ergebnisse/ergDeflektometrischeRegistrierung/spiegelbildAuswertungDeflektometrischeRegistrierung/figures/abbSinusStreifenmusterSpiegel}
+		\label{tikz:abbSinusStreifenmusterSpiegel}
+	\end{figure}
+}
+
+\noindent
+Nach der Bestimmung der deflektometrischen Registrierungen der Prüfobjekte können daraus Bilder erstellt werden (siehe Definition \ref{def:graphDeflektometrischeRegistrierung}):
+
+% Abbildung: Bilder der deflektometrische Registrierung der Zeilen
+{
+	\begin{figure}[H]
+		\centering
+		\input{05_ergebnisse/ergDeflektometrischeRegistrierung/spiegelbildAuswertungDeflektometrischeRegistrierung/figures/abbDeflectometricRegistrationsSpiegel}
+		\label{tikz:abbDeflectometricRegistrationsSpiegel}
+	\end{figure}
+}
+
+\noindent
+In den Bildern der deflektometrischen Zeilenregistrierung tauchen in den zu untersuchenden Objekten einzelne Bildpunkte auf, deren Grauwerte nicht zu der Umgebung passen.
+Diese Ausreißer haben für die Oberflächenform keine größere Bedeutung und entstehen z. B. durch Messfehler, Fremdlicht oder die angestrahlte Abschirmung, die von innen Licht auf das Prüfobjekt reflektiert.
+Durch Anwendung des Medianfilters zur Glättung des Bildes, kann man diese Störungen weitgehend entfernen.
+Anschließend kann auch für diese Objekte zur Auswertung der deflektometrischen Registrierung die Ableitung der geglätteten Bilder in Richtung der Zeilen gebildet werden:
+
+% Abbildung: Bilder der Ableitung der deflektometrische Registrierung der Zeilen
+{
+	\begin{figure}[H]
+		\centering
+		\input{05_ergebnisse/ergDeflektometrischeRegistrierung/spiegelbildAuswertungDeflektometrischeRegistrierung/figures/abbAbleitungRegistrierungSpiegel}
+		\label{tikz:abbAbleitungRegistrierungSpiegel}
+	\end{figure}
+}
+
+\noindent
+Genau wie bei der Durchlichtauswertung durch dieses Verfahren, lassen sich bei dem Brillenglas 1 in Abbildung \ref{tikz:abbAbleitungRegistrierungSpiegel} keine größeren Auffälligkeiten feststellen.
+Es lassen sich demnach nicht wie im Abschnitt \ref{sub:spiegelbildAuswertungLichtstreuung} Fehlstellen oder die Gravur der Brillenkennzeichnung erkennen.
+Auf den Keramikobjekten 1 und 2 erkennt man Abweichungen von den Krümmungsverläufen der Oberfläche.
+In Abbildung \ref{tikz:abbAbleitungRegistrierungSpiegel} sind diese Auffälligkeiten durch rote Rechtecke markiert.
+Beim Keramikobjekt 1 handelt es sich hierbei um sogenannte  \glqq Pickel\grqq ~auf der Oberfläche.
+Auf der Oberfläche des Keramikobjekts 2 befindet sich im roten Rechteck eine Delle bzw. Wölbung.
+
+\p
+Als Alternative zur Auswertung der deflektometrischen Registrierung über die Ableitung, wird eine Auswertung über die Krümmungsberechnung durch den sogenannten \glqq Mexican Hat\grqq -Operator\footnote{
+Der \glqq Mexican Hat\grqq -Operator bzw. der Laplace of Gaussian kann verwendet werden, um ein Maß für die partiellen zweiten Ableitungen in $x$- und $y$-Richtung eines Bildes zu erhalten.
+} durchgeführt:
+
+% Abbildung: Bilder des Mexican Hat Filter angewandt auf die deflektometrische Registrierung der Zeilen
+{
+	\begin{figure}[H]
+		\centering
+		\input{05_ergebnisse/ergDeflektometrischeRegistrierung/spiegelbildAuswertungDeflektometrischeRegistrierung/figures/abbMexicanHatRegistrierung}
+		\label{tikz:abbMexicanHatRegistrierung}
+	\end{figure}
+}
+
+\noindent
+Auch in Abbildung \ref{tikz:abbMexicanHatRegistrierung} erkennt man im Brillenglas keine Abweichungen der Oberflächen\-krümmung.
+Auf den Keramikobjekten 1 und 2 erkennt man an den in Abbildung \ref{tikz:abbAbleitungRegistrierungSpiegel} markierten Fehlstellen auch Auffälligkeiten in Abbildung \ref{tikz:abbMexicanHatRegistrierung}.

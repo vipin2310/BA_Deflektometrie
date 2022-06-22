@@ -1,0 +1,216 @@
+Die im Folgenden beschriebene Methodik zur Bestimmung der deflektometrischen Registrierung ist ein mehrstufiges Phasenschiebeverfahren.
+Ein solches Verfahren wird von Kammel in seiner Dissertation \cite{kit_kammel} vorgestellt.
+Das Verfahren von Kammel zeigt jedoch in der Praxis Kodierungsartefakte bzw. Phasensprünge insbesondere an den Periodengrenzen.
+Aus dem Grund stellt Werling darauf aufbauend in seiner Dissertation \cite{kit_werling} einen neuen Ansatz eines mehrstufigen Phasenschiebeverfahrens vor, der das Problem mit den Phasensprüngen minimiert.
+Die Idee des Ansatzes ist dabei, dass man zunächst analog zum Verfahren aus dem vorigen Abschnitt \ref{sub:registrierungOhnePhasenentfaltung} die $x$- bzw. $y$-Koordinaten relativ zu den Perioden der Muster bestimmt.
+Durch mehrere Muster mit unterschiedlichen Perioden erhält man schließlich unterschiedliche relative $x$- bzw. $y$-Koordinaten.
+Diese müssen für das finale Ergebnis jeweils den richtigen Perioden zugeordnet werden, indem ein Gleichungssystem aufgestellt wird.
+
+\p
+Analog zum Verfahren aus Kapitel \ref{sub:registrierungOhnePhasenentfaltung} benötigt man $N_{shift}$-viele phasenverschobene Muster, um die Phase eines Bildpunkts $(x_B, y_B)^\top$ zu bestimmen.
+Zusätzlich betrachtet man mehrere Stufen des Verfahrens.
+Die Muster auf der Stufe $i$ haben $N_p^i$-viele Perioden über die Monitorbreite \acrshort{lwidth} bzw. Monitorhöhe \acrshort{lheight}.
+Auf unterschiedlichen Stufen des Verfahrens sollen stets auch die Anzahlen der Perioden der Muster unterschiedlich sein.
+Auf jeder Stufe des Verfahrens befinden sich $N_{shift}$-viele phasenverschobene Muster, welche dieselbe Anzahl an Perioden $N_p^i$ entlang der Monitorbreite bzw. Monitorhöhe haben.
+Das heißt, dass die Muster auf der $i$-ten Stufe identisch sind, bis auf die Phasenverschiebung.
+Die Phasen $\phi_x^i$ und $\phi_y^i$ der kodierten Monitorpunkte $(x_L, y_L)^\top$ auf der $i$-ten Stufe sehen dann folgendermaßen aus:
+%
+\begin{equation}
+	\phi_x^i = \dfrac{2\pi N_p^i}{\acrshortmath{lwidth}} x_L,
+	\qquad
+	\phi_y^i = \dfrac{2\pi N_p^i}{\acrshortmath{lheight}} y_L
+\end{equation}
+
+\p
+O.B.d.A. wird unter Verwendung von Satz \ref{theo:separierbarkeitDeflektometrischeRegistrierung} nachfolgend nur die deflektometrische Registrierung der Spaltenpositionen \acrshort{lrx} ($x$-Richtung) betrachtet.
+Die deflektometrische Registrierung der Zeilenpositionen \acrshort{lry} ($y$-Richtung) kann analog bestimmt werden.
+Auf der Stufe $i$ hat das $k$-te Muster $m_k^i$ zur Kodierung der Monitorpunkte $(x_L, y_L)^\top$ somit die Form:
+%
+\begin{equation}\label{eq:monitormuster_mehrstufig}
+	\begin{gathered}	
+		m_k^i(x_L,y_L) = A_m^i \left(1 + C_m^i \cos \left(\phi_x^i + \psi_k\right)\right),\\
+		k \in \lbrace 1,\ldots,N_{shift}\rbrace,
+		\quad
+		\psi_k = (k - 1)\dfrac{2\pi}{N_{shift}}
+	\end{gathered}
+\end{equation}
+%
+$A_m^i$ bezeichnet die Amplitude und $C_m^i$ den Kontrast der Muster der $i$-ten Stufe.
+Wie auch in Abschnitt \ref{sub:registrierungOhnePhasenentfaltung} entspricht $\psi_k$ der Phasenverschiebung des $k$-ten Musters und $N_{shift}$ der Anzahl der Phasenverschiebungen.
+Der Einfluss der jeweiligen Parameter ist analog zu Abschnitt \ref{sub:registrierungOhnePhasenentfaltung} und einsehbar in Abbildung \ref{tikz:abbBeispielMusterOhnePhasenentfaltung}.
+Abbildung \ref{tikz:abbBeispielMusterMitPhasenentfaltung} zeigt eine mögliche Musterserie für dieses Verfahren, um das Verständnis zwischen den Mustern und den Stufen aufzuzeigen.
+%
+% Abbildung: Beispiel Muster
+{
+	\begin{figure}[H]
+		\centering
+		\input{04_deflektometrischeRegistrierung/bestimmungDeflektometrischeRegistrierung/registrierungMitPhasenentfaltung/figures/abbBeispielMusterMitPhasenentfaltung}
+		\label{tikz:abbBeispielMusterMitPhasenentfaltung}
+	\end{figure}
+}
+
+\noindent
+Für jedes Muster jeder Stufe nimmt die Kamera Signale $g_k^i$ auf:
+%
+\begin{equation}\label{eq:kamerabild_mehrstufig}
+	g_k^i(x_B, y_B) = A_g^i(x_B, y_B) \left(1 + C_g^i(x_B, y_B) \cos \left(\dfrac{2\pi N_p^i}{\acrshortmath{lwidth}}\acrshortmath{lrx}(x_B, y_B) + \psi_k\right)\right)
+\end{equation}
+%
+Analog zu Kapitel \ref{sub:registrierungOhnePhasenentfaltung} lässt sich aus den Bildern $g_k^i$ die Phase der $i$-ten Stufe $\phi_x^i$ berechnen.
+Vergleichbar mit Gleichung \ref{eq:registrierungX} kann man in diesem Verfahren aus der Phase die Monitorkoordinaten relativ zum Intervall $[0,\acrshortmath{lwidth}/N_p^i)$ bestimmen:
+%
+\begin{equation}\label{eq:registrierungX_relativ}
+	x_{L,relativ}^i =
+	\dfrac{\acrshortmath{lwidth}}{2\pi N_p^i}
+	\arctan 
+	\left( 
+		-\dfrac
+		{\sum\limits_{k=1}^{N_{shift}} g_k^i(x_B, y_B) sin\left((k - 1)\dfrac{2\pi}{N_{shift}}\right)}
+		{\sum\limits_{k=1}^{N_{shift}} g_k^i(x_B, y_B) cos\left((k - 1)\dfrac{2\pi}{N_{shift}}\right)}
+	\right)
+\end{equation}
+%
+Die absolute Monitorkoordinate $x_L^i$ der $i$-ten Stufe lässt sich bestimmen, indem man zur Phase $\phi_x^i$ ein unbekanntes ganzzahliges Vielfaches von $2\pi$ addiert.
+In Abhängigkeit von $x_{L,relativ}^i$ bedeutet das für $x_L^i$:
+%
+\begin{equation}\label{eq:registrierungX_absolut}
+	x_L^i = x_{L,relativ}^i + n^i \dfrac{\acrshortmath{lwidth}}{N_p^i},
+	\qquad
+	(n^i \in \mathbb{N}_0)
+\end{equation}
+%
+Dabei ist $n^i$ ein unbekannter ganzzahliger Faktor, der die absolute Auswertung bestimmt.
+Zur Bestimmung des Faktors $n^i$ sollen zwei verschiedene Stufen $i$,$j$ des Verfahrens mit $i \neq j$ betrachtet werden.
+Zur eindeutigen Lösbarkeit des nachfolgenden Gleichungssystems müssen $N_p^i$ und $N_p^j$ teilerfremd sein, das heißt es gilt:
+%
+\begin{equation*}
+	ggT(N_p^i, N_p^j) = 1
+	\quad
+	\forall i \neq j
+\end{equation*}
+%
+Dadurch erhält man Bilder $g_k^i$ und $g_k^j$ von zwei unterschiedliche Musterserien $m_k^i$ und $m_k^j$ ($i \neq j$).
+Aufgrund der Teilerfremdheit von $N_p^i$ und $N_p^j$ der Musterserien erhält man aus Gleichung \ref{eq:registrierungX_relativ} unterschiedliche $x_{L,relativ}^i$ und das eindeutig lösbare Gleichungssystem:
+%
+\begin{equation}\label{eq:gleichungssystemRegistrierung}
+	\begin{split}
+		x_L & = x_{L,relativ}^i + n^i \dfrac{\acrshortmath{lwidth}}{N_p^i},
+		\quad n^i \in \lbrace 0,\ldots, N_p^i - 1 \rbrace \subset \mathbb{N}_0\\
+		x_L & = x_{L,relativ}^j + n^j \dfrac{\acrshortmath{lwidth}}{N_p^j},
+		\quad n^j \in \lbrace 0,\ldots, N_p^j - 1 \rbrace \subset \mathbb{N}_0
+	\end{split}
+\end{equation}
+%
+% Abbildung: Bestimmung eindeutiger Position
+{
+	\begin{figure}[H]
+		\centering
+		\input{04_deflektometrischeRegistrierung/bestimmungDeflektometrischeRegistrierung/registrierungMitPhasenentfaltung/figures/abbBestimmungEindeutigerPosition}
+		\label{tikz:abbBestimmungEindeutigerPosition}
+	\end{figure}
+}
+%
+\noindent
+Die Abbildung \ref{tikz:abbBestimmungEindeutigerPosition} stellt die graphische Lösung des Gleichungssystems aus Gleichung \ref{eq:gleichungssystemRegistrierung} anhand eines Beispiels mit drei Mustern dar.
+Durch die zuvor erwähnten Schritte des Verfahrens erhält man für ein Kamerapixel die relative Spaltenposition $x_{L,relativ}^i$ zu den Perioden der $i$-ten Muster (siehe violette Punkte in Abb. \ref{tikz:abbBestimmungEindeutigerPosition}).
+Unter Berücksichtigung der Teilerfremdheit erhält man durch die Bestimmung des minimalen Abstands die eindeutige Zuordnung $\mathrm{\textit{A}} = (\alpha^1,\ldots,\alpha^{N{step}})$ der relativen Spaltenpositionen zur richtigen Periode (siehe rote Punkte in Abb. \ref{tikz:abbBestimmungEindeutigerPosition}).
+
+\p
+In diesem Zusammenhang muss für die Monitorkoordinate $x_L = x_L^i = x_L^j$ gelten.
+Diese Gleichheit ist aufgrund von Ungenauigkeiten während des gesamten Bildaufnahmeprozesses nur schwierig zu erreichen, weshalb man aus dem Gleichungssystem ein Optimierungsproblem bildet.
+Das heißt, gesucht ist folgende Näherungslösung $(n^i, n^j)$:
+%
+\begin{equation}\label{eq:optimierungsProblem_zweiStufen}
+	\begin{gathered}	
+		(n^i, n^j) = \argmin_{\alpha, \beta \in \mathbb{N}_0}
+		\left\lvert
+			\Bigg(
+				x_{L,relativ}^i + \alpha \dfrac{\acrshortmath{lwidth}}{N_p^i}
+			\Bigg)
+			-
+			\Bigg(		
+				x_{L,relativ}^j + \beta \dfrac{\acrshortmath{lwidth}}{N_p^j}
+			\Bigg)
+		\right\rvert,\\
+		\alpha \in \lbrace 0,\ldots, N_p^i - 1\rbrace,
+		\qquad
+		\beta \in \lbrace 0,\ldots, N_p^j - 1\rbrace
+	\end{gathered}
+\end{equation}
+%
+Durch weitere Stufen dieses Verfahrens erhöht sich zunehmend die Genauigkeit der Phasenentfaltung.
+Das zu betrachtende Optimierungsproblem ergibt schließlich das Tupel $(n^1,\ldots, n^{N_{step}})$ zur Bestimmung der deflektometrischen Registrierung in $x$-Richtung:
+%
+\begin{equation}\label{eq:optimierungsProblem_mehrstufig}
+	\begin{gathered}	
+		(n^1,\ldots, n^{N_{step}}) = \argmin_{\mathrm{\textit{A}}}
+		\sum\limits_{i = 1}^{N_{step}}
+		\sum\limits_{j = i + 1}^{N_{step}}
+		\left\lvert
+			\Bigg(
+				x_{L,relativ}^i + \alpha^i \dfrac{\acrshortmath{lwidth}}{N_p^i}
+			\Bigg)
+			-
+			\Bigg(		
+				x_{L,relativ}^j + \alpha^j \dfrac{\acrshortmath{lwidth}}{N_p^j}
+			\Bigg)
+		\right\rvert,\\
+		\text{mit} ~\mathrm{\textit{A}} = (\alpha^1,\ldots,\alpha^{N{step}}) ~\text{und} ~\alpha^i \in \lbrace 0,\ldots, N_p^i - 1 \rbrace \subset \mathbb{N}_0
+	\end{gathered}
+\end{equation}
+
+\p
+Mit der Zuordnung aus Gleichung \ref{eq:optimierungsProblem_mehrstufig} lässt sich die absolute Monitorkoordinate in den Spalten $x_L^i$ berechnen. 
+Durch die Berechnung eines Mittelwerts der $x_L^i$ erhält man die beste Annäherung an die tatsächliche Spaltenposition.
+%
+\begin{equation}\label{eq:registrierungX_mehrstufig}
+	\begin{split}
+		x_L
+		& =
+			\acrshortmath{lrx}(x_B, y_B)\\
+		& =
+			\dfrac{1}{N_{step}}
+			\sum\limits_{i = 1}^{N_{step}}
+			x_{L,relativ}^i + n^i \dfrac{\acrshortmath{lwidth}}{N_p^i}\\
+		& =
+			\dfrac{1}{N_{step}}
+			\sum\limits_{i = 1}^{N_{step}}
+			\dfrac{\acrshortmath{lwidth}}{2\pi N_p^i}
+			\arctan
+			\left(
+				-\dfrac
+				{\sum\limits_{k=1}^{N_{shift}} g_k^i(x_B, y_B) sin\left((k - 1)\dfrac{2\pi}{N_{shift}}\right)}
+				{\sum\limits_{k=1}^{N_{shift}} g_k^i(x_B, y_B) cos\left((k - 1)\dfrac{2\pi}{N_{shift}}\right)}
+			\right)
+			+ n^i \dfrac{\acrshortmath{lwidth}}{N_p^i}
+	\end{split}
+\end{equation}
+%
+Durch Gleichung \ref{eq:registrierungX_mehrstufig} ist die deflektometrische Registrierung der Spaltenpositionen \acrshort{lrx} nach der Phasenentfaltung angegeben.
+Analog lässt sich dieses Verfahren auch für die deflektometrische Registrierung der Zeilenpositionen \acrshort{lry} anwenden.
+
+\p
+Für die eindeutige Lösbarkeit des Gleichungssystems aus \ref{eq:gleichungssystemRegistrierung} ist die Wahl der Anzahl der Perioden im Muster $N_p^i$ entscheidend.
+Da der Zusammenhang
+%
+\begin{equation*}
+	ggT(N_p^1, \ldots, N_p^{N_{step}}) = 1
+\end{equation*}
+%
+gelten soll, sind geeignete Wahlen für die Anzahl der Perioden $N_p^i$ die Elemente aus der Menge der Primzahlen $\mathbb{P} = \lbrace 2, 3, 5, 7, 11,\ldots\rbrace$.
+Die festzulegenden Parameter $N_{shift}$ und $N_{step}$ haben zunächst keine großen Auswirkungen auf die Lösbarkeit des Verfahrens, dennoch empfiehlt es sich, eine genügend hohe Anzahl von Phasenverschiebungen und Mustern mit unterschiedlichen Perioden zu wählen, um die Genauigkeit des Verfahrens anzuheben.
+Für die erfolgreiche Zuordnung der Phase zu einer relativen Spaltenposition $x_{L,relativ}^i$ ist eine Mindestanzahl von drei Phasenverschiebungen notwendig ($N_{shift} \geq 3$, vgl. Kapitel \ref{sub:registrierungOhnePhasenentfaltung}). 
+
+\p
+Das beschriebene Verfahren zur Bestimmung der deflektometrischen Registrierung \acrshort{lr} wird nachfolgend im Algorithmus \ref{alg:bestimmungDeflektometrischeRegistrierung} zusammengefasst.
+
+%Algorithmus zur Bestimmung der deflektometrischen Registrierung mit Phasenentfaltung
+{
+	\FloatBarrier
+	\input{04_deflektometrischeRegistrierung/bestimmungDeflektometrischeRegistrierung/registrierungMitPhasenentfaltung/algorithmusDeflektometrischeRegistrierung}
+}
+
+\noindent
+Der Algorithmus beschreibt die Berechnung der deflektometrischen Registrierung der Spaltenpositionen \acrshort{lrx}.
+Analog lässt sich auch die deflektometrische Registrierung der Zeilenpositionen \acrshort{lry} bestimmen.
+Nach Satz \ref{theo:separierbarkeitDeflektometrischeRegistrierung} kann schließlich aus den separierten deflektometrischen Registrierungen der Spalten- und Zeilenpositionen \acrshort{lrx} und \acrshort{lry} die deflektometrische Registrierung \acrshort{lr} des Prüfsystems gebildet werden.

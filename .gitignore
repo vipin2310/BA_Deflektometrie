@@ -20,3 +20,5 @@
 *.ist
 *.out
 *.gls
+*.bak
+*.ps1

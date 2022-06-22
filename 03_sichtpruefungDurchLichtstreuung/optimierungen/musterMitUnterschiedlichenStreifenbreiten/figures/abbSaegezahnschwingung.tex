@@ -1,0 +1,35 @@
+\begin{adjustbox}{width=\textwidth}
+	\begin{tikzpicture}
+	
+		% Koordinatensystem
+		\draw[thick,-stealth,black] (-8,0)--(8,0) node[below] {$t$};
+		\draw[thick,-stealth,black] (0,-2.125)--(0,2.125);
+		\draw[thick,black] (0,-1.5) -- (-0.1,-1.5) node[anchor=east,fill=white] {$-1$};
+		\draw[thick,black] (0,1.5) -- (-0.1,1.5) node[anchor=east,fill=white] {$1$};
+
+		% Funktion
+		\draw[name path = func1, blue, thick, domain=-8:8, samples=600] plot (\x,{1.5*(2*((\x/3)-0.5-floor((\x/3))))});
+		
+		% Achsenbeschriftungen
+		\draw[thick,black] (0,-1.5) -- (-0.1,-1.5) node[anchor=east,fill=white] {$-1$};
+		\draw[thick,black] (0,1.5) -- (-0.1,1.5) node[anchor=east,fill=white] {$1$};
+		\draw[thick,black] (-7,0) -- (-7,-0.1) node[anchor=north,fill=white] {$-7$};
+		\draw[thick,black] (-6,0) -- (-6,-0.1) node[anchor=north,fill=white] {$-6$};
+		\draw[thick,black] (-5,0) -- (-5,-0.1) node[anchor=north,fill=white] {$-5$};
+		\draw[thick,black] (-4,0) -- (-4,-0.1) node[anchor=north,fill=white] {$-4$};
+		\draw[thick,black] (-3,0) -- (-3,-0.1) node[anchor=north,fill=white] {$-3$};
+		\draw[thick,black] (-2,0) -- (-2,-0.1) node[anchor=north,fill=white] {$-2$};
+		\draw[thick,black] (-1,0) -- (-1,-0.1) node[anchor=north,fill=white] {$-1$};
+		\draw[thick,black] (1,0) -- (1,-0.1) node[anchor=north,fill=white] {$1$};
+		\draw[thick,black] (2,0) -- (2,-0.1) node[anchor=north,fill=white] {$2$};
+		\draw[thick,black] (3,0) -- (3,-0.1) node[anchor=north,fill=white] {$3$};
+		\draw[thick,black] (4,0) -- (4,-0.1) node[anchor=north,fill=white] {$4$};
+		\draw[thick,black] (5,0) -- (5,-0.1) node[anchor=north,fill=white] {$5$};
+		\draw[thick,black] (6,0) -- (6,-0.1) node[anchor=north,fill=white] {$6$};
+		\draw[thick,black] (7,0) -- (7,-0.1) node[anchor=north,fill=white] {$7$};
+		
+		% Funktionsbeschriftung
+		\draw[blue,thick] node[anchor=east] at (8,2.125) {$w_{\tfrac{1}{3}}(t)$};
+	\end{tikzpicture}
+\end{adjustbox}
+\caption[Sägezahnschwingung bzw. Kippschwingung]{Sägezahnschwingung nach Gleichung \ref{eq:saegezahnschwingung} mit $f = \tfrac{1}{3}$.}
