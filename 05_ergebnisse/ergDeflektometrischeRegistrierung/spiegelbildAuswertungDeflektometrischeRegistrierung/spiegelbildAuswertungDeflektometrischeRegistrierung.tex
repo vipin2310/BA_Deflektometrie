@@ -52,9 +52,16 @@ Beim Keramikobjekt 1 handelt es sich hierbei um sogenannte  \glqq Pickel\grqq ~a
 Auf der Oberfläche des Keramikobjekts 2 befindet sich im roten Rechteck eine Delle bzw. Wölbung.
 
 \p
-Als Alternative zur Auswertung der deflektometrischen Registrierung über die Ableitung, wird eine Auswertung über die Krümmungsberechnung durch den sogenannten \glqq Mexican Hat\grqq -Operator\footnote{
-Der \glqq Mexican Hat\grqq -Operator bzw. der Laplace of Gaussian kann verwendet werden, um ein Maß für die partiellen zweiten Ableitungen in $x$- und $y$-Richtung eines Bildes zu erhalten.
-} durchgeführt:
+Als Alternative zur Auswertung der deflektometrischen Registrierung über die Ableitung, wird eine Auswertung über die Krümmungsberechnung durch den sogenannten \glqq Mexican Hat\grqq -Operator durchgeführt (siehe Abbildung \ref{tikz:abbMexicanHatRegistrierung}).
+Die Filterung durch den \glqq Mexican Hat\grqq -Operator kann umgesetzt werden, indem im ersten Schritt eine Glättung des Bildes durch den Gauß-Filter $g_\sigma$ realisiert und im Anschluss der Laplace-Operator $\Delta$ angewandt wird \cite{mexicanHat}.
+Damit erhält man für die Filterung eines Bildes $f$ im kontinuierlichen Fall mit dem \glqq Mexican Hat\grqq -Operator:
+%
+\begin{equation*}
+	\begin{split}
+		h(x,y) &= \Delta(f \ast g_\sigma)(x,y) \\
+		&= \dfrac{\partial^2}{\partial x^2} (f \ast g_\sigma)(x,y) + \dfrac{\partial^2}{\partial y^2} (f \ast g_\sigma)(x,y)
+	\end{split}
+\end{equation*}
 
 % Abbildung: Bilder des Mexican Hat Filter angewandt auf die deflektometrische Registrierung der Zeilen
 {
