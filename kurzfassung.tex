@@ -263,7 +263,7 @@ urlseen = {Letzter Zugriff:},
 	Durch bestimmte Methoden lassen sich die Phasen des gespiegelten Streifenmusters bestimmen, wodurch man die Zuordnung erhält.
 	
 	\par
-	Es ist möglich durch Separierung der Zuordnung in eine Zeilen- und eine Spaltenzuordnung, diese als Bilder darzustellen.
+	Es ist möglich die Zuordnung durch Bilder darzustellen, indem man Grauwerte für die einzelnen Monitorzeilen und -spalten vergibt.
 	Dadurch kann man herkömmliche Bildverarbeitung anwenden um Fehlstellen zu detektieren (siehe Abb. \ref{tikz:gradientenAuswertung}).
 	
 	\begin{figure}[H]
@@ -285,10 +285,67 @@ urlseen = {Letzter Zugriff:},
 	Im Vergleich zur vollständigen Rekonstruktion der Oberfläche, ist es durch die deflektometrische Registrierung möglich, die Krümmung der Oberfläche ohne eine Systemkalibrierung auszuwerten.
 	
 	\section{Ergebnisse} \label{sec:ergebnisse}
+	Es ließ sich feststellen, dass die beiden Verfahren zuverlässig Fehlstellen sichtbar machen können.
+	Der Unterschied der beiden Verfahren ist die Eignung für bestimmte Objekte und Aufbauten.
 	
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[every node/.style={inner sep=0,outer sep=0}]
+
+			\node [anchor=north east] (imgAufbauDurchlicht) at (-0.06\columnwidth,0) {\includegraphics[width=.4\columnwidth]{aufbauFotoDurchlicht}};
+			\node [below=0.2cm of imgAufbauDurchlicht] {Durchlichtauswertung};
+			\node [anchor=north west] (imgAufbauReflexion) at (0.06\columnwidth,0) {\includegraphics[width=.4\columnwidth]{aufbauFotoReflexion}};
+			\node [below=0.2cm of imgAufbauReflexion] {Spiegelbildauswertung};
+			
+		\end{tikzpicture}
+		\caption{Verwendete Aufbauten für die Verfahren}
+		\label{tikz:aufbautenFuerErgebnisse}
+	\end{figure}
+		
+	Die verwendeten Aufbauten sind in Abbildung \ref{tikz:aufbautenFuerErgebnisse} einzusehen.
+	Für die transparenten Objekte hat sich die Durchlichtauswertung mit dem Verfahren \glqq Sichtprüfung durch Lichtstreuung\grqq ~besonders gut geeignet um Anomalien zu detektieren (siehe Abbildung \ref{tikz:ergebnisseLichtstreuung}).
+	Bei Anwendung des Verfahrens auf nicht-transparente spiegelnde Objekte, konnte man feststellen, dass sich das Verfahren nicht für Objekte mit größeren Krümmungen eignet.
+	Außerdem ist das Verfahren abhängig von Oberflächenbeschriftungen oder unterschiedlichen Farben, die das Ergebnis verfälschen können.
+	
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[every node/.style={inner sep=0,outer sep=0}]
+
+			\node [anchor=north east] (img1) at (-0.03\columnwidth,0) {\includegraphics[width=.4\columnwidth]{lasergravur}};
+			\node [below=0.2cm of img1] {Lasergravur};
+			\node [anchor=north west] (img2) at (0.03\columnwidth,0) {\includegraphics[width=.4\columnwidth]{polierfehler}};
+			\node [below=0.2cm of img2] {Kratzer};
+			
+		\end{tikzpicture}
+		\caption{Anomalien in Brillengläsern bei Durchlichtauswertung mit Verfahren \glqq Sichtprüfung durch Lichtstreuung\grqq}
+		\label{tikz:ergebnisseLichtstreuung}
+	\end{figure}
+	
+	Das Verfahren \glqq Auswertung der deflektometrischen Registrierung\grqq ~eignet sich besonders zur Erkennung von Defekten auf nicht-transparenten spiegelnden Oberflächen mit der Spiegelbildauswertung (siehe Abbildung \ref{tikz:ergebnisseRegistrierung}).
+	Zur Erkennung von Lasergravuren oder leichten Kratzer in transparenten Objekten hat die Empfindlichkeit des Verfahrens nicht ausgereicht.
+	
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[every node/.style={inner sep=0,outer sep=0}]
+
+			\node [anchor=north east] (img1) at (-0.03\columnwidth,0) {\includegraphics[width=.4\columnwidth]{pickel}};
+			\node [below=0.2cm of img1] {Pickel};
+			\node [anchor=north west] (img2) at (0.03\columnwidth,0) {\includegraphics[width=.4\columnwidth]{delle}};
+			\node [below=0.2cm of img2] {Delle};
+			
+		\end{tikzpicture}
+		\caption{Anomalien auf spiegelnden Keramikobjekten bei Spiegelbildauswertung mit Verfahren \glqq Auswertung der deflektometrischen Registrierung\grqq}
+		\label{tikz:ergebnisseRegistrierung}
+	\end{figure}
 	
 	\section{Abschlussbemerkungen} \label{sec:abschlussbemerkungen}
+	Im Rahmen der Bachelor-Thesis konnten zwei Verfahren und Aufbauten im Detail entwickelt und beschrieben werden, um Defekte oder Anomalien der Oberflächenkrümmung von spiegelnden und transparenten Objekten zu erkennen.
+	Dies konnte auch durch die Ergebnisse untermauert werden.
+	Im Ausblick stehen noch Verbesserungen an den Verfahren in den Punkten der Laufzeit und der Präzision der Defekterkennung.
 	
+	\par
+	Abschließend lässt sich sagen, dass die deflektometrischen Verfahren vielversprechende Perspektiven bereitstellen, um automatisiert spiegelnde oder transparente Oberflächen vollständig zu erfassen und zu prüfen.
+
 	% Quellenverweise
 	\printbibliography[title = Quellenverzeichnis]
 \end{document}
