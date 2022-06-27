@@ -1,18 +1,18 @@
-Im Abschnitt \ref{sub:unterschiedeKameraUndMonitor} wurde bereits erklärt, dass die horizontalen Streifen in den Ergebnisbildern aus Abbildung \ref{img:minAndMaxLink} und Abbildung \ref{img:diffImage} hauptsächlich durch Unregelmäßigkeiten in dem Aufnahmeprozess entstehen.
-Die Aufnahmeparameter bzw. Kameraeinstellungen müssen allerdings auf die Prüfstation und Prüfbedingungen angepasst werden, deshalb lassen sich diese horizontalen Streifen im Vorhinein nur begrenzt eliminieren.
+Im Abschnitt \ref{sub:unterschiedeKameraUndMonitor} wurde erklärt, dass die streifenförmigen Artefakte in den Ergebnisbildern aus Abbildung \ref{img:minAndMaxLink} und Abbildung \ref{img:diffImage} hauptsächlich durch Unregelmäßigkeiten in dem Aufnahmeprozess entstehen.
+Die Aufnahmeparameter bzw. Kameraeinstellungen müssen allerdings auf die Prüfstation und Prüfbedingungen angepasst werden, deshalb lassen sich diese Artefakte im Vorhinein nur schwer entfernen.
 Stattdessen kann man verschiedene Verfahren der Nachbearbeitung einsetzen.
-Aufgrund der Periodizität und der festen Ausbreitungsrichtung der Streifen bietet es sich an, die Fourier-Analyse anzuwenden.
-Man untersucht die Frequenzkomponenten der Streifen und filtert speziell diese aus dem Bild heraus, um sie zu entfernen.
-Dennoch kann man so nicht die tatsächliche Information an den dunklen Streifen wiederherstellen, sondern lediglich eine Bildverbesserung durchführen.
+Aufgrund der Periodizität und der festen Ausbreitungsrichtung der streifenförmigen Artefakte bietet es sich an, die Fourier-Analyse anzuwenden.
+Man untersucht die Frequenzkomponenten der Artefakte und filtert gezielt diese aus dem Bild heraus.
+Dennoch kann man so nicht die Information an den dunklen Artefakten wiederherstellen, sondern lediglich eine Bildverbesserung durchführen.
 Analog zur Überlegung aus Abschnitt \ref{sec:einsatzVonMehrerenStreifenmustern} ist eine andere Möglichkeit das Hinzuziehen von weiteren Bildern.
 Da an den Stellen der horizontalen Streifen Informationen fehlen, kann man zusätzliche Muster zur Hand nehmen, um die Informationen zu ergänzen.
 Man zieht weitere phasenverschobene Muster hinzu.
 Um zu jedem Muster ein zugehöriges Muster mit einer Phasenverschiebung von $\pi$ zu haben, benötigt man eine gerade Anzahl an Mustern.
 Wie auch in Abschnitt \ref{sec:einsatzVonMehrerenStreifenmustern} begründet, ist dies notwendig um die Oberflächeninformationen zu verknüpfen.
-Dadurch eliminiert man Streifen, welche durch Überlappungen von Streifen in den unterschiedlichen Kamerabildern entstehen.
+Dadurch eliminiert man die Artefakte, die durch Überlappungen von Streifen in den unterschiedlichen Kamerabildern entstehen.
 
 \p
-Im Folgenden werden als Beispiel die vier Kamerabilder der Streifenmustern $m_1$ bis $m_4$ miteinander verknüpft, die mit $N_{shift} = 4$ gebildet wurden.
+Im Folgenden werden als Beispiel die vier Kamerabilder der Streifenmuster $m_1$ bis $m_4$ miteinander verknüpft, die mit $N_{shift} = 4$ gebildet wurden.
 Aus den vier aufgenommenen Bildern verknüpft man je zwei Bilder mit der betragsmäßigen Differenz, in denen die Streifenmuster eine Phasenverschiebung von $\pi$ zueinander haben.
 Die zwei resultierenden Bilder haben zueinander versetzte Streifen, die aus den Überlappungen entstehen.
 Zum Schluss kann man die beiden Bilder so verknüpfen, dass man stets den Bildpunkt mit dem höheren Helligkeitswert nimmt.
