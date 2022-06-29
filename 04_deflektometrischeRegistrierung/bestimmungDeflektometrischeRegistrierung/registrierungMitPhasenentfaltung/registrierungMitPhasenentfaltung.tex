@@ -4,7 +4,7 @@ Das Verfahren von Kammel zeigt jedoch in der Praxis Kodierungsartefakte bzw. Pha
 Aus dem Grund stellt Werling darauf aufbauend in seiner Dissertation \cite{kit_werling} einen neuen Ansatz eines mehrstufigen Phasenschiebeverfahrens vor, der das Problem mit den Phasensprüngen minimiert.
 Die Idee des Ansatzes ist dabei, dass man zunächst analog zum Verfahren aus dem vorigen Abschnitt \ref{sub:registrierungOhnePhasenentfaltung} die $x$- bzw. $y$-Koordinaten relativ zu den Perioden der Muster bestimmt.
 Durch mehrere Muster mit unterschiedlichen Perioden erhält man schließlich unterschiedliche relative $x$- bzw. $y$-Koordinaten.
-Diese müssen für das finale Ergebnis jeweils den richtigen Perioden zugeordnet werden, indem ein Gleichungssystem aufgestellt wird.
+Diese müssen für das finale Ergebnis jeweils den richtigen Perioden zugeordnet werden, indem ein Gleichungssystem gelöst wird.
 
 \p
 Analog zum Verfahren aus Kapitel \ref{sub:registrierungOhnePhasenentfaltung} benötigt man $N_{shift}$-viele phasenverschobene Muster, um die Phase eines Bildpunkts $(x_B, y_B)^\top$ zu bestimmen.
@@ -50,7 +50,7 @@ Abbildung \ref{tikz:abbBeispielMusterMitPhasenentfaltung} zeigt eine mögliche M
 }
 
 \noindent
-Für jedes Muster jeder Stufe nimmt die Kamera Signale $g_k^i$ auf:
+Für jedes Muster jeder Stufe nimmt die Kamera Bilder $g_k^i$ auf:
 %
 \begin{equation}\label{eq:kamerabild_mehrstufig}
 	g_k^i(x_B, y_B) = A_g^i(x_B, y_B) \left(1 + C_g^i(x_B, y_B) \cos \left(\dfrac{2\pi N_p^i}{\acrshortmath{lwidth}}\acrshortmath{lrx}(x_B, y_B) + \psi_k\right)\right)
@@ -80,7 +80,7 @@ In Abhängigkeit von $x_{L,relativ}^i$ bedeutet das für $x_L^i$:
 \end{equation}
 %
 Dabei ist $n^i$ ein unbekannter ganzzahliger Faktor, der die absolute Auswertung bestimmt.
-Zur Bestimmung des Faktors $n^i$ sollen zwei verschiedene Stufen $i$,$j$ des Verfahrens mit $i \neq j$ betrachtet werden.
+Zur Bestimmung des Faktors $n^i$ sollen zwei verschiedene Stufen $i$, $j$ des Verfahrens mit $i \neq j$ betrachtet werden.
 Zur eindeutigen Lösbarkeit des nachfolgenden Gleichungssystems müssen $N_p^i$ und $N_p^j$ teilerfremd sein, das heißt es gilt:
 %
 \begin{equation*}
@@ -213,4 +213,4 @@ Das beschriebene Verfahren zur Bestimmung der deflektometrischen Registrierung \
 \noindent
 Der Algorithmus beschreibt die Berechnung der deflektometrischen Registrierung der Spaltenpositionen \acrshort{lrx}.
 Analog lässt sich auch die deflektometrische Registrierung der Zeilenpositionen \acrshort{lry} bestimmen.
-Nach Satz \ref{theo:separierbarkeitDeflektometrischeRegistrierung} kann schließlich aus den separierten deflektometrischen Registrierungen der Spalten- und Zeilenpositionen \acrshort{lrx} und \acrshort{lry} die deflektometrische Registrierung \acrshort{lr} des Prüfsystems gebildet werden.
+Nach Satz \ref{theo:separierbarkeitDeflektometrischeRegistrierung} kann schließlich durch Zusammenfassung der separierten deflektometrischen Registrierungen der Spalten- und Zeilenpositionen \acrshort{lrx} und \acrshort{lry} die deflektometrische Registrierung \acrshort{lr} des Prüfsystems gebildet werden.
